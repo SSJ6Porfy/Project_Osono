@@ -16,11 +16,11 @@ const App = () => (
       </Link>
     </header>
     <Switch>
-      <AuthRoute path="/login" component={SessionFormContainer} />
-      <AuthRoute path="/signup" component={SessionFormContainer} />
 
     </Switch>
   </div>
 );
+{/* <AuthRoute path="/login" component={SessionFormContainer} />
+<AuthRoute path="/signup" component={SessionFormContainer} /> */}
 
 export default App;
