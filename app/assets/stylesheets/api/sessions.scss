@@ -1,3 +1,77 @@
 // Place all the styles related to the Api::Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// font-family: 'Michroma', sans-serif;
+// font-family: 'Reem Kufi', sans-serif;
+
+.splash_page_container {
+  background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/jVhILry/abstract-rainbow-wave-waving-motion-background_41vpvi0ge__F0000.png);
+  height: 900px;
+  widows: 100%;
+}
+
+.navbarContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbtnContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.btnContainer {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.btnContainer button {
+  border: 2px solid rgb(89, 79, 199);
+  border-radius: 4px;
+  background: none;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  padding: 5px 14px 5px 14px;
+  font-family: 'Michroma', sans-serif;
+  font-size: 15px;
+}
+
+.btnContainer button:hover {
+  background: rgb(89, 79, 199);
+  border-radius: 4px;
+  margin-right: 15px;
+  font-family: 'Michroma', sans-serif;
+  color: white;
+}
+
+.btnContainer button:focus {
+  outline: 0;
+}
+
+.logo {
+  background-image: asset_url("logoNew.png");
+  height: 30px;
+}
+
+.jumbotron {
+  display: flex;
+  justify-content: center;
+}
+
+.logoContainer {
+  font-family: 'Michroma', sans-serif;
+}
+
+.jumbotronMain {
+  font-family: 'Encode Sans Expanded', sans-serif;
+}
+
+.jumbotronMain {
+  font-size: 50px;
+}
+
+.jumbotronContainer {
+  width: 80%;
+}
