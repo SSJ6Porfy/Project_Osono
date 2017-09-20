@@ -19,7 +19,20 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  
+  has_many :team_members,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: 'Team Member'
+
+  has_many :tasks,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: 'Task'
+
+  has_many :teams,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: 'Team'
 
   def self.find_by_credentials(username, password)
     @user = User.find_by(username: username)
