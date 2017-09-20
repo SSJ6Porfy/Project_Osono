@@ -10,13 +10,9 @@ import {
 
 const App = () => (
   <div>
-    <header>
-      <Link to="/" className="header-link">
-        <h1>Osono</h1>
-      </Link>
-    </header>
-    <Switch>
 
+    <Switch>
+       <Route exact path="/" component={SplashPageContainer} />
     </Switch>
   </div>
 );
