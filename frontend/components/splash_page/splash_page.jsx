@@ -54,7 +54,7 @@ class SplashPage extends React.Component {
           <div className="navbarContainer">
             <div className="logoContainer">
               <div className="logo">
-
+                <imc src={"http://res.cloudinary.com/ssj6porfy/image/upload/v1505954437/logoNew_vmlcop.png"}></imc>
               </div>
               <h1>Osono</h1>
             </div>
