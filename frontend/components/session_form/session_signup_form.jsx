@@ -76,6 +76,7 @@ class SessionSignupForm extends React.Component {
          <label>Email
            <br/>
              <input type="text"
+               placeholder={"name@yourCompany.com"}
                value={this.state.email}
                onChange={this.update('email')}
                className="signup-input"
