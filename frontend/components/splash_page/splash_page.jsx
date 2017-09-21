@@ -5,6 +5,7 @@ import SessionSignupFormContainer from "../session_form/session_signup_form_cont
 
 ReactModal.defaultStyles.overlay.backgroundColor = 'rgba(128,128,128,0.75)';
 
+
 class SplashPage extends React.Component {
   constructor(props) {
     super(props)
@@ -77,7 +78,7 @@ class SplashPage extends React.Component {
           </div>
         </div>
       <ReactModal className="Session Modal"
-               onRequestClose={() => this.setState({ loginModalisOpen: false })}
+               onRequestClose={() => this.closeLoginModal()}
                isOpen={this.state.loginModalIsOpen}
                shouldCloseOnOverlayClick={true}
                contentLabel="Modal">
@@ -87,7 +88,7 @@ class SplashPage extends React.Component {
     </ReactModal>
 
       <ReactModal className="Session Modal"
-               onRequestClose={() => this.setState({ signUpModalisOpen: false })}
+               onRequestClose={() => this.closeSignupModal()}
                isOpen={this.state.signUpModalIsOpen}
                shouldCloseOnOverlayClick={true}
                contentLabel="Modal">
