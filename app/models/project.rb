@@ -21,7 +21,7 @@ class Project < ApplicationRecord
 
   belongs_to :team,
     primary_key: :id,
-    foreign_key: team_id,
+    foreign_key: :team_id,
     class_name: 'Team'
 
   has_many :tasks,
@@ -30,5 +30,5 @@ class Project < ApplicationRecord
     class_name: 'Task'
 
   has_many :team_members,
-    through: :project_leader, source: :team_members 
+    through: :project_leader, source: :team_members
 end
