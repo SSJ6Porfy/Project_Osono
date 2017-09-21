@@ -19,20 +19,23 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  has_many :team_members,
-    primary_key: :id,
-    foreign_key: :user_id,
-    class_name: 'Team Member'
+  has_many :tasks
 
-  has_many :tasks,
-    primary_key: :id,
-    foreign_key: :user_id,
-    class_name: 'Task'
-
-  has_many :teams,
+  has_many :teams_lead,
     primary_key: :id,
     foreign_key: :user_id,
     class_name: 'Team'
+
+    has_many :team_members
+
+    has_many :teams, through: :team_members, source: :team
+
+    has_many :all_teammates,
+      through: :teams, source: :members
+
+    def teammates
+      all_teammates.reject { |user| user.id == self.id }
+    end
 
   def self.find_by_credentials(username, password)
     @user = User.find_by(username: username)
