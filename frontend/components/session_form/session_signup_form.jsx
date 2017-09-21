@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 
+
 class SessionSignupForm extends React.Component {
 
   constructor(props) {
@@ -50,7 +51,7 @@ class SessionSignupForm extends React.Component {
       <div className="session-form-container">
        <form onSubmit={this.handleSubmit} className="session-form-box">
          <br/>
-       Please Signup!
+       <h1 className="formHeader">SIGN UP</h1>
          {this.renderErrors()}
          <div className="signup-form">
            <br/>
@@ -78,7 +79,7 @@ class SessionSignupForm extends React.Component {
              />
            </label>
            <br/>
-           <input type="submit" value="Submit" />
+         <input type="submit" value="SIGN UP"/>
          </div>
        </form>
      </div>

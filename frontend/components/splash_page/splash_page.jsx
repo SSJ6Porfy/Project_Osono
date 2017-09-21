@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import SessionLoginFormContainer from "../session_form/session_login_form_container";
 import SessionSignupFormContainer from "../session_form/session_signup_form_container";
 
+
 class SplashPage extends React.Component {
   constructor(props) {
     super(props)
@@ -52,7 +53,10 @@ class SplashPage extends React.Component {
         <div className="nav-bar">
           <div className="navbarContainer">
             <div className="logoContainer">
-              <div className="logo"></div><h1>Osono</h1>
+              <div className="logo">
+
+              </div>
+              <h1>Osono</h1>
             </div>
             <div className="navbtnContainer">
               <div className="btnContainer">
@@ -67,29 +71,30 @@ class SplashPage extends React.Component {
           <div className="jumbotronContainer">
             <div className="jumbotronMain">
               <h1>TEAMWORK.<br/>OPTIMIZED</h1>
+              <p>Osono is the easiest way for teams to<br/>
+              track their work—and get results.</p>
             </div>
           </div>
         </div>
       <Modal className="Session Modal"
-               shouldCloseOnOverlayClick={true}
+
                isOpen={this.state.loginModalIsOpen}
                contentLabel="Modal">
 
           <SessionLoginFormContainer formType={"login"}/>
 
-          <button onClick={this.closeLoginModal}>Close</button>
+        <button onClick={this.closeLoginModal}>X</button>
         </Modal>
 
       <Modal className="Session Modal"
+
                isOpen={this.state.signUpModalIsOpen}
-               shouldCloseOnOverlayClick={true}
                contentLabel="Modal">
 
           <SessionSignupFormContainer formType={"signup"}/>
 
-          <button onClick={this.closeSignupModal}>Close</button>
-        </Modal>
-
+        <button onClick={this.closeSignupModal}>X</button>
+      </Modal>
 
       </div>
     )
