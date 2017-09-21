@@ -1,8 +1,9 @@
 import React from "react";
-import Modal from "react-modal";
+import ReactModal from 'react-modal';
 import SessionLoginFormContainer from "../session_form/session_login_form_container";
 import SessionSignupFormContainer from "../session_form/session_signup_form_container";
 
+ReactModal.defaultStyles.overlay.backgroundColor = 'rgba(128,128,128,0.75)';
 
 class SplashPage extends React.Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class SplashPage extends React.Component {
 
   afterOpenLoginModal() {
     // references are now sync'd and can be accessed.
-    this.subtitle.style.color = '#f00';
+    // this.subtitle.style.color = '#f00';
   }
 
   closeLoginModal() {
@@ -38,7 +39,6 @@ class SplashPage extends React.Component {
 
   afterOpenSignupModal() {
     // references are now sync'd and can be accessed.
-    this.subtitle.style.color = '#f00';
   }
 
   closeSignupModal() {
@@ -76,25 +76,26 @@ class SplashPage extends React.Component {
             </div>
           </div>
         </div>
-      <Modal className="Session Modal"
-
+      <ReactModal className="Session Modal"
+               onRequestClose={() => this.setState({ loginModalisOpen: false })}
                isOpen={this.state.loginModalIsOpen}
+               shouldCloseOnOverlayClick={true}
                contentLabel="Modal">
-
           <SessionLoginFormContainer formType={"login"}/>
 
         <button onClick={this.closeLoginModal}>X</button>
-        </Modal>
+    </ReactModal>
 
-      <Modal className="Session Modal"
-
+      <ReactModal className="Session Modal"
+               onRequestClose={() => this.setState({ signUpModalisOpen: false })}
                isOpen={this.state.signUpModalIsOpen}
+               shouldCloseOnOverlayClick={true}
                contentLabel="Modal">
 
           <SessionSignupFormContainer formType={"signup"}/>
 
         <button onClick={this.closeSignupModal}>X</button>
-      </Modal>
+    </ReactModal>
 
       </div>
     )

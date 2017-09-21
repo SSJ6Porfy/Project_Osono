@@ -7,25 +7,8 @@
 
 .splash_page_container {
   background-image: url(http://res.cloudinary.com/ssj6porfy/image/upload/v1505954412/abstract-rainbow-wave-waving-motion-background_41vpvi0ge__F0000_xikxdc.png);
-  height: 900px;
-  widows: 100%;
-}
-
-.navbarContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.navbtnContainer {
-  display: flex;
-  justify-content: center;
-}
-
-.btnContainer {
-  display: flex;
-  align-items: center;
-  margin-right: 20px;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
 }
 
 .logo {
@@ -35,19 +18,19 @@
   background-size: contain;
   height: 60px;
   width: 60px;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
-.logo h1 {
-  margin-bottom: 40px;
+.logoContainer h1 {
+  padding-bottom: 25px;
 }
 
 .logoContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
+  font-family: 'Michroma', sans-serif;
 }
-
 
 .btnContainer button {
   border: 2px solid rgb(89, 79, 199);
@@ -72,14 +55,27 @@
   outline: 0;
 }
 
+.navbarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-.jumbotron {
+.navbtnContainer {
   display: flex;
   justify-content: center;
 }
 
-.logoContainer {
-  font-family: 'Michroma', sans-serif;
+.btnContainer {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+
+.jumbotron {
+  display: flex;
+  justify-content: center;
 }
 
 .jumbotronMain {
@@ -106,16 +102,9 @@
   background: white;
   border: 3px solid rgb(89, 79, 199);
   display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 6px;
-  padding-bottom: 50px;
-}
-
-.session-form-box {
-  padding: 100px;
-}
-.login-form {
-  padding-left: 30px;
-  padding-right: 30px;
 }
 
 .Session {
