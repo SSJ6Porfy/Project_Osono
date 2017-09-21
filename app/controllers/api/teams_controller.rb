@@ -19,7 +19,6 @@ class Api::TeamsController < ApplicationController
 
   def create
     @team = Team.new(team_params)
-    @team.user_id = current_user.id # Set the current_user as the Team Lead
 
     if @team.save
       render :show
