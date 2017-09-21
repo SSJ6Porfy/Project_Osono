@@ -1,7 +1,9 @@
 class Api::TeamsController < ApplicationController
 
-  before_action :check_if_user_is_team_leader?,  only: [:new, :create]
+  before_action :check_if_user_is_team_leader?,  only: [:update, :create]
 
+  #Method checks the current_user is the Team Lead.
+  #Only Team Leads are allow to modify teams
   def check_if_user_is_team_leader?
     render :json ["Only the Team Lead can edit this team"] unless current_user.id == this_team.user_id;
   end
@@ -45,7 +47,13 @@ class Api::TeamsController < ApplicationController
   end
 
   def destroy
-
+    @team = Team.find_by(params[:id])
+    if @team
+      @team.destroy
+      render :show
+    else
+      render json: ["Team does not exist!"], status: 422
+    end
   end
 
   def team_params
