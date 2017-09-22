@@ -3,7 +3,7 @@ class Api::ProjectsController < ApplicationController
 
   #Method checks the current_user is the Project Lead.
   #Only Project Leads are allow to modify projects
-  
+
   def check_if_user_is_project_leader?
     if current_user.id != this_project.project_leader_id;
       render :json ["Only the Project Lead can edit this project"]
@@ -27,10 +27,6 @@ class Api::ProjectsController < ApplicationController
     else
       render json: @project.errors.full_messages, status: 422
     end
-  end
-
-  def edit
-    @project = Project.find_by(params[:id])
   end
 
   def update

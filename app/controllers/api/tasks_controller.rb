@@ -14,10 +14,6 @@ class Api::TasksController < ApplicationController
     end
   end
 
-  def edit
-    @task = Task.find_by(params[:id])
-  end
-
   def update
     @task = current_user.tasks.find_by(params[:id])
 

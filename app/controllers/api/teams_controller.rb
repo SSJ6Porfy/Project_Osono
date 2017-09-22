@@ -27,10 +27,6 @@ class Api::TeamsController < ApplicationController
     end
   end
 
-  def edit
-    @team = Team.find_by(params[:id])
-  end
-
   def update
     @team = current_user.teams.find_by(params[:id])
 
