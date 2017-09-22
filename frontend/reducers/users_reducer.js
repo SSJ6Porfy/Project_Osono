@@ -7,7 +7,6 @@ const _nullUser = Object.freeze({
 
 const UsersReducer = (state = _nullUser, action) => {
   Object.freeze(state);
-
   const newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_UPDATED_USER:

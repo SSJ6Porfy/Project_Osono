@@ -5,6 +5,7 @@ class UserProfile extends React.Component {
     super(props)
     this.state = this.props.currentUser
     this.renderErrors = this.renderErrors.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
@@ -15,6 +16,7 @@ class UserProfile extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.updateUser(this.state).then(() => console.log("successful update"))
   }
 
   renderErrors() {
