@@ -33,17 +33,17 @@ class SessionSignupForm extends React.Component {
      this.props.signup(user).then(res => console.log("it worked-Signup"));
    }
 
-  renderErrors() {
-  return(
-    <ul>
-      {this.props.errors.map((error, i) => (
-        <li key={`error-${i}`}>
-          {error}
-        </li>
-      ))}
-    </ul>
-  );
-}
+   renderErrors() {
+       return(
+         <ul>
+           {this.props.errors.map((error, i) => (
+             <li key={`error-${i}`}>
+               {error}
+             </li>
+           ))}
+         </ul>
+       );
+     }
 
 
   render() {
@@ -52,7 +52,7 @@ class SessionSignupForm extends React.Component {
        <form onSubmit={this.handleSubmit} className="session-form-box">
          <br/>
        <h1 className="formHeader">SIGN UP</h1>
-         {this.renderErrors()}
+         <h2 className="errors-text">{this.renderErrors()}</h2>
          <div className="signup-form">
            <br/>
            <label>Username

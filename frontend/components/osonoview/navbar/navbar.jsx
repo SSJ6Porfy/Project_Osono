@@ -52,8 +52,8 @@ class Navbar extends React.Component {
               shouldCloseOnOverlayClick={true}
               contentLabel="Modal">
 
-              <UserProfileContainer/>
-              <button onClick={this.closeModal}>X</button>
+              <UserProfileContainer closeModal={this.closeModal}/>
+            <button className="close-btn" onClick={this.closeModal}>X</button>
             </ReactModal>
             </div>
           </div>

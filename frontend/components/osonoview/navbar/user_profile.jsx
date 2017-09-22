@@ -8,6 +8,7 @@ class UserProfile extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -16,30 +17,37 @@ class UserProfile extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateUser(this.state).then(() => console.log("successful update"))
+    console.log(this.props);
+    this.props.updateUser(this.state).then(() => this.props.closeModal())
   }
 
   renderErrors() {
-    console.log(this.props);
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
 
   render() {
     return (
-      <div>
         <div className="session-form-container">
          <form onSubmit={this.handleSubmit} className="session-form-box">
            <br/>
-         <h1 className="formHeader">{this.state.username}'s Profile</h1>
-           {this.renderErrors()}
+         <div className="formHeaderContainer">
+           <div className="avatarContainer">
+             <div className="avatar">
+               <span className="user-profile">{this.state.username[0].toUpperCase()}</span>
+             </div>
+           </div>
+            <h1 className="user-form-header">{this.state.username}'s Profile</h1>
+         </div>
+
+           <h2 className="errors-text">{this.renderErrors()}</h2>
            <div className="login-form">
              <br/>
              <label>Username
@@ -64,7 +72,6 @@ class UserProfile extends React.Component {
            </div>
          </form>
        </div>
-      </div>
     )
   }
 }

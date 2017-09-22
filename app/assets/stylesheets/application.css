@@ -57,3 +57,8 @@
    border-collapse: collapse;
    border-spacing: 0;
  }
+
+ .errors-text {
+   color: red;
+   font-weight: bold;
+ }

@@ -84,7 +84,7 @@ class SplashPage extends React.Component {
                contentLabel="Modal">
           <SessionLoginFormContainer formType={"login"}/>
 
-        <button onClick={this.closeLoginModal}>X</button>
+        <button className="close-btn" onClick={this.closeLoginModal}>X</button>
     </ReactModal>
 
       <ReactModal className="Session Modal"
@@ -95,7 +95,7 @@ class SplashPage extends React.Component {
 
           <SessionSignupFormContainer formType={"signup"}/>
 
-        <button onClick={this.closeSignupModal}>X</button>
+        <button className="close-btn" onClick={this.closeSignupModal}>X</button>
     </ReactModal>
 
       </div>

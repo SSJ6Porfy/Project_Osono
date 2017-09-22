@@ -150,10 +150,11 @@
   cursor: pointer;
   height: 34px;
   width: 120px;
+  border: none;
 }
 
 .session-form-box input[type="submit"]:hover {
-  background: rgb(89, 79, 199);
+  background: rgb(251, 63, 255);
   color: white;
 }
 
@@ -185,7 +186,7 @@
   color: rgb(138, 142, 147);
 }
 
-.Session button {
+.close-btn {
   font-size: 1.375rem;
   cursor: pointer;
   color: "#b7bfc6";
@@ -198,4 +199,25 @@
   transition: opacity .15s ease-in-out;
   background: transparent;
   border: none;
+}
+
+
+.demo-btn {
+  background: rgb(89, 79, 199);
+  color: white;
+  border-radius: 4px;
+  padding: 0 16px;
+  font-family: sans-serif;
+  font-size: 14px;
+  float: left;
+  cursor: pointer;
+  height: 34px;
+  width: 120px;
+  border: none;
+  margin-left: 5px;
+}
+
+.demo-btn:hover {
+  background: rgb(251, 63, 255);
+  color: white;
 }
