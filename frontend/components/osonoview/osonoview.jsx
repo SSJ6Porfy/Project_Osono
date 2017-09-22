@@ -1,4 +1,5 @@
 import React from "react";
+import NavbarContainer from "./navbar/navbar_container";
 
 class Osonoview extends React.Component {
   constructor(props) {
@@ -7,7 +8,10 @@ class Osonoview extends React.Component {
 
   render() {
     return (
-      <h1>I'm the Dashboard</h1>
+      <div>
+        <NavbarContainer />
+        <h1>I'm the Dashboard</h1>
+      </div>
     )
   }
 }
