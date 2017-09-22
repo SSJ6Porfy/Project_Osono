@@ -1,0 +1,72 @@
+
+.mainNavbarContainer {
+  width: 83%;
+  float: right;
+  border-bottom: 1px solid rgb(224, 230, 232);
+  height: 41px;
+  font-family: sans-serif;
+  font-size: 13px;
+  display: flex;
+  align-items: center
+}
+
+.mainNavbarLeft, .mainNavbarRight, .mainNavbarCenter {
+  width: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.mainNavbarLeft a {
+  text-decoration: none;
+  color: rgb(157, 167, 176);
+}
+
+.mainNavbarLeft button {
+  background: linear-gradient(to top right, #ff5263 0%, #ff7381 35%, #fcbd01 100%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logoutBtnContainer button {
+  background: rgb(252, 189, 1);
+  border: 1px solid rgb(252, 189, 1);
+  color: white;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 9px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+  color: white;
+  transition: background-color 1s ease-out;
+}
+
+.logoutBtnContainer button:hover{
+  background: rgb(255, 224, 27);
+  border: 1px solid rgb(255, 224, 27);
+}
+
+.avatarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  border-radius: 50%;
+  background-color: #7a6ff0;
+  color: white;
+  font-size: 13px;
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
+  font-weight: bold;
+}
+
+.avatarContainer:hover {
+  border: 3px solid rgb(50, 193, 255);
+}
