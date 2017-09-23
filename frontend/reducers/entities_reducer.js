@@ -1,9 +1,6 @@
-// import { combineReducers } from 'redux';
+import { combineReducers } from 'redux';
+import TaskReducer from "./task_reducer";
 
-
-// export default combineReducers({
-//   users: UsersReducer,
-//   tasks: TasksReducer,
-//   teams: TeamsReducer,
-//   projects: ProjectsReducer
-// })
+export default combineReducers({
+  tasks: TaskReducer
+})
