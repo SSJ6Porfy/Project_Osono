@@ -15,7 +15,7 @@ class Api::TasksController < ApplicationController
   end
 
   def update
-    @task = current_user.tasks.find_by(params[:id])
+    @task = current_user.tasks.find_by(id: params[:id])
 
     if @task.update_attributes(task_params)
       render :show
@@ -25,11 +25,11 @@ class Api::TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find_by(params[:id])
+    @task = Task.find_by(id: params[:id])
   end
 
   def destroy
-    @task = Task.find_by(params[:id])
+    @task = Task.find_by(id: params[:id])
     if @task
       @task.destroy
       render :show
@@ -39,8 +39,6 @@ class Api::TasksController < ApplicationController
   end
 
   def task_params
-    params
-      .require(:task)
-      .permit(:project_id, :user_id, :name, :description)
+    params.require(:task).permit(:project_id, :user_id, :name, :description, :complete?)
   end
 end

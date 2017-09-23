@@ -9,7 +9,8 @@ import { currentUserTasks } from "../../../reducers/selectors";
 
 const mapStateToProps = (state) => ({
   tasks: currentUserTasks(state.session.currentUser,state.entities.tasks),
-  errors: state.errors.tasks
+  errors: state.errors.tasks,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({

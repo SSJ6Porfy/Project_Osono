@@ -19,8 +19,8 @@ class TaskIndexListItem extends React.Component {
   }
 
   saveChanges(e) {
-    e.preventDefault()
-    this.props.updateTask(this.state).then(() => {})
+    e.preventDefault();
+    this.props.updateTask(this.state).then(() => console.log("success"))
   }
 
 

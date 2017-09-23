@@ -16,7 +16,7 @@ export const fetchTask = (id) => (
 export const updateTask = (task) => (
   $.ajax({
     method: 'PATCH',
-    url: '/api/tasks',
+    url: `/api/tasks/${task.id}`,
     data: { task }
   })
 );
