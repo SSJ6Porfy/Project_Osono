@@ -6,6 +6,7 @@ class TaskIndexListItem extends React.Component {
     super(props)
     this.state = this.props.task
     this.saveChanges = this.saveChanges.bind(this);
+    this.removeTask = this.removeTask.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
@@ -16,6 +17,12 @@ class TaskIndexListItem extends React.Component {
     return (e) => {
       this.setState({[field]: e.target.value})
     }
+  }
+
+  removeTask(e) {
+    e.preventDefault();
+    console.log(this.props);
+    this.props.deleteTask(this.props.task.id).then(() => console.log("success"))
   }
 
   saveChanges(e) {
@@ -37,6 +44,7 @@ class TaskIndexListItem extends React.Component {
                       onChange={this.update("name")}
                       value={this.state.name}/>
           </li>
+          <button className="delete-task-btn" onClick={this.removeTask}>X</button>
         </div>
       </div>
 

@@ -22,6 +22,7 @@ class TaskIndex extends React.Component {
       return ( <TaskIndexListItem className="task-index-item"
                                   key={idx+"porf"}
                                   task={task}
+                                  deleteTask={this.props.deleteTask}
                                   updateTask={this.props.updateTask}/> )
     })
     return (

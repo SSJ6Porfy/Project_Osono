@@ -3,7 +3,8 @@ import TaskIndex from "./task_index";
 import { fetchTasks,
          fetchTask,
          createTask,
-         updateTask, } from "../../../actions/task_actions";
+         updateTask,
+         deleteTask } from "../../../actions/task_actions";
 
 import { currentUserTasks } from "../../../reducers/selectors";
 

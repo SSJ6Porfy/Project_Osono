@@ -157,3 +157,20 @@
 .header-add-task-btn:hover {
   border: 3px solid rgb(50, 193, 255);
 }
+
+.delete-task-btn {
+  font-family: sans-serif;
+  border-radius: 50%;
+  border: 2px solid #d3d5d6;
+  font-size: 9px;
+  background: transparent;
+  padding: 4px 6px 4px 6px;
+  color: #d3d5d6;
+  cursor: pointer;
+  outline: 0;
+}
+
+.delete-task-btn:hover {
+  color: red;
+  border: 2px solid red;
+}
