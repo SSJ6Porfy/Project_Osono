@@ -12,7 +12,10 @@ class TaskIndex extends React.Component {
 
   render() {
     let result = this.props.tasks.map((task, idx) => {
-      return <TaskIndexListItem className="task-index-item" key={idx+"porf"} task={task}/>
+      return ( <TaskIndexListItem className="task-index-item"
+                                  key={idx+"porf"}
+                                  task={task}
+                                  updateTask={this.props.updateTask}/> )
     })
     return (
       <div className="task-index-container">

@@ -4,6 +4,12 @@ import React from "react";
 class TaskIndexListItem extends React.Component {
   constructor(props) {
     super(props)
+    this.state = this.props.task
+    this.saveChanges = this.saveChanges.bind(this);
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setState(newProps.task)
   }
 
   update(field) {
@@ -11,6 +17,12 @@ class TaskIndexListItem extends React.Component {
       this.setState({[field]: e.target.value})
     }
   }
+
+  saveChanges(e) {
+    e.preventDefault()
+    this.props.updateTask(this.state).then(() => {})
+  }
+
 
   render() {
     return (
@@ -20,7 +32,10 @@ class TaskIndexListItem extends React.Component {
             <div className="task-status-checkbox-container">
               <input className="task-status-checkbox" type="checkbox"/>
             </div>
-            <textarea className="task-item-name-editable" value={this.props.task.name}/>
+            <textarea className="task-item-name-editable"
+                      onBlur={this.saveChanges}
+                      onChange={this.update("name")}
+                      value={this.state.name}/>
           </li>
         </div>
       </div>
