@@ -1,13 +1,14 @@
 
 .mainNavbarContainer {
-  width: 83%;
+  width: 100%;
   float: right;
   border-bottom: 1px solid rgb(224, 230, 232);
   height: 41px;
   font-family: sans-serif;
   font-size: 13px;
   display: flex;
-  align-items: center
+  align-items: center;
+  background: white;
 }
 
 .mainNavbarLeft, .mainNavbarRight, .mainNavbarCenter {

@@ -1,3 +1,14 @@
 // Place all the styles related to the Api::Tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.task-index-container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-start;
+  width: 85%;
+  min-height: 600px;
+  border: 1px solid rgb(224, 230, 232);
+  background: white;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+}

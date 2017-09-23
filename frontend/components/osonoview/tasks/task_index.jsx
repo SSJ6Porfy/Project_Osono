@@ -1,4 +1,5 @@
 import React from "react";
+import TaskIndexListItem from "./task_index_list_item";
 
 class TaskIndex extends React.Component {
   constructor(props) {
@@ -10,9 +11,14 @@ class TaskIndex extends React.Component {
   }
 
   render() {
+    let result = this.props.tasks.map((task, idx) => {
+      return <TaskIndexListItem key={idx+"porf"} task={task}/>
+    })
     return (
-      <div>
-        <h1>I'm the Task Index</h1>
+      <div className="task-index-container">
+        <ul>
+          { result }
+        </ul>
       </div>
     )
   }

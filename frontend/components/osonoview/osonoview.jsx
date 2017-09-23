@@ -9,9 +9,14 @@ class Osonoview extends React.Component {
   render() {
     return (
       <div>
-        <NavbarContainer />
-        <h1>I'm the Dashboard</h1>
-      <TaskIndexContainer/>
+        <div className="sidebar-container"></div>
+        <div className="osonoview-main-container">
+          <NavbarContainer />
+        <div className="team-name-container">
+          <h1>Team Name</h1>
+        </div>
+        <TaskIndexContainer/>
+      </div>
       </div>
     )
   }
