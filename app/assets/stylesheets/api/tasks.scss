@@ -6,7 +6,7 @@
   margin-top: 15px;
   display: flex;
   justify-content: flex-start;
-  width: 85%;
+  width: 100%;
   min-height: 600px;
   border: 1px solid rgb(224, 230, 232);
   background: white;
@@ -18,7 +18,7 @@
   margin-top: 15px;
   display: flex;
   justify-content: flex-start;
-  width: 45%;
+  width: 55%;
   min-height: 600px;
   border: 1px solid rgb(224, 230, 232);
   background: white;
@@ -194,4 +194,18 @@
 .delete-task-btn:hover {
   color: red;
   border: 2px solid red;
+}
+
+.task-detail-container {
+  display: flex;
+  width: 45%;
+  min-height: 600px;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.task-detail {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
 }

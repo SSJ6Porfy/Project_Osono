@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 class TaskIndexListItem extends React.Component {
   constructor(props) {
     super(props)
-    this.state = this.props.task
-    this.saveChanges = this.saveChanges.bind(this);
+    this.state = this.props.task;
     this.removeTask = this.removeTask.bind(this);
     this.toggleStatus = this.toggleStatus.bind(this);
     this.addClass = this.addClass.bind(this)
@@ -28,18 +27,9 @@ class TaskIndexListItem extends React.Component {
     this.props.deleteTask(this.props.task.id).then(() => this.props.history.push("/osonoview"))
   }
 
-  saveChanges(e) {
-    e.preventDefault();
-    const el = document.getElementsByClassName("task-index-container-enabled");
-    if (el[0].classList) {
-      el[0].classList.remove("task-index-container-enabled")
-    }
-    this.props.updateTask(this.state).then(() => this.props.history.push("/osonoview"))
-  }
 
   toggleStatus(e) {
     e.preventDefault();
-    console.log(this.props);
     this.state["complete?"] = true;
     this.props.updateTask(this.state).then(() => this.props.history.push("/osonoview"));
   }
@@ -67,7 +57,7 @@ class TaskIndexListItem extends React.Component {
             </div>
             <Link className="ask-item-name-editable-link" to={`/osonoview/tasks/${this.props.task.id}`}>
               <textarea className="task-item-name-editable"
-                        onBlur={this.saveChanges}
+
                         onChange={this.update("name")}
                         onClick={this.addClass}
                         value={this.state.name}

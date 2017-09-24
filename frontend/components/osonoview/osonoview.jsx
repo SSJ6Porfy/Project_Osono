@@ -22,8 +22,11 @@ class Osonoview extends React.Component {
         <div className="team-name-container">
           <h1>Team Name</h1>
         </div>
-        <TaskIndexContainer/>
-        <ProtectedRoute exact path="/osonoview/tasks/:taskId" component={TaskDetailContainer}/>
+        <div className="main-console-container">
+          <TaskIndexContainer/>
+          <ProtectedRoute exact path="/osonoview/tasks/:taskId" component={TaskDetailContainer}/>
+        </div>
+
       </div>
 
       </div>
