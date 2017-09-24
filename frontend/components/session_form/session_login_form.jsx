@@ -11,6 +11,7 @@ class SessionLoginForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoUserLogin = this.demoUserLogin.bind(this);
+
   }
 
 
@@ -26,10 +27,10 @@ class SessionLoginForm extends React.Component {
      });
    }
 
-   demoUserLogin() {
-     this.setState({"username": "TywinLannister", "password": "password"});
-     console.log(this.state);
-     this.props.login(this.state).then(res => console.log("it worked-Login"));
+   demoUserLogin(e) {
+     e.preventDefault();
+     this.setState({"username": "TywinLannister", "password": "password"})
+     this.props.login({"username": "TywinLannister", "password": "password"}).then(res => console.log("it worked-Login"));
    }
 
    handleSubmit(e) {

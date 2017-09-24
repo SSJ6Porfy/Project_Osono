@@ -13,7 +13,8 @@ class TaskIndex extends React.Component {
   }
 
   newTask(e) {
-    e.preventDefault()
+    e.preventDefault();
+    debugger
     this.props.createTask(this.task).then(() => console.log("new task!"))
   }
 
