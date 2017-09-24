@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchTask: (id) => dispatch(fetchTask()),
   createTask: (task) => dispatch(createTask(task)),
   updateTask: (task) => dispatch(updateTask(task)),
-  deleteTask: (task) => dispatch(deleteTask(task))
+  deleteTask: (id) => dispatch(deleteTask(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskIndex);
