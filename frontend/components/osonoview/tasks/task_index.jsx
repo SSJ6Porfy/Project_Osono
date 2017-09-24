@@ -14,9 +14,9 @@ class TaskIndex extends React.Component {
 
   newTask(e) {
     e.preventDefault();
-    debugger
     this.props.createTask(this.task).then(() => console.log("new task!"))
   }
+
 
   render() {
     let result = this.props.tasks.map((task, idx) => {

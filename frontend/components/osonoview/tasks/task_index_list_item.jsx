@@ -9,6 +9,7 @@ class TaskIndexListItem extends React.Component {
     this.saveChanges = this.saveChanges.bind(this);
     this.removeTask = this.removeTask.bind(this);
     this.toggleStatus = this.toggleStatus.bind(this);
+    this.addClass = this.addClass.bind(this)
   }
 
   componentWillReceiveProps(newProps) {
@@ -29,6 +30,10 @@ class TaskIndexListItem extends React.Component {
 
   saveChanges(e) {
     e.preventDefault();
+    const el = document.getElementsByClassName("task-index-container-enabled");
+    if (el[0].classList) {
+      el[0].classList.remove("task-index-container-enabled")
+    }
     this.props.updateTask(this.state).then(() => this.props.history.push("/osonoview"))
   }
 
@@ -39,6 +44,12 @@ class TaskIndexListItem extends React.Component {
     this.props.updateTask(this.state).then(() => this.props.history.push("/osonoview"));
   }
 
+  addClass(e) {
+    const el = document.getElementsByClassName("task-index-container");
+    if (el[0].classList) {
+      el[0].classList.add("task-index-container-enabled")
+    }
+  }
 
   render() {
     return (
@@ -58,6 +69,7 @@ class TaskIndexListItem extends React.Component {
               <textarea className="task-item-name-editable"
                         onBlur={this.saveChanges}
                         onChange={this.update("name")}
+                        onClick={this.addClass}
                         value={this.state.name}
                         rows="1"/></Link>
           </li>

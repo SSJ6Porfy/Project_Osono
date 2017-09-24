@@ -14,6 +14,18 @@
   flex-direction: column;
 }
 
+.task-index-container-enabled {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-start;
+  width: 45%;
+  min-height: 600px;
+  border: 1px solid rgb(224, 230, 232);
+  background: white;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+  flex-direction: column;
+}
+
 .task-index-header-container {
     -webkit-box-align: center;
     -webkit-align-items: center;
