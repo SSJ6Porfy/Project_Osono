@@ -10,7 +10,7 @@ class Osonoview extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="osono-all">
         <div className="sidebar-container">
           <TeamIndexContainer />
         </div>

@@ -63,12 +63,6 @@
    font-weight: bold;
  }
 
-.sidebar-container {
-  display: flex;
-  flex-direction: column;
-  width: 16.7%;
- }
-
 .osonoview-main-container {
   display: flex;
   flex-direction: column;
@@ -85,4 +79,8 @@
   background: white;
   width: 100%;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+}
+
+.osono-all {
+  display: flex;
 }

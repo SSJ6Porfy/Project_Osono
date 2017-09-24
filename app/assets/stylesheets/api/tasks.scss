@@ -101,23 +101,29 @@
   border: none;
   font-family: sans-serif;
   font-size: 100%;
-  padding-top: 16px;
 }
 
-.task-status-checkbox {
-    -webkit-transition: 200ms box-shadow,200ms color,200ms background,200ms fill;
-    transition: 200ms box-shadow,200ms color,200ms background,200ms fill;
+.task-status-checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  cursor: pointer;
 }
 
-.task-status-checkbox {
-    margin: 0 10px 0 0;
+.Icon {
+  border: 1px solid #d5dce0;
+  border-radius: 50%;
+  fill: #d5dce0;
+  padding: 3px;
+  transition: bow-shadow 1.0s ease;
 }
 
-.task-status-checkbox {
-    border: 1px solid #b7bfc6;
-    border-radius: 50%;
-    fill: #d5dce0;
+.Icon:hover {
+  fill: rgb(98, 246, 219);
+  border: 1px solid rgb(98, 246, 219);
+  box-shadow: 0 0 0 3px rgb(98, 246, 219);
 }
+
 
 .task-status {
     -webkit-box-align: center;
