@@ -3,14 +3,15 @@ import { Provider } from 'react-redux';
 import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import SplashPageContainer from "./splash_page/splash_page_container";
 import OsonoviewContainer from "./osonoview/osonoview_container";
-import TaskDetailContainer from "./tasks/task_detail_container";
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-    <AuthRoute exact path="/" component={SplashPageContainer} />
-    <ProtectedRoute path="/osonoview" component={OsonoviewContainer}/>
-    <ProtectedRoute path="/task/:taskId" component={TaskDetailContainer}/>
+
+    <Switch>
+      <AuthRoute exact path="/" component={SplashPageContainer} />
+      <ProtectedRoute path="/osonoview" component={OsonoviewContainer}/>
+    </Switch>
   </div>
 );
 

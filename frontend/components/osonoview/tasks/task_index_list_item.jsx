@@ -24,18 +24,19 @@ class TaskIndexListItem extends React.Component {
   removeTask(e) {
     e.preventDefault();
     console.log(this.props);
-    this.props.deleteTask(this.props.task.id).then(() => console.log("success"))
+    this.props.deleteTask(this.props.task.id).then(() => this.props.history.push("/osonoview"))
   }
 
   saveChanges(e) {
     e.preventDefault();
-    this.props.updateTask(this.state).then(() => console.log("success"))
+    this.props.updateTask(this.state).then(() => this.props.history.push("/osonoview"))
   }
 
   toggleStatus(e) {
     e.preventDefault();
+    console.log(this.props);
     this.state["complete?"] = true;
-    this.props.updateTask(this.state).then(() => console.log("success"));
+    this.props.updateTask(this.state).then(() => this.props.history.push("/osonoview"));
   }
 
 
@@ -53,11 +54,12 @@ class TaskIndexListItem extends React.Component {
                 </polygon>
               </svg>
             </div>
-            <Link to=`/tasks/${this.props.task.id}`><textarea className="task-item-name-editable"
-                      onBlur={this.saveChanges}
-                      onChange={this.update("name")}
-                      value={this.state.name}
-                      rows="1"/></Link>
+            <Link className="ask-item-name-editable-link" to={`/osonoview/tasks/${this.props.task.id}`}>
+              <textarea className="task-item-name-editable"
+                        onBlur={this.saveChanges}
+                        onChange={this.update("name")}
+                        value={this.state.name}
+                        rows="1"/></Link>
           </li>
           <button className="delete-task-btn" onClick={this.removeTask}>X</button>
         </div>
