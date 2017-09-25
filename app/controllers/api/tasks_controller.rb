@@ -1,7 +1,11 @@
 class Api::TasksController < ApplicationController
 
   def index
-    @tasks = Task.all
+    if params[:project_id]
+      @tasks = Task.where(project_id: params[:project_id])
+    else
+      @tasks = Task.all
+    end
   end
 
   def create

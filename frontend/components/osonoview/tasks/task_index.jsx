@@ -9,10 +9,12 @@ class TaskIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchTasks();
+    this.props.fetchTasks(this.props.match.params.projectId);
   }
   componentWillReceiveProps(newProps) {
-    this.setState(newProps.tasks);
+    if (this.props.match.params.projectId !== newProps.match.params.projectId) {
+      this.props.fetchTasks(newProps.match.params.projectId);
+    }
   }
 
   newTask(e) {

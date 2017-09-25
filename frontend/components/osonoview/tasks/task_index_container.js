@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import values from "lodash/values";
 import TaskIndex from "./task_index";
 import { fetchTasks,
          fetchTask,
@@ -9,14 +10,22 @@ import { fetchTasks,
 
 import { currentUserTasks } from "../../../reducers/selectors";
 
-const mapStateToProps = (state, ownProps) => ({
-  tasks: currentUserTasks(state.session.currentUser,state.entities.tasks),
-  errors: state.errors.tasks,
-  currentUser: state.session.currentUser
-});
+const mapStateToProps = (state, ownProps) => {
+  // let tasks;
+  // if (!!ownProps.match.params.projectId) {
+  //   tasks = state.entities.projects[projectId].tasks
+  // } else {
+  //   tasks = currentUserTasks(state.session.currentUser,state.entities.tasks)
+  // }
+  return {
+    tasks: values(state.entities.tasks),
+    errors: state.errors.tasks,
+    currentUser: state.session.currentUser
+  }
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  fetchTasks: () => dispatch(fetchTasks()),
+  fetchTasks: (projectId) => dispatch(fetchTasks(projectId)),
   fetchTask: (id) => dispatch(fetchTask()),
   createTask: (task) => dispatch(createTask(task)),
   updateTask: (task) => dispatch(updateTask(task)),

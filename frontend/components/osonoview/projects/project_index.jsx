@@ -18,7 +18,7 @@ class ProjectIndex extends React.Component {
     let projects;
     if (Object.values(this.props.projects).length > 0) {
       projects = this.props.projects.map((project,idx) => {
-                return <li key={idx+"mat"}><Link to={`/projects/${project.id}`}>{project.name}</Link></li>
+                return <li key={idx+"mat"}><Link to={`/osonoview/projects/${project.id}`}>{project.name}</Link></li>
               });
     } else {
       projects = " "

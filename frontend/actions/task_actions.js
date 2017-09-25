@@ -5,8 +5,8 @@ export const RECEIVE_TASK = 'RECEIVE_TASK';
 export const REMOVE_TASK = 'REMOVE_TASK';
 export const RECEIVE_TASK_ERRORS = "RECEIVE_TASK_ERRORS";
 
-export const fetchTasks = () => dispatch => (
-  TaskAPIUtil.fetchTasks()
+export const fetchTasks = (projectId) => dispatch => (
+  TaskAPIUtil.fetchTasks(projectId)
     .then(res => (dispatch(receiveAllTasks(res))
     ), err => (dispatch(receiveTaskErrors(err.responseJSON))))
 );
