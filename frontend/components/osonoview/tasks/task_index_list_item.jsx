@@ -23,7 +23,6 @@ class TaskIndexListItem extends React.Component {
 
   removeTask(e) {
     e.preventDefault();
-    console.log(this.props);
     this.props.deleteTask(this.props.task.id).then(() => this.props.history.push("/osonoview"))
   }
 
