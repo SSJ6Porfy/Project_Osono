@@ -88,10 +88,14 @@
 .main-console-container {
   display: flex;
   width: 85%;
-  align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
-html, body, #root, div {
+html, body, #root {
   height: 100%;
+}
+
+#root > [data-reactroot] {
+  height: 100%
 }
