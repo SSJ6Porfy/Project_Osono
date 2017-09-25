@@ -83,10 +83,15 @@
 
 .osono-all {
   display: flex;
+  height: 100%;
 }
 .main-console-container {
   display: flex;
   width: 85%;
   align-items: center;
   justify-content: center;
+}
+
+html, body, #root, div {
+  height: 100%;
 }

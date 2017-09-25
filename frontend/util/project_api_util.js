@@ -1,37 +1,37 @@
 
-export const fetchTeams = () => (
+export const fetchProjects = () => (
   $.ajax({
     method: 'GET',
-    url: '/api/teams'
+    url: '/api/projects'
   })
 );
 
-export const fetchTeam = (id) => (
+export const fetchProject = (id) => (
   $.ajax({
     method: 'GET',
-    url: `/api/teams/${id}`
+    url: `/api/projects/${id}`
   })
 );
 
-export const updateTeam = (team) => (
+export const updateProject = (project) => (
   $.ajax({
     method: 'PATCH',
-    url: `/api/teams/${team.id}`,
-    data: { team }
+    url: `/api/projects/${project.id}`,
+    data: { project }
   })
 );
 
-export const createTeam = (team) => (
+export const createProject = (project) => (
   $.ajax({
     method: 'POST',
-    url: '/api/teams',
-    data: { team }
+    url: '/api/projects',
+    data: { project }
   })
 );
 
-export const deleteTeam = (id) => (
+export const deleteProject = (id) => (
   $.ajax({
     method: 'DELETE',
-    url: `/api/teams/${id}`
+    url: `/api/projects/${id}`
   })
 );
