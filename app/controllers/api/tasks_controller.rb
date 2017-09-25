@@ -1,7 +1,15 @@
 class Api::TasksController < ApplicationController
 
   def index
-    @tasks = Task.all
+    @tasks = []
+    current_user.teams.each do |team|
+      team.projects.each do |project|
+        project.tasks.each do |task|
+          @tasks << task
+        end
+      end
+    end
+    @tasks
   end
 
   def create

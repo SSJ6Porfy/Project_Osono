@@ -15,8 +15,13 @@ class Api::ProjectsController < ApplicationController
   end
 
   def index
-    @projects = current_user.projects.where(project.project_leader_id != "#{current_user.id}")
-    @current_user_projects = current_user.projects.where(project_leader_id: current_user.id)
+    @projects = []
+    current_user.teams.each do |team|
+      team.projects.each do |project|
+        @projects << project
+      end
+    end
+    @projects
   end
 
   def create
@@ -56,7 +61,7 @@ class Api::ProjectsController < ApplicationController
   def project_params
     current_params = params
       .require(:project)
-      .permit(:project_leader_id, :team_id, :name, :description)
+      .permit(:id, :project_leader_id, :team_id, :name, :description)
 
     current_params[:project_leader_id] = current_user.id
     current_params
