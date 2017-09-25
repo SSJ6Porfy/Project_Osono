@@ -8,14 +8,11 @@ export const currentUserTasks = (currentUser, tasks) => {
 
   return usersTasks;
 };
-export const currentUserTeams = (currentUser, teams) => {
+export const defaultTeam = (currentUser, teams) => {
   const teamArr = Object.values(teams);
 
-  let usersTeams = teamArr.filter((team) => {
-    let memberIds = team.members.map((member) => {
-      return member.id
-    })
-    return memberIds.includes(currentUser.id);
+  let userTeams = teamArr.filter((team) => {
+    return team.user_id == currentUser.id;
   });
 
   return usersTeams;

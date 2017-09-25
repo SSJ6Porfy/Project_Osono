@@ -5,10 +5,29 @@ class TeamIndex extends React.Component {
     super(props)
   }
 
+  componentDidMount() {
+    this.props.fetchTeams();
+  }
+
+  componentWillMount() {
+    this.props.fetchTeams()
+  }
+
   render() {
+    let teams;
+    if (Object.values(this.props.teams).length > 0) {
+      teams = this.props.teams.map((team,idx) => {
+                return <li key={idx+"mat"}>{team.name}</li>
+              });
+    } else {
+      teams = " "
+    }
+
     return (
       <div>
-        <h1>I'm the team Index</h1>
+        <ul>
+          { teams }
+        </ul>
       </div>
     )
   }

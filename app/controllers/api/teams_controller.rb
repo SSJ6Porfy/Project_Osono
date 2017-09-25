@@ -9,12 +9,11 @@ class Api::TeamsController < ApplicationController
   end
 
   def this_team
-    @team = Team.find_by(params[:id])
+    @team = Team.find_by(id: params[:id])
   end
 
   def index
-    @teams = current_user.teams.where(team.user_id != "#{current_user.id}")
-    @current_user_teams = current_user.teams.where(user_id: current_user.id)
+    @teams = Team.all.select{ |team| team.members.any? { |member| member.id == current_user.id } }
   end
 
   def create
@@ -28,7 +27,7 @@ class Api::TeamsController < ApplicationController
   end
 
   def update
-    @team = current_user.teams.find_by(params[:id])
+    @team = current_user.teams.find_by(id: params[:id])
 
     if @team.update_attributes(team_params)
       render :show
@@ -38,11 +37,11 @@ class Api::TeamsController < ApplicationController
   end
 
   def show
-    @team = Team.find_by(params[:id])
+    @team = Team.find_by(id: params[:id])
   end
 
   def destroy
-    @team = Team.find_by(params[:id])
+    @team = Team.find_by(id: params[:id])
     if @team
       @team.destroy
       render :show
@@ -52,7 +51,7 @@ class Api::TeamsController < ApplicationController
   end
 
   def team_params
-    current_params = params.require(:team).permit(:user_id, :name, :department)
+    current_params = params.require(:team).permit(:id, :user_id, :name, :department)
     current_params[:user_id] = current_user.id
     current_params
   end

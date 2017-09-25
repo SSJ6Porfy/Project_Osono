@@ -15,13 +15,13 @@ export const fetchTeam = (id) => dispatch => (
     .then(res => (dispatch(receiveTeam(res))
   ), err => (dispatch(receiveTeamErrors(err.responseJSON))))
 );
-export const createTeam = (task) => dispatch => (
-  TeamAPIUtil.createTeam(task)
+export const createTeam = (team) => dispatch => (
+  TeamAPIUtil.createTeam(team)
     .then(res => (dispatch(receiveTeam(res))
   ), err => (dispatch(receiveTeamErrors(err.responseJSON))))
 );
-export const updateTeam = (task) => dispatch => (
-  TeamAPIUtil.updateTeam(task)
+export const updateTeam = (team) => dispatch => (
+  TeamAPIUtil.updateTeam(team)
     .then(res => (dispatch(receiveTeam(res))
   ), err => (dispatch(receiveTeamErrors(err.responseJSON))))
 );
@@ -33,18 +33,18 @@ export const deleteTeam = (id) => dispatch => (
 );
 
 
-export const receiveAllTeams = (tasks) => ({
+export const receiveAllTeams = (teams) => ({
   type: RECEIVE_ALL_TEAMS,
-  tasks
+  teams
 })
-export const receiveTeam = (task) => ({
+export const receiveTeam = (team) => ({
   type: RECEIVE_TEAM,
-  task
+  team
 })
 
-export const removeTeam = (task) => ({
+export const removeTeam = (team) => ({
   type: REMOVE_TEAM,
-  task
+  team
 })
 
 export const receiveTeamErrors = (errors) => ({

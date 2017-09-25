@@ -1,1 +1,1 @@
-json.extract! team, :name, :description
+json.extract! team, :id, :user_id, :name, :department

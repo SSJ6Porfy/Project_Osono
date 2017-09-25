@@ -6,17 +6,21 @@ import { fetchTeams,
          updateTeam,
          deleteTeam } from "../../../actions/team_actions";
 
-import { currentUserTeams } from "../../../reducers/selectors";
 
-const mapStateToProps = (state) => ({
-  teams: currentUserTeams(state.session.currentUser,state.entities.teams),
-  errors: state.errors.teams,
-  currentUser: state.session.currentUser
-});
+const mapStateToProps = (state) => {
+  let teams = { name: "a" };
+  if (state.entities.teams === {}) {
+    teams
+  } else {
+    teams = state.entities.teams
+  }
+
+  return { teams };
+};
 
 const mapDispatchToProps = (dispatch) => ({
   fetchTeams: () => dispatch(fetchTeams()),
-  fetchTeam: (id) => dispatch(fetchTeam()),
+  fetchTeam: (id) => dispatch(fetchTeam(id)),
   createTeam: (team) => dispatch(createTeam(team)),
   updateTeam: (team) => dispatch(updateTeam(team)),
   deleteTeam: (id) => dispatch(deleteTeam(id))
