@@ -11,12 +11,6 @@ import { fetchTasks,
 import { currentUserTasks } from "../../../reducers/selectors";
 
 const mapStateToProps = (state, ownProps) => {
-  // let tasks;
-  // if (!!ownProps.match.params.projectId) {
-  //   tasks = state.entities.projects[projectId].tasks
-  // } else {
-  //   tasks = currentUserTasks(state.session.currentUser,state.entities.tasks)
-  // }
   return {
     tasks: values(state.entities.tasks),
     errors: state.errors.tasks,

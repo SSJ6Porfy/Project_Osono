@@ -29,6 +29,7 @@ class TaskIndex extends React.Component {
                                   key={idx+"porf"}
                                   task={task}
                                   history={this.props.history}
+                                  match={this.props.match}
                                   deleteTask={this.props.deleteTask}
                                   updateTask={this.props.updateTask}/> )
     })

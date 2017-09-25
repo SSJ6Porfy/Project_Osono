@@ -32,7 +32,12 @@ class Osonoview extends React.Component {
           <ProtectedRoute exaxt path="/osonoview/projects/:projectId" component={TaskIndexContainer}/>
           <ProtectedRoute path="/osonoview" component={TaskIndexContainer}/>
         </Switch>
+
+        <Switch>
           <ProtectedRoute exact path="/osonoview/tasks/:taskId" component={TaskDetailContainer}/>
+          <ProtectedRoute exact path="/osonoview/projects/:projectId/tasks/:taskId" component={TaskDetailContainer}/>
+        </Switch>
+
         </div>
 
       </div>

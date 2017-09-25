@@ -43,6 +43,9 @@ class TaskIndexListItem extends React.Component {
   }
 
   render() {
+    let linkAddress = (this.props.match.params.projectId) ? (
+      `/osonoview/projects/${this.props.match.params.projectId}/tasks/${this.props.task.id}`
+    ) : (`/osonoview/tasks/${this.props.task.id}`);
 
     return (
       <div className="task-row">
@@ -57,7 +60,7 @@ class TaskIndexListItem extends React.Component {
                 </polygon>
               </svg>
             </div>
-            <Link className="ask-item-name-editable-link" to={`/osonoview/tasks/${this.props.task.id}`}>
+            <Link className="ask-item-name-editable-link" to={linkAddress}>
               <textarea className="task-item-name-editable"
                         onBlur={this.saveChanges}
                         onChange={this.update("name")}

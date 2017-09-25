@@ -30,10 +30,18 @@ class TaskDetail extends React.Component {
   closeTaskDetail(e) {
     e.preventDefault();
     const el = document.getElementsByClassName("task-index-container-enabled");
+    debugger
     if (el[0].classList) {
       el[0].classList.remove("task-index-container-enabled")
     }
-    this.props.updateTask(this.state).then(() => this.props.history.push("/osonoview"))
+    if (this.props.match.params.projectId) {
+      let projectId = this.props.match.params.projectId
+      this.props.updateTask(this.state)
+        .then(() => this.props.history.push(`/osonoview/projects/${projectId}`));
+    } else {
+      this.props.updateTask(this.state)
+        .then(() => this.props.history.push("/osonoview"))
+    }
   }
 
 
