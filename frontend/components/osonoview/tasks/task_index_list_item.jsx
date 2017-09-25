@@ -11,9 +11,11 @@ class TaskIndexListItem extends React.Component {
     this.saveChanges = this.saveChanges.bind(this);
   }
 
-  // componentWillReceiveProps(newProps) {
-  //   this.setState(newProps.task)
-  // }
+  componentWillReceiveProps(newProps) {
+    if (this.props.task !== newProps.task) {
+      this.setState(newProps.task);
+    }
+  }
 
   update(field) {
     return (e) => {

@@ -11,6 +11,9 @@ class TaskIndex extends React.Component {
   componentDidMount() {
     this.props.fetchTasks();
   }
+  componentWillReceiveProps(newProps) {
+    this.setState(newProps.tasks);
+  }
 
   newTask(e) {
     e.preventDefault();
