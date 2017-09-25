@@ -11,9 +11,9 @@ class TaskIndexListItem extends React.Component {
     this.saveChanges = this.saveChanges.bind(this);
   }
 
-  componentWillReceiveProps(newProps) {
-    this.setState(newProps.task)
-  }
+  // componentWillReceiveProps(newProps) {
+  //   this.setState(newProps.task)
+  // }
 
   update(field) {
     return (e) => {
@@ -36,7 +36,7 @@ class TaskIndexListItem extends React.Component {
 
   saveChanges(e) {
     e.preventDefault();
-    
+
     this.props.updateTask(this.state)
       .then(() => this.props.history.push(`/osonoview/tasks/${this.props.task.id}`))
   }
