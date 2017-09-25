@@ -6,12 +6,11 @@ import { fetchTask,
          deleteTask } from "../../../actions/task_actions";
 
 const mapStateToProps = (state, ownProps) => {
-  if (ownProps.match.params.taskId) {
+  if (state.entities.tasks[ownProps.match.params.taskId]) {
     return { task: state.entities.tasks[ownProps.match.params.taskId] };
   } else {
-    return { task: {} };
+    return { task: {name: "", description: ""} };
   }
-
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

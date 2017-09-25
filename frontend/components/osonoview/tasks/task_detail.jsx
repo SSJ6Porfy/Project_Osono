@@ -3,13 +3,17 @@ import React from "react";
 class TaskDetail extends React.Component {
   constructor(props) {
     super(props)
-    this.state = this.props.task;
-    this.saveChanges = this.saveChanges.bind(this);
+    this.state = this.props.task || { name: " ", description: " " };
+    this.closeTaskDetail = this.closeTaskDetail.bind(this);
   }
 
   componentDidMount() {
     if (this.props.match.params.taskId) {
       this.props.fetchTask(this.props.match.params.taskId)
+    }
+    const el = document.getElementsByClassName("task-index-container");
+    if (el[0].classList) {
+      el[0].classList.add("task-index-container-enabled")
     }
   }
 
@@ -17,7 +21,13 @@ class TaskDetail extends React.Component {
     this.setState(newProps.task)
   }
 
-  saveChanges(e) {
+  update(field) {
+    return (e) => {
+      this.setState({[field]: e.target.value})
+    }
+  }
+
+  closeTaskDetail(e) {
     e.preventDefault();
     const el = document.getElementsByClassName("task-index-container-enabled");
     if (el[0].classList) {
@@ -26,15 +36,28 @@ class TaskDetail extends React.Component {
     this.props.updateTask(this.state).then(() => this.props.history.push("/osonoview"))
   }
 
+
   render() {
     return (
       <div className="task-detail-container">
-        <form className="task-detail">
-          <button className="close-btn"
-                  onClick={this.saveChanges}>X</button>
-          <input className="task-detail-name-input" type="text" placeholder={this.props.task.name}></input>
-          <textarea className="task-detail-description-text" placeholder={this.props.task.description}/>
-        </form>
+        <div className="task-detail">
+          <div className="task-detail-header-container">
+            <button className="close-task-btn"
+                  onClick={this.closeTaskDetail}>X</button>
+          </div>
+          <form className="task-detail-form">
+
+            <div className="task-detail-field-container">
+              <input className="task-detail-input"
+                     onChange={this.update("name")}
+                     type="text"
+                     value={this.state.name}></input>
+              <textarea className="task-detail-description-text"
+                        onChange={this.update("description")}
+                        value={this.state.description}/>
+            </div>
+          </form>
+        </div>
       </div>
     )
   }
