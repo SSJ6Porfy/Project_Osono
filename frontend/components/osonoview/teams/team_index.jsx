@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class TeamIndex extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class TeamIndex extends React.Component {
     let teams;
     if (Object.values(this.props.teams).length > 0) {
       teams = this.props.teams.map((team,idx) => {
-                return <li key={idx+"mat"}>{team.name}</li>
+                return <li key={idx+"mat"}><Link to={`/teams/${team.id}`}>{team.name}</Link></li>
               });
     } else {
       teams = " "

@@ -33,6 +33,11 @@ class User < ApplicationRecord
     has_many :all_teammates,
       through: :teams, source: :members
 
+    has_many :projects_lead,
+      primary_key: :id,
+      foreign_key: :project_leader_id,
+      class_name: 'Project'
+
     def teammates
       all_teammates.reject { |user| user.id == self.id }
     end
