@@ -17,12 +17,24 @@ export const currentTasks = (currentUser, tasks, params) => {
     return usersTasks;
   }
 };
-export const defaultTeam = (currentUser, teams) => {
-  const teamArr = Object.values(teams);
+// export const defaultTeam = (currentUser, teams) => {
+//   const teamArr = Object.values(teams);
+//
+//   let userTeams = teamArr.filter((team) => {
+//     return team.user_id == currentUser.id;
+//   });
+//
+//   return usersTeams;
+// };
 
-  let userTeams = teamArr.filter((team) => {
-    return team.user_id == currentUser.id;
+export const leadProjects = (allProjects, currentUser) => {
+  let projects = [];
+
+  Object.values(allProjects).forEach((project) => {
+    if (project.project_leader_id === Number(currentUser.id)) {
+      projects.push(project);
+    }
   });
 
-  return usersTeams;
-};
+  return projects;
+}

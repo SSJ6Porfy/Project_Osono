@@ -6,11 +6,21 @@ import { fetchProjects,
          createProject,
          updateProject,
          deleteProject } from "../../../actions/project_actions";
+import { leadProjects } from "../../../reducers/selectors";
 
 
 const mapStateToProps = (state) => {
-    return { projects: state.entities.projects,
-             currentTeamId: state.ui.currentTeamId };
+  if (state.ui.currentTeamId) {
+    return {
+      projects: state.entities.projects,
+      currentTeamId: state.ui.currentTeamId
+    };
+  } else {
+    return {
+      projects: leadProjects(state.entities.projects, state.session.currentUser),
+      currentTeamId: state.ui.currentTeamId
+    }
+  }
 };
 
 const mapDispatchToProps = (dispatch) => ({
