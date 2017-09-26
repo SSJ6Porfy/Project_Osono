@@ -12,7 +12,6 @@ class TaskIndex extends React.Component {
   }
   componentWillReceiveProps(newProps) {
     if (this.props.match.params.projectId !== newProps.match.params.projectId) {
-      debugger
       this.props.fetchTasks(newProps.match.params.projectId);
     }
   }

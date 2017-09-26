@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import ProjectIndex from "./project_index";
 import { fetchProjects,
+         fetchTeamProjects,
          fetchProject,
          createProject,
          updateProject,
@@ -8,18 +9,17 @@ import { fetchProjects,
 
 
 const mapStateToProps = (state) => {
-  let projects = { name: "a" };
-  if (state.entities.projects === {}) {
-    projects
+  let projects;
+  if (state.entities.teamProjects) {
+    return { projects: state.entities.teamProjects };
   } else {
-    projects = state.entities.projects
+    return { projects: state.entities.projects };
   }
-
-  return { projects };
 };
 
 const mapDispatchToProps = (dispatch) => ({
   fetchProjects: () => dispatch(fetchProjects()),
+  fetchTeamProjects: (team_id) => dispatch(fetchTeamProjects(team_id)),
   fetchProject: (id) => dispatch(fetchProject(id)),
   createProject: (project) => dispatch(createProject(project)),
   updateProject: (project) => dispatch(updateProject(project)),
