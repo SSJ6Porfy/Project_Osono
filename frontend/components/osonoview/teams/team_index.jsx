@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import TeamIndexListItem from "./team_index_list_item";
 
 class TeamIndex extends React.Component {
   constructor(props) {
@@ -11,14 +12,17 @@ class TeamIndex extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchTeams()
+    this.props.fetchTeams();
   }
 
   render() {
     let teams;
+    debugger
     if (Object.values(this.props.teams).length > 0) {
-      teams = this.props.teams.map((team,idx) => {
-                return <li key={idx+"mat"}><Link to={`/teams/${team.id}`}>{team.name}</Link></li>
+      teams = Object.values(this.props.teams).map((team,idx) => {
+                return <TeamIndexListItem key={idx+"mat"}
+                                          fetchTeam={this.props.fetchTeam}
+                                          team={team}/>
               });
     } else {
       teams = " "

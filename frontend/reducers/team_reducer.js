@@ -9,7 +9,10 @@ const TeamReducer = (state = initialState, action) => {
   const newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_ALL_TEAMS:
-      return action.teams;
+    action.teams.forEach((team) => {
+      newState[team.id] = team
+    })
+      return newState;
     case RECEIVE_TEAM:
       newState[action.team.id] = action.team;
       return newState;
