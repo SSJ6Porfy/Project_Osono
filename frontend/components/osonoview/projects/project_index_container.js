@@ -9,12 +9,8 @@ import { fetchProjects,
 
 
 const mapStateToProps = (state) => {
-  let projects;
-  if (state.entities.teamProjects) {
-    return { projects: state.entities.teamProjects };
-  } else {
-    return { projects: state.entities.projects };
-  }
+    return { projects: state.entities.projects,
+             currentTeamId: state.ui.currentTeamId };
 };
 
 const mapDispatchToProps = (dispatch) => ({

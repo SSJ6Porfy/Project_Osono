@@ -36,29 +36,28 @@ class Navbar extends React.Component {
         <div className="mainNavbarLeft">
           <Link to="/osonoview">My Tasks</Link>
           <Link to="/osonoview">Dashboard</Link>
-        <button>+</button>
+          <button>+</button>
         </div>
         <div className="mainNavbarCenter"></div>
-      <div className="mainNavbarRight">
+        <div className="mainNavbarRight">
           <div className="logoutBtnContainer">
             <button onClick={this.handleLogout}>Logout</button>
           </div>
           <div className="avatarContainer" onClick={this.openModal}>
             <div className="avatar">
-            <span className="user-profile">{this.props.currentUser.username[0].toUpperCase()}</span>
-            <ReactModal className="Session Modal"
-              onRequestClose={() => this.closeModal()}
-              isOpen={this.state.modalIsOpen}
-              shouldCloseOnOverlayClick={true}
-              contentLabel="Modal">
+              <span className="user-profile">{this.props.currentUser.username[0].toUpperCase()}</span>
+              <ReactModal className="Session Modal"
+                onRequestClose={() => this.closeModal()}
+                isOpen={this.state.modalIsOpen}
+                shouldCloseOnOverlayClick={true}
+                contentLabel="Modal">
 
-              <UserProfileContainer closeModal={this.closeModal}/>
-            <button className="close-btn" onClick={this.closeModal}>X</button>
-            </ReactModal>
+                <UserProfileContainer closeModal={this.closeModal}/>
+                <button className="close-btn" onClick={this.closeModal}>X</button>
+              </ReactModal>
             </div>
           </div>
         </div>
-
       </div>
     )
   }

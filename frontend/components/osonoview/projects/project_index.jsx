@@ -10,8 +10,10 @@ class ProjectIndex extends React.Component {
     this.props.fetchProjects();
   }
 
-  componentWillMount() {
-    this.props.fetchProjects()
+  componentWillReceiveProps(newProps) {
+    if ( newProps.currentTeamId && this.props.currentTeamId !== newProps.currentTeamId) {
+      this.props.fetchTeamProjects(newProps.currentTeamId)
+    }
   }
 
   render() {

@@ -11,10 +11,6 @@ class TeamIndex extends React.Component {
     this.props.fetchTeams();
   }
 
-  componentWillMount() {
-    this.props.fetchTeams();
-  }
-
   render() {
     let teams;
     if (Object.values(this.props.teams).length > 0) {
