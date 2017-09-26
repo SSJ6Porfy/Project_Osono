@@ -13,7 +13,7 @@ class Api::TeamsController < ApplicationController
   end
 
   def index
-    @teams = Team.all.select{ |team| team.members.any? { |member| member.id == current_user.id } }
+    @teams = current_user.teams
   end
 
   def create

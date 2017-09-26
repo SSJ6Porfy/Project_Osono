@@ -1,0 +1,245 @@
+/* line 13, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.splash_page_container {
+  background-image: url(http://res.cloudinary.com/ssj6porfy/image/upload/v1505954412/abstract-rainbow-wave-waving-motion-background_41vpvi0ge__F0000_xikxdc.png);
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+}
+
+/* line 19, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.logo {
+  display: flex;
+  align-items: flex-end;
+  background: url("http://res.cloudinary.com/ssj6porfy/image/upload/v1505954437/logoNew_vmlcop.png") no-repeat;
+  background-size: contain;
+  height: 60px;
+  width: 60px;
+  margin-right: 10px;
+}
+
+/* line 29, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.logoContainer h1 {
+  padding-bottom: 25px;
+}
+
+/* line 34, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.logoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+/* line 41, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.btnContainer button {
+  border: 2px solid #594fc7;
+  border-radius: 4px;
+  background: none;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  padding: 5px 14px 5px 14px;
+  font-family: sans-serif;
+  font-size: 15px;
+}
+
+/* line 52, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.btnContainer button:hover {
+  background: #594fc7;
+  border-radius: 4px;
+  margin-right: 15px;
+  font-family: sans-serif;
+  color: white;
+}
+
+/* line 60, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.btnContainer button:focus {
+  outline: 0;
+}
+
+/* line 64, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.nav-bar {
+  padding-top: 10px;
+}
+
+/* line 68, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.navbarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* line 76, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.navbtnContainer {
+  display: flex;
+  justify-content: center;
+}
+
+/* line 81, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.btnContainer {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+/* line 88, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.jumbotron {
+  display: flex;
+  justify-content: center;
+}
+
+/* line 93, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.jumbotronMain {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* line 97, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.jumbotronMain h1 {
+  font-size: 50px;
+}
+
+/* line 101, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.jumbotronMain p {
+  font-size: 30px;
+}
+
+/* line 105, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.jumbotronContainer {
+  width: 80%;
+}
+
+/* line 109, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.Session {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+  background: white;
+  display: flex;
+  justify-content: center;
+  border-radius: 6px;
+  outline: 0;
+  padding: 20px 60px 40px 60px;
+  width: 580px;
+}
+
+/* line 122, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.session-form-container {
+  width: 100%;
+  display: flex;
+}
+
+/* line 127, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.session-form-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* line 133, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 138, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 143, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.formHeader {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+/* line 148, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.session-form-box input[type="submit"] {
+  background: #594fc7;
+  color: white;
+  border-radius: 4px;
+  padding: 0 16px;
+  font-family: sans-serif;
+  font-size: 14px;
+  float: left;
+  cursor: pointer;
+  height: 34px;
+  width: 120px;
+  border: none;
+}
+
+/* line 162, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.session-form-box input[type="submit"]:hover {
+  background: #fb3fff;
+  color: white;
+}
+
+/* line 167, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.session-form-box input[type="text"] {
+  height: 40px;
+  border-radius: 3px;
+  width: 100%;
+  font-family: sans-serif;
+  border: 1px solid #e6e7e8;
+  padding: 0 15px;
+  margin: 0;
+  font-size: 16px;
+}
+
+/* line 178, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.session-form-box input[type="password"] {
+  height: 40px;
+  width: 100%;
+  border-radius: 3px;
+  font-family: sans-serif;
+  border: 1px solid #e6e7e8;
+  padding: 0 15px;
+  margin: 0;
+  font-size: 16px;
+}
+
+/* line 189, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.session-form-box label {
+  font-family: sans-serif;
+  float: right;
+  color: #8a8e93;
+}
+
+/* line 195, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.close-btn {
+  font-size: 1.375rem;
+  cursor: pointer;
+  color: "#b7bfc6";
+  border-radius: 4px;
+  font-family: sans-serif;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: .6;
+  transition: opacity .15s ease-in-out;
+  background: transparent;
+  border: none;
+}
+
+/* line 211, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.demo-btn {
+  background: #594fc7;
+  color: white;
+  border-radius: 4px;
+  padding: 0 16px;
+  font-family: sans-serif;
+  font-size: 14px;
+  float: left;
+  cursor: pointer;
+  height: 34px;
+  width: 120px;
+  border: none;
+  margin-left: 5px;
+}
+
+/* line 226, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/sessions.scss */
+.demo-btn:hover {
+  background: #fb3fff;
+  color: white;
+}

@@ -14,7 +14,7 @@ class TeamIndexListItem extends React.Component {
 
   render() {
     return (
-      <li onClick={this.setCurrentTeam}>{this.props.team.name}</li>
+      <li className="team-list-name" onClick={this.setCurrentTeam}>{this.props.team.name}</li>
     )
   }
 }

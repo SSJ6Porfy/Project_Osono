@@ -1,0 +1,87 @@
+/* line 2, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/navbar.scss */
+.mainNavbarContainer {
+  width: 100%;
+  float: right;
+  border-bottom: 1px solid #e0e6e8;
+  height: 41px;
+  font-family: sans-serif;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  background: white;
+}
+
+/* line 14, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/navbar.scss */
+.mainNavbarLeft, .mainNavbarRight, .mainNavbarCenter {
+  width: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* line 21, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/navbar.scss */
+.mainNavbarLeft a {
+  text-decoration: none;
+  color: #9da7b0;
+}
+
+/* line 26, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/navbar.scss */
+.mainNavbarLeft button {
+  background: linear-gradient(to top right, #ff5263 0%, #ff7381 35%, #fcbd01 100%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* line 37, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/navbar.scss */
+.logoutBtnContainer {
+  display: flex;
+  align-items: center;
+}
+
+/* line 42, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/navbar.scss */
+.logoutBtnContainer button {
+  background: #fcbd01;
+  border: 1px solid #fcbd01;
+  color: white;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 9px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+  color: white;
+  transition: background-color 1s ease-out;
+}
+
+/* line 56, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/navbar.scss */
+.logoutBtnContainer button:hover {
+  background: #ffe01b;
+  border: 1px solid #ffe01b;
+}
+
+/* line 61, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/navbar.scss */
+.avatarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #7a6ff0;
+  border-radius: 50%;
+  background-color: #7a6ff0;
+  color: white;
+  font-size: 13px;
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
+  font-weight: bold;
+}
+
+/* line 76, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/navbar.scss */
+.avatarContainer:hover {
+  border: 1px solid #32c1ff;
+  box-shadow: 0 0 0 3px #32c1ff;
+}

@@ -1,0 +1,13 @@
+/* line 7, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/users.scss */
+.user-form-header {
+  font-family: sans-serif;
+  margin-left: 15px;
+}
+
+/* line 12, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/users.scss */
+.formHeaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}

@@ -17,7 +17,6 @@ class TeamIndex extends React.Component {
 
   render() {
     let teams;
-    debugger
     if (Object.values(this.props.teams).length > 0) {
       teams = Object.values(this.props.teams).map((team,idx) => {
                 return <TeamIndexListItem key={idx+"mat"}

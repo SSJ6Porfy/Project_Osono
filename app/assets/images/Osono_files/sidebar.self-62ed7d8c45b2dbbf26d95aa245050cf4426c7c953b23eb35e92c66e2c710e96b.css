@@ -1,0 +1,7 @@
+/* line 2, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/sidebar.scss */
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  width: 16.7%;
+  background: #222b37;
+}

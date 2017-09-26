@@ -12,9 +12,15 @@ const ProjectReducer = (state = initialState, action) => {
   const newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_ALL_PROJECTS:
-      return action.projects;
+    action.projects.forEach((project) => {
+      newState[project.id] = project
+    })
+      return newState;
     case RECEIVE_TEAM_PROJECTS:
-      return action.teamProjects;
+    action.teamProjects.forEach((teamProject) => {
+      newState[teamProject.id] = teamProject
+    })
+      return newState;
     case RECEIVE_PROJECT:
       newState[action.project.id] = action.project;
       return newState;

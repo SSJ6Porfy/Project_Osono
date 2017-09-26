@@ -1,0 +1,302 @@
+/* line 5, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.task-index-container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 600px;
+  border: 1px solid #e0e6e8;
+  background: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+  flex-direction: column;
+}
+
+/* line 17, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.task-index-container-enabled {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-start;
+  width: 55%;
+  min-height: 600px;
+  border: 1px solid #e0e6e8;
+  background: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+  flex-direction: column;
+}
+
+/* line 29, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.task-index-header-container {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  height: 50px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: 30px;
+  position: relative;
+}
+
+/* line 54, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.task-row, .task-row--highlighted {
+  overflow: hidden;
+}
+
+/* line 63, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.item-row:hover {
+  border-color: #e0e6e8;
+}
+
+/* line 72, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.item-row-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+
+/* line 79, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.item-row {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  height: 34px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  overflow: visible;
+  padding: 0 30px;
+  position: relative;
+  -webkit-transition: box-shadow 0s ease-in;
+  transition: box-shadow 0s ease-in;
+  white-space: nowrap;
+}
+
+/* line 104, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.task-item-name-editable {
+  background: transparent;
+  border-radius: 0;
+  height: 100%;
+  outline: 0;
+  overflow: hidden;
+  resize: none;
+  top: 0;
+  width: 100%;
+  border: none;
+  font-family: sans-serif;
+  font-size: 100%;
+}
+
+/* line 118, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.ask-item-name-editable-link {
+  width: 100%;
+}
+
+/* line 122, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.task-status-checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+/* line 129, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.Icon {
+  border: 1px solid #d5dce0;
+  border-radius: 50%;
+  fill: #d5dce0;
+  padding: 3px;
+  transition: bow-shadow 1.0s ease;
+}
+
+/* line 137, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.Icon:hover {
+  fill: #62f6db;
+  border: 1px solid #62f6db;
+  box-shadow: 0 0 0 3px #62f6db;
+}
+
+/* line 144, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.task-status {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 20px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 20px;
+}
+
+/* line 164, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.header-add-task-btn {
+  background: #fff;
+  border: 1px solid #32c1ff;
+  color: #32c1ff;
+  fill: #32c1ff;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 9px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 13px;
+}
+
+/* line 178, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.header-add-task-btn:hover {
+  box-shadow: 0 0 0 2px #32c1ff;
+}
+
+/* line 182, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.delete-task-btn {
+  font-family: sans-serif;
+  border-radius: 50%;
+  border: 2px solid #d3d5d6;
+  font-size: 9px;
+  background: transparent;
+  padding: 4px 6px 4px 6px;
+  color: #d3d5d6;
+  cursor: pointer;
+  outline: 0;
+}
+
+/* line 194, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.delete-task-btn:hover {
+  color: red;
+  border: 2px solid red;
+}
+
+/* line 199, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.task-detail-container {
+  display: flex;
+  width: 45%;
+  min-height: 600px;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+/* line 207, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.task-detail {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  background: white;
+  align-items: center;
+}
+
+/* line 215, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.close-task-btn {
+  font-size: 1.375rem;
+  cursor: pointer;
+  color: "#b7bfc6";
+  border-radius: 4px;
+  font-family: sans-serif;
+  top: 10px;
+  right: 10px;
+  opacity: .6;
+  transition: opacity .15s ease-in-out;
+  background: transparent;
+  border: none;
+  width: 30px;
+  align-self: flex-start;
+}
+
+/* line 231, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.task-detail-field-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* line 237, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.task-detail-header-container {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  height: 50px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: justify;
+  justify-content: flex-end;
+  position: relative;
+  width: 100%;
+}
+
+/* line 262, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.task-detail-form {
+  display: flex;
+  width: 90%;
+  margin: 10px;
+}
+
+/* line 268, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.task-detail-input {
+  width: 98%;
+  font-size: 20px;
+  margin-bottom: 15px;
+  border: none;
+  padding-left: 10px;
+  line-height: 30px;
+}
+
+/* line 277, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.task-detail-description-text {
+  border: none;
+  line-height: 30px;
+  font-size: 20px;
+  height: 200px;
+}
+
+/* line 284, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.task-detail-input:hover {
+  border-radius: 3px;
+  border: 1px solid #e6e7e8;
+}
+
+/* line 289, /Users/porfiriomatias/Desktop/Full Stack Project/osono/app/assets/stylesheets/api/tasks.scss */
+.task-detail-description-text:hover {
+  border-radius: 3px;
+  border: 1px solid #e6e7e8;
+}
