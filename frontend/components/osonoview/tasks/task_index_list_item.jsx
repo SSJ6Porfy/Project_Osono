@@ -25,21 +25,41 @@ class TaskIndexListItem extends React.Component {
 
   removeTask(e) {
     e.preventDefault();
-    this.props.deleteTask(this.props.task.id).then(() => this.props.history.push("/osonoview"))
+    if (this.props.match.params.projectId) {
+      let projectId = this.props.match.params.projectId
+      this.props.updateTask(this.state)
+        .then(() => this.props.history.push(`/osonoview/projects/${projectId}`));
+    } else {
+      this.props.updateTask(this.state)
+        .then(() => this.props.history.push("/osonoview"))
+    }
   }
 
 
   toggleStatus(e) {
     e.preventDefault();
     this.state["complete?"] = true;
-    this.props.updateTask(this.state).then(() => this.props.history.push("/osonoview"));
+    if (this.props.match.params.projectId) {
+      let projectId = this.props.match.params.projectId
+      this.props.updateTask(this.state)
+        .then(() => this.props.history.push(`/osonoview/projects/${projectId}`));
+    } else {
+      this.props.updateTask(this.state)
+        .then(() => this.props.history.push("/osonoview"))
+    }
   }
 
   saveChanges(e) {
     e.preventDefault();
 
-    this.props.updateTask(this.state)
-      .then(() => this.props.history.push(`/osonoview/tasks/${this.props.task.id}`))
+    if (this.props.match.params.projectId) {
+      let projectId = this.props.match.params.projectId
+      this.props.updateTask(this.state)
+        .then(() => {});
+    } else {
+      this.props.updateTask(this.state)
+        .then(() => { })
+    }
   }
 
   render() {
