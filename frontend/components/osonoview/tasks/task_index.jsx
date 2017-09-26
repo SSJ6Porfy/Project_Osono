@@ -4,7 +4,6 @@ import TaskIndexListItem from "./task_index_list_item";
 class TaskIndex extends React.Component {
   constructor(props) {
     super(props)
-    this.task = { "user_id": this.props.currentUser.id, "project_id": this.props.match.params.projectId, "name": "new task", "description": " ", "complete?": false };
     this.newTask = this.newTask.bind(this);
   }
 
@@ -13,13 +12,20 @@ class TaskIndex extends React.Component {
   }
   componentWillReceiveProps(newProps) {
     if (this.props.match.params.projectId !== newProps.match.params.projectId) {
+      debugger
       this.props.fetchTasks(newProps.match.params.projectId);
     }
   }
 
   newTask(e) {
     e.preventDefault();
-    this.props.createTask(this.task).then(() => console.log("new task!"))
+    let task = { "user_id": this.props.currentUser.id,
+                  "project_id": this.props.match.params.projectId,
+                  "name": "new task",
+                  "description": " ",
+                  "complete?": false
+                };
+    this.props.createTask(task).then(() => console.log("new task!"))
   }
 
 
