@@ -30,7 +30,6 @@ class TaskDetail extends React.Component {
   closeTaskDetail(e) {
     e.preventDefault();
     const el = document.getElementsByClassName("task-index-container-enabled");
-    debugger
     if (el[0].classList) {
       el[0].classList.remove("task-index-container-enabled")
     }

@@ -25,12 +25,13 @@ class TaskIndexListItem extends React.Component {
 
   removeTask(e) {
     e.preventDefault();
+    debugger
     if (this.props.match.params.projectId) {
       let projectId = this.props.match.params.projectId
-      this.props.updateTask(this.state)
+      this.props.deleteTask(this.state.id)
         .then(() => this.props.history.push(`/osonoview/projects/${projectId}`));
     } else {
-      this.props.updateTask(this.state)
+      this.props.deleteTask(this.state.id)
         .then(() => this.props.history.push("/osonoview"))
     }
   }
