@@ -5,6 +5,7 @@ import TaskDetailContainer from "./tasks/task_detail_container";
 import TeamIndexContainer from "./teams/team_index_container";
 import ProjectIndexContainer from "./projects/project_index_container";
 import ProjectDetailContainer from "./projects/project_detail_container"
+import TeamDetailContainer from "./teams/team_detail_container"
 import { ProtectedRoute } from '../../util/route_util';
 import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 
@@ -29,7 +30,8 @@ class Osonoview extends React.Component {
 
 
         <Switch>
-          <ProtectedRoute exaxt path="/osonoview/projects/:projectId" component={TaskIndexContainer}/>
+          <ProtectedRoute exact path="/osonoview/projects/:projectId" component={TaskIndexContainer}/>
+          <ProtectedRoute exact path="/osonoview/teams/:teamId" component={TeamDetailContainer}/>
           <ProtectedRoute path="/osonoview" component={TaskIndexContainer}/>
         </Switch>
 
