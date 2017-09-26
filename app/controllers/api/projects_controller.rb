@@ -15,13 +15,11 @@ class Api::ProjectsController < ApplicationController
   end
 
   def index
-    @projects = []
-    current_user.teams.each do |team|
-      team.projects.each do |project|
-        @projects << project
-      end
+    if params[:team_id]
+      @projects = Project.where(team_id: params[:team_id])
+    else
+      @projects = Project.all
     end
-    @projects
   end
 
   def create

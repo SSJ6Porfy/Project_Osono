@@ -8,11 +8,11 @@ import { fetchTasks,
          updateTask,
          deleteTask } from "../../../actions/task_actions";
 
-import { currentUserTasks } from "../../../reducers/selectors";
+import { currentTasks } from "../../../reducers/selectors";
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    tasks: values(state.entities.tasks),
+    tasks: currentTasks(state.session.currentUser, state.entities.tasks, ownProps.match.params),
     errors: state.errors.tasks,
     currentUser: state.session.currentUser
   }

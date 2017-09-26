@@ -1,10 +1,11 @@
 
-export const fetchProjects = () => (
-  $.ajax({
+export const fetchProjects = (team_id) => {
+  let team_query = team_id ? `?team_id=${team_id}` : "";
+  return $.ajax({
     method: 'GET',
-    url: '/api/projects'
+    url: `/api/projects${team_query}`
   })
-);
+};
 
 export const fetchProject = (id) => (
   $.ajax({

@@ -25,7 +25,6 @@ class TaskIndexListItem extends React.Component {
 
   removeTask(e) {
     e.preventDefault();
-    debugger
     if (this.props.match.params.projectId) {
       let projectId = this.props.match.params.projectId
       this.props.deleteTask(this.state.id)
