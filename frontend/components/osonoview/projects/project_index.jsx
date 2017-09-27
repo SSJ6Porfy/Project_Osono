@@ -6,7 +6,7 @@ class ProjectIndex extends React.Component {
     super(props)
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchTeamProjects(this.props.currentTeamId);
   }
 
@@ -19,20 +19,17 @@ class ProjectIndex extends React.Component {
   render() {
     let projects;
     if (Object.values(this.props.projects).length > 0) {
-      projects = Object.values(this.props.projects).map((project,idx) => {
+       projects = Object.values(this.props.projects).map((project,idx) => {
                 return <li key={idx+"mat"}><Link to={`/osonoview/projects/${project.id}`}>{project.name}</Link></li>
               });
-    } else {
-      projects = " "
     }
-
-    return (
-      <div>
-        <div class="loader">Loading...</div>
-        <ul>
-          { projects }
-        </ul>
-      </div>
+    return ( this.props.loading ? (<div className="loader">Loading...</div>) : (
+        <div>
+          <ul>
+            { projects }
+          </ul>
+        </div>
+      )
     )
   }
 }
