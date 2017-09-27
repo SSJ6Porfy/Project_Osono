@@ -56,7 +56,13 @@ class TeamDetail extends React.Component {
         </div>
 
         <div className="team-project-list-container">
-          <ProjectIndexContainer/>
+          <div className="team-detail-header-container">
+
+          </div>
+          <div className="project-index-inner-container">
+            <ProjectIndexContainer/>
+          </div>
+
         </div>
       </div>
     )

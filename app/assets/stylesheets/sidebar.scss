@@ -2,6 +2,63 @@
 .sidebar-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 16.7%;
   background: rgb(34, 43, 55);
  }
+
+.osono-logo-sidebar {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin-top: 10px;
+  width: 90%;
+  justify-content: center;
+  border-bottom: 1px solid #646F79;
+}
+
+.logo-sidebar {
+  display: flex;
+  align-items: center;
+  background: url("http://res.cloudinary.com/ssj6porfy/image/upload/v1505954437/logoNew_vmlcop.png") no-repeat;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
+
+.logo-container-sidebar{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  font-family: sans-serif;
+  color: white;
+  font-size: 24px;
+}
+
+.team-index-header, .project-index-header {
+  font-size: 16px;
+  border-bottom: 1px solid #646F79;
+}
+
+.team-index-sidebar-container, .project-index-sidebar-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  color: white;
+  font-family: sans-serif;
+  margin-top: 40px;
+}
+
+.team-index-sidebar-container div ul li a, .project-index-sidebar-container div ul li a {
+  text-decoration: none;
+  color: rgb(181, 186, 191);
+}
+
+.team-index-sidebar-container div ul li a:hover, .project-index-sidebar-container div ul li a:hover {
+  color: white;
+}
+
+.team-index-sidebar-container div ul li:hover, .project-index-sidebar-container div ul li:hover {
+  background: #646F79;
+}

@@ -18,8 +18,26 @@ class Osonoview extends React.Component {
     return (
       <div className="osono-all">
         <div className="sidebar-container">
-          <TeamIndexContainer />
-          <ProjectIndexContainer/>
+          <div className="osono-logo-sidebar">
+            <div className="logo-container-sidebar">
+              <div className="logo-sidebar">
+                <imc src={"http://res.cloudinary.com/ssj6porfy/image/upload/v1505954437/logoNew_vmlcop.png"}></imc>
+              </div>
+              <h1>Osono</h1>
+            </div>
+          </div>
+          <div className="team-index-sidebar-container">
+            <div className="team-index-header">
+              <h1>Teams</h1>
+            </div>
+            <TeamIndexContainer/>
+          </div>
+          <div className="project-index-sidebar-container">
+            <div className="project-index-header">
+              <h1>Projects</h1>
+            </div>
+            <ProjectIndexContainer/>
+          </div>
         </div>
         <div className="osonoview-main-container">
           <NavbarContainer />

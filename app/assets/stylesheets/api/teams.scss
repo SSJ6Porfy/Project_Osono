@@ -28,6 +28,8 @@
   display: flex;
   width: 45%;
   flex-direction: column;
+  background: white;
+  align-items: center;
 }
 
 .team-detail-header-container{
@@ -79,4 +81,27 @@
   font-size: 13px;
   color: white;
   transition: background-color 1s ease-out;
+}
+
+.project-index-inner-container {
+  margin-top: 15px;
+  width: 90%;
+}
+
+.project-index-inner-container div ul li a {
+  text-decoration: none;
+  cursor: pointer;
+  padding-left: 5px;
+  height: 100%;
+  width: 100%;
+}
+
+.project-index-inner-container div ul li {
+  height: 40px;
+  display: flex;
+}
+
+.project-index-inner-container div ul li:hover {
+  box-shadow: 0 0 0 1px rgb(230, 231, 232);
+  border-radius: 3px;
 }
