@@ -5,17 +5,19 @@ export const RECEIVE_TEAM_PROJECTS = 'RECEIVE_TEAM_PROJECTS'
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 export const REMOVE_PROJECT = 'REMOVE_PROJECT';
 export const RECEIVE_PROJECT_ERRORS = "RECEIVE_PROJECT_ERRORS";
+export const START_LOADING_PROJECTS = 'START_LOADING_PROJECTS';
 
 export const fetchProjects = () => dispatch => (
   ProjectAPIUtil.fetchProjects()
     .then(res => (dispatch(receiveAllProjects(res))
   ), err => (dispatch(receiveProjectErrors(err.responseJSON))))
 );
-export const fetchTeamProjects = (team_id) => dispatch => (
-  ProjectAPIUtil.fetchProjects(team_id)
+export const fetchTeamProjects = (team_id) => dispatch => {
+  dispatch(startLoadingProjects());
+  return ProjectAPIUtil.fetchProjects(team_id)
     .then(res => (dispatch(receiveTeamProjects(res))
   ), err => (dispatch(receiveProjectErrors(err.responseJSON))))
-);
+};
 
 export const fetchProject = (id) => dispatch => (
   ProjectAPIUtil.fetchProject(id)
@@ -39,6 +41,9 @@ export const deleteProject = (id) => dispatch => (
   ), err => (dispatch(receiveProjectErrors(err.responseJSON))))
 );
 
+export const startLoadingProjects = () => ({
+  type: START_LOADING_PROJECTS
+})
 
 export const receiveAllProjects = (projects) => ({
   type: RECEIVE_ALL_PROJECTS,

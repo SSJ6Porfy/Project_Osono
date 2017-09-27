@@ -10,7 +10,7 @@ class TeamIndexListItem extends React.Component {
 
   setCurrentTeam(e) {
     e.preventDefault();
-    this.props.fetchTeam(this.state.id).then(() => {})
+    this.props.fetchTeam(this.state.id).then((res) => this.setState(res))
   }
 
   render() {

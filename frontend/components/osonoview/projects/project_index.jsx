@@ -6,7 +6,7 @@ class ProjectIndex extends React.Component {
     super(props)
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchTeamProjects(this.props.currentTeamId);
   }
 
@@ -28,6 +28,7 @@ class ProjectIndex extends React.Component {
 
     return (
       <div>
+        <div class="loader">Loading...</div>
         <ul>
           { projects }
         </ul>
