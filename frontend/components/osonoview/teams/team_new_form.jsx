@@ -4,13 +4,26 @@ import Modal from "react-modal";
 class TeamNewForm extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      "user_id": this.props.currentUserId,
+      "name": "",
+      "team_mission": ""
+    }
     this.renderErrors = this.renderErrors.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  update() {}
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
 
-  handleSubmit() {}
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createTeam(this.state).then(res => console.log("it worked-Login"));
+  }
 
   renderErrors() {}
 
@@ -26,7 +39,7 @@ class TeamNewForm extends React.Component {
          <label>Team Name
              <br/>
              <input type="text"
-               onChange={this.update('username')}
+               onChange={this.update('name')}
                className="login-input"
              />
            </label>
@@ -34,7 +47,7 @@ class TeamNewForm extends React.Component {
          <label>Team Misson
              <br/>
            <input type="text"
-               onChange={this.update('password')}
+               onChange={this.update('team_mission')}
                className="login-input"
              />
            </label>

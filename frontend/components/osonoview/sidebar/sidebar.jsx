@@ -47,6 +47,13 @@ class Sidebar extends React.Component {
             <h1>Osono</h1>
           </div>
         </div>
+
+        <div className="teammates-sidebar-container">
+          <div className="teammates-index-header">
+            <h1>Teammates</h1>
+          </div>
+        </div>
+
         <div className="team-index-sidebar-container">
           <div className="team-index-header">
             <h1>Teams</h1>

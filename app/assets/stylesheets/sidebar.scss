@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 16.7%;
+  width: 244px;
   background: rgb(34, 43, 55);
  }
 
@@ -36,7 +36,9 @@
   font-size: 24px;
 }
 
-.team-index-header, .project-index-header {
+.team-index-header,
+.project-index-header,
+.teammates-index-header {
   font-size: 16px;
   border-bottom: 1px solid #646F79;
   display: flex;
@@ -45,7 +47,9 @@
   justify-content: space-between;
 }
 
-.team-index-sidebar-container, .project-index-sidebar-container {
+.team-index-sidebar-container,
+.project-index-sidebar-container,
+.teammates-sidebar-container {
   display: flex;
   flex-direction: column;
   width: 90%;
