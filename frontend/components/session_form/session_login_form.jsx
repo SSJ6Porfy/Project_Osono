@@ -29,17 +29,20 @@ class SessionLoginForm extends React.Component {
 
    demoUserLogin(e) {
      e.preventDefault();
-     this.setState({"username": "TywinLannister", "password": "password"})
-     this.props.login({"username": "TywinLannister", "password": "password"}).then(res => console.log("it worked-Login"));
+     this.setState({"username": "TywinLannister", "password": "password"});
+     this.props.login({"username": "TywinLannister", "password": "password"})
+      .then(() => this.props.fetchTeammates());
    }
 
    handleSubmit(e) {
      e.preventDefault();
      const user = this.state;
      if (this.props.formType === "login") {
-       this.props.login(user).then(res => console.log("it worked-Login"));
+       this.props.login(user)
+        .then(() => this.props.fetchTeammates());
      } else {
-       this.props.signup(user).then(res => console.log("it worked-Signup"));
+       this.props.signup(user)
+        .then(() => this.props.fetchTeammates());
      }
    }
 
