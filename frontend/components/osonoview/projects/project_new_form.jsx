@@ -8,10 +8,12 @@ class ProjectNewForm extends React.Component {
 
   render() {
     return (
-      <div className="new-project-form">
-        <form>
-          <h1>I'm the Project form</h1>
-        </form>
+      <div className="new-project-form-container">
+        <div className="new-team-form">
+          <form>
+            <h1>I'm the Project form</h1>
+          </form>
+        </div>
       </div>
     )
   }

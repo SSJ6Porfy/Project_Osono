@@ -4,7 +4,7 @@
 
 // font-family: 'Michroma', sans-serif;
 // font-family: 'Reem Kufi', sans-serif;
-// 
+//
 // @font-face {
 //        font-family:Roboto Condensed;
 //       src: url(fonts/Roboto_Condensed/RobotoCondensed-Regular.tff);
@@ -106,7 +106,7 @@
   width: 80%;
 }
 
-.Session {
+.Session, .NewTeam, .NewProject {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -119,12 +119,12 @@
   padding: 20px 60px 40px 60px;
   width: 580px;
 }
-.session-form-container {
+.session-form-container, .new-project-form-container {
   width: 100%;
   display: flex;
 }
 
-.session-form-box {
+.session-form-box, .new-team-form {
   display: flex;
   flex-direction: column;
   width: 100%;
