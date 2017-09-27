@@ -1,5 +1,9 @@
 class Api::UsersController < ApplicationController
 
+  def index
+    @users = current_user.teammates
+  end
+
   def show
     @post = User.find_by(params[:id])
   end
