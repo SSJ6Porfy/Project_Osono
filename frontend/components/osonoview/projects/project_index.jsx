@@ -6,8 +6,8 @@ class ProjectIndex extends React.Component {
     super(props)
   }
 
-  componentDidMount() {
-    this.props.fetchProjects();
+  componentWillMount() {
+    this.props.fetchTeamProjects(this.props.currentTeamId);
   }
 
   componentWillReceiveProps(newProps) {

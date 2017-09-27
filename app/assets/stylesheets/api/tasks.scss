@@ -281,12 +281,7 @@
   height: 200px;
 }
 
-.task-detail-input:hover {
+.task-detail-input:hover, .task-detail-description-text:hover {
   border-radius: 3px;
-  border: 1px solid rgb(230, 231, 232);
-}
-
-.task-detail-description-text:hover {
-  border-radius: 3px;
-  border: 1px solid rgb(230, 231, 232);
+  box-shadow: 0 0 0 1px rgb(230, 231, 232);
 }

@@ -9,7 +9,13 @@ class TeamDetail extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchTeam(this.props.params.match.teamId);
+    this.props.fetchTeam(this.props.match.params.teamId).then((res) => this.setState(res));
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.match.params.teamId !== newProps.match.params.teamId) {
+      this.props.fetchTeam(newProps.match.params.teamId).then((res) => this.setState(res))
+    }
   }
 
   update(field) {
@@ -28,17 +34,22 @@ class TeamDetail extends React.Component {
     return(
       <div className="team-detail-container">
         <div className="team-detail-form-container">
-          <form onSubmit={this.handleSubmit}>
+          <div className="team-detail-header-container">
+
+          </div>
+          <form className="team-detail-form" onSubmit={this.handleSubmit}>
             <label>Team Name
               <br/>
-              <input type="text"
-                     onChange={this.update("name")}
-                     value={this.state.name}></input>
+            <input className="team-detail-name-input"
+                   type="text"
+                   onChange={this.update("name")}
+                   value={this.state.name}></input>
             </label>
             <label>Team Mission
               <br/>
-            <textarea onChange={this.update("description")}
-                        value={this.state.description} />
+            <textarea className="team-detail-description-input"
+                      onChange={this.update("description")}
+                      value={this.state.description} />
             </label>
             <input type="submit" value="Update Team"/>
           </form>

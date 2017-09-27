@@ -12,8 +12,10 @@ export const fetchTeams = () => dispatch => (
 );
 export const fetchTeam = (id) => dispatch => (
   TeamAPIUtil.fetchTeam(id)
-    .then(res => (dispatch(receiveTeam(res))
-  ), err => (dispatch(receiveTeamErrors(err.responseJSON))))
+    .then(res => {
+       dispatch(receiveTeam(res));
+       return res;
+    }, err => dispatch(receiveTeamErrors(err.responseJSON)))
 );
 export const createTeam = (team) => dispatch => (
   TeamAPIUtil.createTeam(team)
