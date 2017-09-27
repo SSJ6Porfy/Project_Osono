@@ -1,8 +1,40 @@
 import React from "react";
 import TeamIndexContainer from "../teams/team_index_container";
 import ProjectIndexContainer from "../projects/project_index_container";
+import NewTeamFormContainer from "../teams/team_new_form_container";
+import NewProjectFormContainer from "../projects/project_new_form_container";
+import ReactModal from 'react-modal';
 
 class Sidebar extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      newTeamModalIsOpen: false,
+      newProjectModalIsOpen: false
+    }
+
+    this.openNewTeamModal = this.openNewTeamModal.bind(this);
+    this.closeNewTeamModal = this.closeNewTeamModal.bind(this);
+    this.openNewProjectModal = this.openNewProjectModal.bind(this);
+    this.closeNewProjectModal = this.closeNewProjectModal.bind(this);
+  }
+
+  openNewTeamModal() {
+    this.setState({newTeamModalIsOpen: true});
+  }
+
+  closeNewTeamModal() {
+    this.setState({newTeamModalIsOpen: false});
+  }
+
+  openNewProjectModal() {
+    this.setState({newProjectModalIsOpen: true});
+  }
+
+  closeNewProjectModal() {
+    this.setState({newProjectModalIsOpen: false});
+  }
+
 
   render() {
     return (
@@ -18,7 +50,7 @@ class Sidebar extends React.Component {
         <div className="team-index-sidebar-container">
           <div className="team-index-header">
             <h1>Teams</h1>
-            <a className="create-team-btn">
+          <a className="create-team-btn" onClick={this.openNewTeamModal}>
               <svg className="Icon PlusIcon" viewBox="0 0 32 32" height="10" width="10">
                 <polygon points="28,14 18,14 18,4 14,4 14,14 4,14 4,18 14,18 14,28 18,28 18,18 28,18"/>
               </svg>
@@ -29,7 +61,7 @@ class Sidebar extends React.Component {
         <div className="project-index-sidebar-container">
           <div className="project-index-header">
             <h1>Projects</h1>
-          <a className="create-project-btn">
+          <a className="create-project-btn" onClick={this.openNewProjectModal}>
               <svg className="Icon PlusIcon" viewBox="0 0 32 32" height="10" width="10">
                 <polygon points="28,14 18,14 18,4 14,4 14,14 4,14 4,18 14,18 14,28 18,28 18,18 28,18"/>
               </svg>
@@ -37,6 +69,26 @@ class Sidebar extends React.Component {
           </div>
           <ProjectIndexContainer/>
         </div>
+        <ReactModal className="NewTeam Modal"
+                 onRequestClose={() => this.closeNewTeamModal()}
+                 isOpen={this.state.newTeamModalIsOpen}
+                 shouldCloseOnOverlayClick={true}
+                 contentLabel="Modal">
+
+            <NewTeamFormContainer />
+
+          <button className="close-btn" onClick={this.closeNewTeamModal}>X</button>
+      </ReactModal>
+        <ReactModal className="NewProject Modal"
+                 onRequestClose={() => this.closeNewProjectModal()}
+                 isOpen={this.state.newProjectModalIsOpen}
+                 shouldCloseOnOverlayClick={true}
+                 contentLabel="Modal">
+
+            <NewProjectFormContainer />
+
+          <button className="close-btn" onClick={this.closeNewProjectModal}>X</button>
+      </ReactModal>
       </div>
     )
   }
