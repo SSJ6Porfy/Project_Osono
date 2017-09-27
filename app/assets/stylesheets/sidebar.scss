@@ -39,6 +39,10 @@
 .team-index-header, .project-index-header {
   font-size: 16px;
   border-bottom: 1px solid #646F79;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .team-index-sidebar-container, .project-index-sidebar-container {
@@ -61,4 +65,34 @@
 
 .team-index-sidebar-container div ul li:hover, .project-index-sidebar-container div ul li:hover {
   background: #646F79;
+}
+
+.create-team-btn, .create-project-btn {
+  height: 16px;
+  width: 16px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.PlusIcon {
+  background: transparent;
+  border: 1px solid #9ca6af;
+  color: #9ca6af;
+  fill: #9ca6af;
+  float: right;
+  margin-top: -2px;
+  overflow: hidden;
+  font-size: 13px;
+  border-radius: 50%;
+  padding: 2px;
 }

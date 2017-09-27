@@ -29,12 +29,22 @@ class Osonoview extends React.Component {
           <div className="team-index-sidebar-container">
             <div className="team-index-header">
               <h1>Teams</h1>
+              <a className="create-team-btn">
+                <svg className="Icon PlusIcon" viewBox="0 0 32 32" height="10" width="10">
+                  <polygon points="28,14 18,14 18,4 14,4 14,14 4,14 4,18 14,18 14,28 18,28 18,18 28,18"/>
+                </svg>
+              </a>
             </div>
             <TeamIndexContainer/>
           </div>
           <div className="project-index-sidebar-container">
             <div className="project-index-header">
               <h1>Projects</h1>
+            <a className="create-project-btn">
+                <svg className="Icon PlusIcon" viewBox="0 0 32 32" height="10" width="10">
+                  <polygon points="28,14 18,14 18,4 14,4 14,14 4,14 4,18 14,18 14,28 18,28 18,18 28,18"/>
+                </svg>
+              </a>
             </div>
             <ProjectIndexContainer/>
           </div>

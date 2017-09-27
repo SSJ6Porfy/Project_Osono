@@ -126,7 +126,7 @@
   cursor: pointer;
 }
 
-.Icon {
+.CheckIcon {
   border: 1px solid #d5dce0;
   border-radius: 50%;
   fill: #d5dce0;
@@ -134,7 +134,7 @@
   transition: bow-shadow 1.0s ease;
 }
 
-.Icon:hover {
+.CheckIcon:hover {
   fill: rgb(98, 246, 219);
   border: 1px solid rgb(98, 246, 219);
   box-shadow: 0 0 0 3px rgb(98, 246, 219);
