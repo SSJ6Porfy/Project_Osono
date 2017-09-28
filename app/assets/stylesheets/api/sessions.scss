@@ -10,6 +10,14 @@
 //       src: url(fonts/Roboto_Condensed/RobotoCondensed-Regular.tff);
 // }
 
+@font-face {
+  font-family: 'Nexa_Free_Light';
+  src: url('../Nexa_Free_Light-webfont.woff2') format('woff2'),
+       url('../Nexa_Free_Light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .splash_page_container {
   background-image: url(http://res.cloudinary.com/ssj6porfy/image/upload/v1505954412/abstract-rainbow-wave-waving-motion-background_41vpvi0ge__F0000_xikxdc.png);
   width: -webkit-fill-available;
@@ -28,14 +36,13 @@
 
 .logoContainer h1 {
   padding-bottom: 25px;
-
+  font-size: 30px;
+  font-family: "Nexa_Free_Light", sans-serif;
 }
 
 .logoContainer {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  font-family: sans-serif;
 }
 
 .btnContainer button {
@@ -91,7 +98,7 @@
 }
 
 .jumbotronMain {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nexa_Free_Light", sans-serif;
 }
 
 .jumbotronMain h1 {
@@ -141,8 +148,9 @@
 }
 
 .formHeader {
-  font-family: sans-serif;
+  font-family: "Nexa_Free_Light", sans-serif;
   text-align: center;
+  font-size: 24px;
 }
 
 .session-form-box input[type="submit"] {
