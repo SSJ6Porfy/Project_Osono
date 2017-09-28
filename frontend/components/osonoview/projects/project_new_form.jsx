@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
+import TeamIndexContainer from "../teams/team_index_container";
 
 class ProjectNewForm extends React.Component {
   constructor(props) {
@@ -35,6 +36,13 @@ class ProjectNewForm extends React.Component {
              />
            </label>
            <br/>
+
+         <label>Available Teams
+           <br/>
+         </label>
+         <div className="team-list-container">
+           <TeamIndexContainer/>
+         </div>
          <div className="login-btn-conatainer">
            <input type="submit" value="Create Project" />
 
