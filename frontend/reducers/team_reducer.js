@@ -1,5 +1,6 @@
 import { merge } from "lodash";
 import { RECEIVE_ALL_TEAMS, RECEIVE_TEAM, REMOVE_TEAM } from "../actions/team_actions";
+import { LOGOUT } from '../actions/session_actions';
 
 const initialState = {}
 
@@ -18,8 +19,10 @@ const TeamReducer = (state = initialState, action) => {
       newState[action.team.id] = action.team;
       return newState;
     case REMOVE_TEAM:
-    delete newState[action.team.id];
-    return newState;
+      delete newState[action.team.id];
+      return newState;
+    case LOGOUT:
+      return initialState;
     default:
       return state;
   }

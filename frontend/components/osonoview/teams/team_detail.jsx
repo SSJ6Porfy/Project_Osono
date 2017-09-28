@@ -58,7 +58,7 @@ class TeamDetail extends React.Component {
             <input type="submit" value="Update Team"/>
           </form>
           <div className="team-detail-teammates-index">
-            <TeammatesIndexContainer/>
+            <TeammatesIndexContainer team={this.props.team}/>
           </div>
         </div>
 

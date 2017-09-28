@@ -17,15 +17,7 @@ export const currentTasks = (currentUser, tasks, params) => {
     return usersTasks;
   }
 };
-// export const defaultTeam = (currentUser, teams) => {
-//   const teamArr = Object.values(teams);
-//
-//   let userTeams = teamArr.filter((team) => {
-//     return team.user_id == currentUser.id;
-//   });
-//
-//   return usersTeams;
-// };
+
 
 export const leadProjects = (allProjects, currentUser) => {
   let projects = [];
@@ -38,13 +30,3 @@ export const leadProjects = (allProjects, currentUser) => {
 
   return projects;
 }
-
-export const currentTeamMembers = (team, teamMembers, users) => {
-  let team_members = [];
-
-  let currentTeamId = team.id;
-
-  let currentTeamMembers = teamMember
-
-  return team_members;
-};

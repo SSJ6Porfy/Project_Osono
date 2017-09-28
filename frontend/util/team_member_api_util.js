@@ -2,36 +2,36 @@
 export const fetchTeamMembers = () => (
   $.ajax({
     method: 'GET',
-    url: '/api/teamMembers'
+    url: '/api/team_members'
   })
 );
 
 export const fetchTeamMember = (id) => (
   $.ajax({
     method: 'GET',
-    url: `/api/teamMembers/${id}`
+    url: `/api/team_members/${id}`
   })
 );
 
-export const updateTeamMember = (teamMember) => (
+export const updateTeamMember = (team_member) => (
   $.ajax({
     method: 'PATCH',
-    url: `/api/teamMembers/${teamMember.id}`,
-    data: { teamMember }
+    url: `/api/team_members/${team_member.id}`,
+    data: { team_member }
   })
 );
 
-export const createTeamMember = (teamMember) => (
+export const createTeamMember = (team_member) => (
   $.ajax({
     method: 'POST',
-    url: '/api/teamMembers',
-    data: { teamMember }
+    url: '/api/team_members',
+    data: { team_member }
   })
 );
 
 export const deleteTeamMember = (id) => (
   $.ajax({
     method: 'DELETE',
-    url: `/api/teamMembers/${id}`
+    url: `/api/team_members/${id}`
   })
 );

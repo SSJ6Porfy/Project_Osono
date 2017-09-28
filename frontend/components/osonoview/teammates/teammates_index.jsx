@@ -5,25 +5,31 @@ class TeammatesIndex extends React.Component {
     super(props)
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchTeammates();
   }
 
   render() {
-    if (this.props.teammates !== undefined) {
-      let teamMembers = Object.values(this.props.teammates).map((teammate, idx) => {
-        return (<li>{teammate.username}</li>)
-      })
-      return (
-        <ul>
-          { teamMembers }
-        </ul>
-      )
-    } else {
-      return (<div></div>)
-    }
-  }
+    console.log(this.props);
+    debugger
+    let teamMembers = this.props.teammates || {};
 
+    let memberList = Object.values(teamMembers).map((teammate, idx) => {
+      return (<li>{teammate.username}</li>)
+    })
+
+    if (this.props.team) {
+      memberList = this.props.team.team_members.map(({ id }) => {
+        return <li>{ teamMembers[id].username }</li>
+      })
+    }
+
+    return (
+      <ul>
+        { memberList }
+      </ul>
+    )
+  }
 };
 
 export default TeammatesIndex;
