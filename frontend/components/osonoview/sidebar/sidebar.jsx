@@ -3,6 +3,7 @@ import TeamIndexContainer from "../teams/team_index_container";
 import ProjectIndexContainer from "../projects/project_index_container";
 import NewTeamFormContainer from "../teams/team_new_form_container";
 import NewProjectFormContainer from "../projects/project_new_form_container";
+import TeammatesIndexContainer from "../teammates/teammates_index_container";
 import ReactModal from 'react-modal';
 
 class Sidebar extends React.Component {
@@ -52,6 +53,7 @@ class Sidebar extends React.Component {
           <div className="teammates-index-header">
             <h1>Teammates</h1>
           </div>
+          <TeammatesIndexContainer/>
         </div>
 
         <div className="team-index-sidebar-container">
