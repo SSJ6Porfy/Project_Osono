@@ -55,17 +55,21 @@ class TeamDetail extends React.Component {
                       onChange={this.update("team_mission")}
                       value={this.state.team_mission} />
             </label>
+            <label>Team Members
+              <br/>
+              <div className="team-detail-teammates-index">
+                <TeammatesIndexContainer team={this.props.team}/>
+              </div>
+            </label>
             <input type="submit" value="Update Team"/>
           </form>
-          <div className="team-detail-teammates-index">
-            <TeammatesIndexContainer team={this.props.team}/>
-          </div>
         </div>
 
         <div className="team-project-list-container">
           <div className="team-detail-header-container">
 
           </div>
+          <h1>{this.props.team.name}'s Project List</h1>
           <div className="project-index-inner-container">
             <ProjectIndexContainer/>
           </div>

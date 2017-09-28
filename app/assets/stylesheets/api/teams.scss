@@ -116,3 +116,21 @@
   box-shadow: 0 0 0 1px rgb(230, 231, 232);
   border-radius: 3px;
 }
+
+.team-detail-teammates-index {
+  border: 1px solid rgb(230, 231, 232);
+  border-radius: 3px;
+  width: 97%;
+}
+
+.team-detail-teammates-index ul li {
+  padding-left: 5px;
+}
+
+.team-detail-teammates-index ul li:hover {
+  background: #fcbd01;
+}
+
+.team-project-list-container h1 {
+  margin-top: 15px;
+}

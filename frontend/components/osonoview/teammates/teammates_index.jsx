@@ -10,8 +10,6 @@ class TeammatesIndex extends React.Component {
   }
 
   render() {
-    console.log(this.props);
-    debugger
     let teamMembers = this.props.teammates || {};
 
     let memberList = Object.values(teamMembers).map((teammate, idx) => {
