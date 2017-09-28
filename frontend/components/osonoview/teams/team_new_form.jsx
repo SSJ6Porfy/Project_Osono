@@ -22,7 +22,7 @@ class TeamNewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createTeam(this.state).then(res => console.log("it worked-Login"));
+    this.props.createTeam(this.state).then(() => this.props.closeModal());
   }
 
   renderErrors() {}

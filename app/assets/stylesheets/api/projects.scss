@@ -95,8 +95,8 @@
 .team-list-container div ul li a {
   text-decoration: none;
   color: black;
-  height: 100%;
-  width: 100%;
+  pointer-events: none;
+  cursor: pointer;
 }
 
 .team-list-container div ul li {
@@ -110,13 +110,14 @@
   color: rgb(89, 79, 199);
   box-shadow: 0 0 0 1px rgb(89, 79, 199);
   border-radius: 3px;
+  cursor: pointer;
 }
 
 .team-list-container div ul li a:hover {
   color: rgb(89, 79, 199);
 }
 
-.team-list-container div ul, .team-list-container div {
+.team-list-container div ul {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -125,4 +126,71 @@
 .team-list-container div {
   padding-left: 3px;
   padding-right: 3px;
+  padding-top: 3px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.new-project-form-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.new-project-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.new-project-form label input[type="submit"] {
+  background: #594fc7;
+  color: white;
+  border-radius: 4px;
+  padding: 0 16px;
+  font-family: sans-serif;
+  font-size: 14px;
+  float: left;
+  cursor: pointer;
+  height: 34px;
+  width: 120px;
+  border: none;
+  margin-top: 10px;
+}
+
+.new-project-form label input[type="text"] {
+  height: 40px;
+  border-radius: 3px;
+  width: 99%;
+  font-family: sans-serif;
+  border: 1px solid rgb(230, 231, 232);
+  padding-left: 5px;
+  margin: 0;
+  font-size: 16px;
+}
+
+.new-project-form label {
+  font-family: sans-serif;
+  float: right;
+  color: rgb(138, 142, 147);
+}
+
+.new-project-form input[type="submit"]:hover {
+  background: rgb(251, 63, 255);
+  color: white;
+}
+
+.new-project-form input[type="submit"] {
+  background: #594fc7;
+  color: white;
+  border-radius: 4px;
+  padding: 0 16px;
+  font-family: sans-serif;
+  font-size: 14px;
+  float: left;
+  cursor: pointer;
+  height: 34px;
+  width: 120px;
+  border: none;
 }

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class TeamIndexListItem extends React.Component {
   constructor(props) {
     super(props)
-    this.state = this.props.team;
+    this.state = this.props.team || { name: "" }
     this.setCurrentTeam = this.setCurrentTeam.bind(this);
   }
 
@@ -19,8 +19,7 @@ class TeamIndexListItem extends React.Component {
 
   render() {
     return (
-      <li className="team-list-name"
-          onClick={this.setCurrentTeam}>
+      <li className="team-list-name">
         <Link to={`/osonoview/teams/${this.props.team.id}`}>
           {this.props.team.name}
         </Link>

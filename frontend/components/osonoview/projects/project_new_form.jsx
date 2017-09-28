@@ -5,34 +5,38 @@ import TeamIndexContainer from "../teams/team_index_container";
 class ProjectNewForm extends React.Component {
   constructor(props) {
     super(props)
+    this.state = { name: "", description: "", team_id: null }
     this.renderErrors = this.renderErrors.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleSubmit() {}
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createProject(this.state).then(() => this.props.closeModal())
+  }
 
   renderErrors() {}
 
   render() {
     return (
-      <div className="session-form-container">
-       <form onSubmit={this.handleSubmit} className="session-form-box">
+      <div className="new-project-form-container">
+       <form onSubmit={this.handleSubmit} className="new-project-form-box">
          <br/>
        <h1 className="formHeader">New Project</h1>
          <h2 className="errors-text">{this.renderErrors()}</h2>
-         <div className="login-form">
+       <div className="new-project-form">
            <br/>
          <label>Project Name
              <br/>
              <input type="text"
-               className="login-input"
+               className="new-project-input"
              />
            </label>
            <br/>
          <label>Project Description
              <br/>
            <input type="text"
-               className="login-input"
+               className="new-project-input"
              />
            </label>
            <br/>
@@ -43,8 +47,8 @@ class ProjectNewForm extends React.Component {
          <div className="team-list-container">
            <TeamIndexContainer/>
          </div>
-         <div className="login-btn-conatainer">
-           <input type="submit" value="Create Project" />
+         <div className="new-project-btn-container">
+           <input type="submit" value="Create Project" onClick={this.props.closeNewProjectModal}/>
 
          </div>
          </div>

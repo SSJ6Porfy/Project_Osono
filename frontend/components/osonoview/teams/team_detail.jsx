@@ -5,7 +5,7 @@ import TeammatesIndexContainer from "../teammates/teammates_index_container";
 class TeamDetail extends React.Component {
   constructor(props) {
     super(props)
-    this.state = this.props.team;
+    this.state = this.props.team || { name: "", team_mission: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -70,7 +70,7 @@ class TeamDetail extends React.Component {
           <div className="team-detail-header-container">
 
           </div>
-          <h1>{this.props.team.name}'s Project List</h1>
+          <h1>{this.state.name}'s Project List</h1>
           <div className="project-index-inner-container">
             <ProjectIndexContainer/>
           </div>

@@ -84,17 +84,17 @@ class Sidebar extends React.Component {
                  shouldCloseOnOverlayClick={true}
                  contentLabel="Modal">
 
-            <NewTeamFormContainer />
+            <NewTeamFormContainer closeModal={this.closeNewTeamModal} />
 
           <button className="close-btn" onClick={this.closeNewTeamModal}>X</button>
-      </ReactModal>
+        </ReactModal>
         <ReactModal className="NewProject Modal"
                  onRequestClose={() => this.closeNewProjectModal()}
                  isOpen={this.state.newProjectModalIsOpen}
                  shouldCloseOnOverlayClick={true}
                  contentLabel="Modal">
 
-            <NewProjectFormContainer />
+            <NewProjectFormContainer closeModal={this.closeNewProjectModal} />
 
           <button className="close-btn" onClick={this.closeNewProjectModal}>X</button>
       </ReactModal>
