@@ -5,13 +5,10 @@ import { fetchTeam,
          updateTeam,
          deleteTeam } from "../../../actions/team_actions";
 
-const mapStateToProps = (state, ownProps) => {
-  if (state.entities.teams[ownProps.match.params.teamId]) {
-    return { team: state.entities.teams[ownProps.match.params.teamId] };
-  } else {
-    return { team: {name: "", description: ""} };
-  }
-};
+const mapStateToProps = (state, ownProps) => ({
+  team: state.entities.teams[ownProps.match.params.teamId]
+  current_team_members: 
+});
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchTeam: (id) => dispatch(fetchTeam(id)),

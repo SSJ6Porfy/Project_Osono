@@ -27,6 +27,9 @@ class TeamDetail extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    if (this.state.team_mission === "") {
+      this.state.team_mission = " "
+    }
     this.props.updateTeam(this.state)
       .then(() => this.props.history.push(`/osonoview/teams/${this.props.team.id}`));
   }

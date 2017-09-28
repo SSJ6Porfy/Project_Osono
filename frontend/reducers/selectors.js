@@ -38,3 +38,13 @@ export const leadProjects = (allProjects, currentUser) => {
 
   return projects;
 }
+
+export const currentTeamMembers = (team, teamMembers, users) => {
+  let team_members = [];
+
+  let currentTeamId = team.id;
+
+  let currentTeamMembers = teamMember
+
+  return team_members;
+};

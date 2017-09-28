@@ -4,11 +4,13 @@ import TeamReducer from "./team_reducer";
 import ProjectReducer from "./project_reducer";
 import loadingReducer from "./loading_reducer";
 import UserReducer from "./user_reducer";
+import TeamMemberReducer from "./team_member_reducer";
 
 export default combineReducers({
   tasks: TaskReducer,
   teams: TeamReducer,
   projects: ProjectReducer,
   loading: loadingReducer,
-  teammates: UserReducer
+  teammates: UserReducer,
+  team_members: TeamMemberReducer
 })
