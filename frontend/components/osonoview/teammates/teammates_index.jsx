@@ -3,10 +3,15 @@ import React from 'react';
 class TeammatesIndex extends React.Component {
   constructor(props) {
     super(props)
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchTeammates();
+  }
+
+  handleClick(id) {
+    this.props.deleteTeamMember(id).then(() => console.log("it worked"))
   }
 
   render() {
@@ -19,7 +24,8 @@ class TeammatesIndex extends React.Component {
     if (this.props.team) {
       memberList = this.props.team.team_members.map(({ id }) => {
         return <li><span>{ teamMembers[id].username }</span>
-                <button className="remove-teammate-btn">Remove from Team</button>
+      <button className="remove-teammate-btn"
+              onClick={() => this.handleClick(id)}>Remove from Team</button>
                </li>
       })
     }

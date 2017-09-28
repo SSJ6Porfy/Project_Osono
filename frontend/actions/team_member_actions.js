@@ -17,10 +17,6 @@ export const createTeamMember = (teamMember) => dispatch => (
   TeamMemberAPIUtil.createTeamMember(teamMember)
     .then(res => dispatch(receiveTeamMember(res)))
 );
-export const updateTeamMember = (teamMember) => dispatch => (
-  TeamMemberAPIUtil.updateTeamMember(teamMember)
-    .then(res => dispatch(receiveTeamMember(res)))
-  );
 
 export const deleteTeamMember = (id) => dispatch => (
   TeamMemberAPIUtil.deleteTeamMember(id)
