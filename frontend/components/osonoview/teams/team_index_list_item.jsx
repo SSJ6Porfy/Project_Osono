@@ -8,6 +8,10 @@ class TeamIndexListItem extends React.Component {
     this.setCurrentTeam = this.setCurrentTeam.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchTeam(this.props.team.id);
+  }
+
   setCurrentTeam(e) {
     e.preventDefault();
     this.props.fetchTeam(this.state.id).then((res) => this.setState(res))

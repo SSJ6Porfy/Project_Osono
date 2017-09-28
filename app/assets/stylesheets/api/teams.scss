@@ -96,7 +96,18 @@
   width: 100%;
 }
 
-.project-index-inner-container div ul li {
+.team-index-sidebar-container div ul li, .project-index-sidebar-container div ul li {
+  display: flex;
+}
+
+.project-index-sidebar-container div ul li a,
+.team-index-sidebar-container div ul li a {
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+}
+
+.project-index-inner-container div ul li, {
   height: 40px;
   display: flex;
 }

@@ -1,11 +1,11 @@
 class Api::TeamsController < ApplicationController
 
-  before_action :check_if_user_is_team_leader?,  only: [:update]
+  before_action :check_if_user_is_team_leader?, only: [:update]
 
   #Method checks the current_user is the Team Lead.
   #Only Team Leads are allow to modify teams
   def check_if_user_is_team_leader?
-    render :json ["Only the Team Lead can edit this team"] unless current_user.id == this_team.user_id;
+    render json: ["Only the Team Lead can edit this team"] unless current_user.id == this_team.user_id;
   end
 
   def this_team
@@ -13,7 +13,7 @@ class Api::TeamsController < ApplicationController
   end
 
   def index
-    @teams = current_user.teams
+    @teams = current_user.teams + current_user.teams_lead
   end
 
   def create
@@ -27,7 +27,7 @@ class Api::TeamsController < ApplicationController
   end
 
   def update
-    @team = current_user.teams.find_by(id: params[:id])
+    @team = Team.find_by(id: params[:id])
 
     if @team.update_attributes(team_params)
       render :show

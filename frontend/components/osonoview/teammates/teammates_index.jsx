@@ -1,9 +1,12 @@
 import React from 'react';
 
-
 class TeammatesIndex extends React.Component {
   constructor(props) {
     super(props)
+  }
+
+  componentWillMount() {
+    this.props.fetchTeammates();
   }
 
   render() {
