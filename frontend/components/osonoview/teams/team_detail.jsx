@@ -57,10 +57,11 @@ class TeamDetail extends React.Component {
             </label>
             <label>Team Members
               <br/>
+            </label>
               <div className="team-detail-teammates-index">
                 <TeammatesIndexContainer team={this.props.team}/>
               </div>
-            </label>
+
             <input type="submit" value="Update Team"/>
           </form>
         </div>

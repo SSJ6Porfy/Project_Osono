@@ -18,7 +18,9 @@ class TeammatesIndex extends React.Component {
 
     if (this.props.team) {
       memberList = this.props.team.team_members.map(({ id }) => {
-        return <li>{ teamMembers[id].username }</li>
+        return <li><span>{ teamMembers[id].username }</span>
+                <button className="remove-teammate-btn">Remove from Team</button>
+               </li>
       })
     }
 

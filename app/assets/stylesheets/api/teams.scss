@@ -100,11 +100,23 @@
   display: flex;
 }
 
-.project-index-sidebar-container div ul li a,
+
 .team-index-sidebar-container div ul li a {
   text-decoration: none;
   height: 100%;
   width: 100%;
+}
+
+.project-index-inner-container div ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.project-index-inner-container div ul li a:hover {
+  background: rgb(186, 232, 255);
 }
 
 .project-index-inner-container div ul li, {
@@ -125,12 +137,33 @@
 
 .team-detail-teammates-index ul li {
   padding-left: 5px;
+  padding-right: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
 }
 
 .team-detail-teammates-index ul li:hover {
-  background: #fcbd01;
+  background: rgb(186, 232, 255);
 }
 
 .team-project-list-container h1 {
   margin-top: 15px;
+}
+
+.remove-teammate-btn {
+  background: white;
+  color: #7a6ff0;
+  border-radius: 3px;
+  width: 120px;
+  height: 20px;
+  border: 1px solid #7a6ff0
+}
+
+.remove-teammate-btn:hover {
+  background: red;
+  color: white;
+  border: 1px solid red;
 }
