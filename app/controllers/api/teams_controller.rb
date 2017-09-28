@@ -1,6 +1,6 @@
 class Api::TeamsController < ApplicationController
 
-  before_action :check_if_user_is_team_leader?,  only: [:update, :create]
+  before_action :check_if_user_is_team_leader?,  only: [:update]
 
   #Method checks the current_user is the Team Lead.
   #Only Team Leads are allow to modify teams
@@ -51,7 +51,7 @@ class Api::TeamsController < ApplicationController
   end
 
   def team_params
-    current_params = params.require(:team).permit(:id, :user_id, :name, :department)
+    current_params = params.require(:team).permit(:id, :user_id, :name, :team_mission)
     current_params[:user_id] = current_user.id
     current_params
   end

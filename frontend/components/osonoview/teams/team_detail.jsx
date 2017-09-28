@@ -1,5 +1,6 @@
 import React from "react";
 import ProjectIndexContainer from "../projects/project_index_container";
+import TeammatesIndexContainer from "../teammates/teammates_index_container";
 
 class TeamDetail extends React.Component {
   constructor(props) {
@@ -48,11 +49,14 @@ class TeamDetail extends React.Component {
             <label>Team Mission
               <br/>
             <textarea className="team-detail-description-input"
-                      onChange={this.update("description")}
-                      value={this.state.description} />
+                      onChange={this.update("team_mission")}
+                      value={this.state.team_mission} />
             </label>
             <input type="submit" value="Update Team"/>
           </form>
+          <div className="team-detail-teammates-index">
+            <TeammatesIndexContainer/>
+          </div>
         </div>
 
         <div className="team-project-list-container">

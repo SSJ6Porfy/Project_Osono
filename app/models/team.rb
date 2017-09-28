@@ -11,7 +11,7 @@
 #
 
 class Team < ApplicationRecord
-  validates :user_id, :name, :department, presence: true
+  validates :user_id, :name, presence: true
 
   has_many :team_members
   has_many :projects
