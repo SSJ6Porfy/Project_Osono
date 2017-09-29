@@ -1,7 +1,9 @@
-# README
+# Osono
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://osono.herokuapp.com is a web application for project management
+inspired by Asana. Osono allows users to create teams, projects and
+tasks, allowing users and organizations to have centralized project
+management.
 
 Things you may want to cover:
 
