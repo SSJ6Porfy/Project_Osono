@@ -2,7 +2,7 @@ import * as TeamAPIUtil from "../util/team_api_util";
 import * as SearchTeamAPIUtil from "../util/search_team_api_util"
 
 export const RECEIVE_ALL_TEAMS = 'RECEIVE_ALL_TEAMS';
-export const SEARCHED_TEAMS = 'SEARCHED_TEAMS';
+export const RECEIVE_SEARCHED_TEAMS = 'RECEIVE_SEARCHED_TEAMS';
 export const RECEIVE_TEAM = 'RECEIVE_TEAM';
 export const REMOVE_TEAM = 'REMOVE_TEAM';
 export const RECEIVE_TEAM_ERRORS = "RECEIVE_TEAM_ERRORS";
@@ -42,7 +42,7 @@ export const fetchSearchedTeams = (search) => dispatch => (
 )
 
 export const receiveSearchedTeams = (searchedTeams) => ({
-  type: SEARCHED_TEAMS,
+  type: RECEIVE_SEARCHED_TEAMS,
   searchedTeams
 })
 
