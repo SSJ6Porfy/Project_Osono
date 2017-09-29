@@ -12,6 +12,12 @@ class Api::TeamsController < ApplicationController
     @team = Team.find_by(id: params[:id])
   end
 
+  def search
+    query = params[:search]
+      @teams = Team.where('name LIKE ?', "%#{query}%")
+      render "api/teams/search"
+  end
+
   def index
     @teams = current_user.teams + current_user.teams_lead
   end
@@ -51,7 +57,7 @@ class Api::TeamsController < ApplicationController
   end
 
   def team_params
-    current_params = params.require(:team).permit(:id, :user_id, :name, :team_mission)
+    current_params = params.require(:team).permit(:id, :user_id, :name, :team_mission, :search)
     current_params[:user_id] = current_user.id
     current_params
   end
