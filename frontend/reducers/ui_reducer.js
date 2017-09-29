@@ -3,9 +3,7 @@ import { RECEIVE_ALL_TEAMS, RECEIVE_TEAM, REMOVE_TEAM } from "../actions/team_ac
 import { RECEIVE_ALL_TASKS } from "../actions/task_actions";
 import { LOGOUT } from '../actions/session_actions';
 
-const initialState = {
-  currentTeamId: null
-}
+const initialState = {}
 
 const UIReducer = (state = initialState, action) => {
   Object.freeze(state);
