@@ -4,6 +4,7 @@ import { LOGOUT } from '../actions/session_actions';
 
 const initialState = {}
 
+
 const TeamReducer = (state = initialState, action) => {
 
   Object.freeze(state);

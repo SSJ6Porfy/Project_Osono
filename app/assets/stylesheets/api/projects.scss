@@ -103,11 +103,11 @@
   display: flex;
   width: 99%;
   padding-left: 5px;
+  font-family: sans-serif;
 }
 
 .team-list-container div ul li:hover {
   background: rgb(219, 217, 244);
-  color: rgb(89, 79, 199);
   box-shadow: 0 0 0 1px rgb(89, 79, 199);
   border-radius: 3px;
   cursor: pointer;
@@ -170,7 +170,7 @@
   font-size: 16px;
 }
 
-.new-project-form label {
+.new-project-form label, .task-detail-field-container label {
   font-family: sans-serif;
   float: right;
   color: rgb(138, 142, 147);

@@ -7,16 +7,9 @@ import { fetchTeams,
          deleteTeam } from "../../../actions/team_actions";
 
 
-const mapStateToProps = (state) => {
-  let teams = { name: "a" };
-  if (state.entities.teams === {}) {
-    teams
-  } else {
-    teams = state.entities.teams
-  }
-
-  return { teams };
-};
+const mapStateToProps = (state) => ({
+  teams: state.entities.teams
+})
 
 const mapDispatchToProps = (dispatch) => ({
   fetchTeams: () => dispatch(fetchTeams()),

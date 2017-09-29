@@ -4,22 +4,18 @@ import { Link } from "react-router-dom";
 class TeamIndexListItem extends React.Component {
   constructor(props) {
     super(props)
-    this.state = this.props.team || { name: "" }
+    this.state = this.props.team || { id: "", name: "" }
     this.setCurrentTeam = this.setCurrentTeam.bind(this);
-  }
-
-  componentDidMount() {
-    this.props.fetchTeam(this.props.team.id);
   }
 
   setCurrentTeam(e) {
     e.preventDefault();
-    this.props.fetchTeam(this.state.id).then((res) => this.setState(res))
+    this.props.fetchTeam(this.props.team.id).then((res) => this.setState(res))
   }
 
   render() {
     return (
-      <li className="team-list-name">
+      <li className="team-list-name" onClick={this.setCurrentTeam}>
         <Link to={`/osonoview/teams/${this.props.team.id}`}>
           {this.props.team.name}
         </Link>

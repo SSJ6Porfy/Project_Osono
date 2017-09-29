@@ -55,10 +55,16 @@ class TaskDetail extends React.Component {
           <form className="task-detail-form">
 
             <div className="task-detail-field-container">
+              <label>Task Name
+                <br/>
+              </label>
               <input className="task-detail-input"
                      onChange={this.update("name")}
                      type="text"
                      value={this.state.name}></input>
+                   <label>Task Description
+               <br/>
+             </label>
               <textarea className="task-detail-description-text"
                         onChange={this.update("description")}
                         value={this.state.description}/>
