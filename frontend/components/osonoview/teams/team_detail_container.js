@@ -7,7 +7,6 @@ import { fetchTeam,
 
 const mapStateToProps = (state, ownProps) => ({
   team: state.entities.teams[ownProps.match.params.teamId]
-  // current_team_members: 
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
