@@ -29,8 +29,8 @@ class SessionLoginForm extends React.Component {
 
    demoUserLogin(e) {
      e.preventDefault();
-     this.setState({"username": "TywinLannister", "password": "password"});
-     this.props.login({"username": "TywinLannister", "password": "password"})
+     this.setState({"username": "John", "password": "12345678"});
+     this.props.login({"username": "John", "password": "12345678"})
       .then(() => this.props.fetchTeammates());
    }
 

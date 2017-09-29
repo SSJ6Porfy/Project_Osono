@@ -30,6 +30,19 @@ the core functionalities of Asana.
 
 [Database Schema](https://github.com/SSJ6Porfy/Project_Osono/wiki/Database-Schema)
 
+
+## Technology
+
+### Backend
+
+* Database
+  * PostgreSQL, an object-relational database management system (ORDBMS) was used
+for the database.  
+*
+Heroku
+### Frontend
+
+
 * Ruby version
 
 * System dependencies
