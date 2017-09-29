@@ -3,14 +3,13 @@ import { Link } from "react-router-dom";
 
 class TeamIndexListItem extends React.Component {
   constructor(props) {
-    super(props)
-    this.state = this.props.team || { id: "", name: "" }
+    super(props);
     this.setCurrentTeam = this.setCurrentTeam.bind(this);
   }
 
   setCurrentTeam(e) {
     e.preventDefault();
-    this.props.fetchTeam(this.props.team.id).then((res) => this.setState(res))
+    this.props.receiveTeam(this.props.team);
   }
 
   render() {
@@ -20,7 +19,7 @@ class TeamIndexListItem extends React.Component {
           {this.props.team.name}
         </Link>
       </li>
-    )
+    );
   }
 }
 

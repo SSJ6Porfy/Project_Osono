@@ -21,14 +21,18 @@ class Api::TeamsController < ApplicationController
   end
 
   def index
-    @teams = current_user.teams + current_user.teams_lead
+    @teams = current_user.teams
   end
 
   def create
     @team = Team.new(team_params)
-
     if @team.save
-      render :show
+      @teamMember = TeamMember.create!(user_id: current_user.id, team_id: @team.id)
+      if @teamMember.save
+        render :show
+      else
+        render json: @teamMember.errors.full_messages, status: 422
+      end
     else
       render json: @team.errors.full_messages, status: 422
     end
