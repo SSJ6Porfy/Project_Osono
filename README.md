@@ -65,7 +65,7 @@ for the database.
   * redux-thunk
   * webpack
 
-##ToDos
+## ToDos
 
 * Implement restrictions where only project and team leads can edit
 the respective team or project.
