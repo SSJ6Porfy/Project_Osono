@@ -19,6 +19,7 @@ complete or incomplete.
 * Users have a profile to manage their own information.
 
 ![Wireframe Instructions](https://github.com/SSJ6Porfy/Project_Osono/blob/master/docs/Osonoview.png)
+![Wireframe Instructions](https://github.com/SSJ6Porfy/Project_Osono/blob/master/docs/Osonoview%20Task%20Edit.png)
 ![Wireframe Instructions](https://github.com/SSJ6Porfy/Project_Osono/blob/master/docs/Osonoview%20Create%20Team.png)
 
 ## Product Design
@@ -45,6 +46,9 @@ for the database.
 
 ### Frontend
 
+* React/Redux
+  * Used react components with Redux predictable state container.
+
 * npm is used manage all frontend dependencies.
   * babel-core
   * babel-loader
@@ -61,21 +65,9 @@ for the database.
   * redux-thunk
   * webpack
 
+##ToDos
 
-* Ruby version
+* Implement restrictions where only project and team leads can edit
+the respective team or project.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Implement team search for users to search teams to join
