@@ -46,20 +46,20 @@ for the database.
 ### Frontend
 
 * npm is used manage all frontend dependencies.
-  ** babel-core
-  ** babel-loader
-  ** babel-preset-es2015
-  ** babel-preset-react
-  ** lodash
-  ** react
-  ** react-dom
-  ** react-modal
-  ** react-redux
-  ** react-router-dom
-  ** redux
-  ** redux-logger
-  ** redux-thunk
-  ** webpack
+  * babel-core
+  * babel-loader
+  * babel-preset-es2015
+  * babel-preset-react
+  * lodash
+  * react
+  * react-dom
+  * react-modal
+  * react-redux
+  * react-router-dom
+  * redux
+  * redux-logger
+  * redux-thunk
+  * webpack
 
 
 * Ruby version
