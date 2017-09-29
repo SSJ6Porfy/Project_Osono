@@ -15,4 +15,4 @@ export default combineReducers({
   teammates: UserReducer,
   team_members: TeamMemberReducer,
   searchedTeams: SearchedTeamReducer
-})
+});

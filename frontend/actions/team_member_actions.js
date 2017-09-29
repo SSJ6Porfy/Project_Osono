@@ -27,13 +27,13 @@ export const deleteTeamMember = (id) => dispatch => (
 export const receiveAllTeamMembers = (teamMembers) => ({
   type: RECEIVE_ALL_TEAM_MEMBERS,
   teamMembers
-})
+});
 export const receiveTeamMember = (teamMember) => ({
   type: RECEIVE_TEAM_MEMBER,
   teamMember
-})
+});
 
 export const removeTeamMember = (teamMember) => ({
   type: REMOVE_TEAM_MEMBER,
   teamMember
-})
+});

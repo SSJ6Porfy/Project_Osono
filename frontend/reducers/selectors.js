@@ -4,11 +4,11 @@ export const currentTasks = (currentUser, tasks, params) => {
 
 
   let usersTasks = taskArr.filter((task) => {
-    return currentUser.id === task.user_id
+    return currentUser.id === task.user_id;
   });
 
   let projectTasks = taskArr.filter((task) => {
-    return Number(params.projectId) === task.project_id
+    return Number(params.projectId) === task.project_id;
   });
 
   if (params.projectId) {
@@ -29,4 +29,4 @@ export const leadProjects = (allProjects, currentUser) => {
   });
 
   return projects;
-}
+};

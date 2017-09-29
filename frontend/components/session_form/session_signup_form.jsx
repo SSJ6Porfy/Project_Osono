@@ -87,8 +87,8 @@ class SessionSignupForm extends React.Component {
          </div>
        </form>
      </div>
-    )
+   );
   }
-};
+}
 
 export default SessionSignupForm;

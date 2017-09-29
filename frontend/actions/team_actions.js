@@ -1,5 +1,5 @@
 import * as TeamAPIUtil from "../util/team_api_util";
-import * as SearchTeamAPIUtil from "../util/search_team_api_util"
+import * as SearchTeamAPIUtil from "../util/search_team_api_util";
 
 export const RECEIVE_ALL_TEAMS = 'RECEIVE_ALL_TEAMS';
 export const RECEIVE_SEARCHED_TEAMS = 'RECEIVE_SEARCHED_TEAMS';
@@ -39,26 +39,26 @@ export const deleteTeam = (id) => dispatch => (
 export const fetchSearchedTeams = (search) => dispatch => (
   SearchTeamAPIUtil.fetchSearchedTeams(search)
     .then(res => dispatch(receiveSearchedTeams(res)))
-)
+);
 
 export const receiveSearchedTeams = (searchedTeams) => ({
   type: RECEIVE_SEARCHED_TEAMS,
   searchedTeams
-})
+});
 
 export const receiveAllTeams = (teams) => ({
   type: RECEIVE_ALL_TEAMS,
   teams
-})
+});
 export const receiveTeam = (team) => ({
   type: RECEIVE_TEAM,
   team
-})
+});
 
 export const removeTeam = (team) => ({
   type: REMOVE_TEAM,
   team
-})
+});
 
 export const receiveTeamErrors = (errors) => ({
   type: RECEIVE_TEAM_ERRORS,

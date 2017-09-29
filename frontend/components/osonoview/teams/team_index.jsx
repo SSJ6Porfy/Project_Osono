@@ -17,10 +17,10 @@ class TeamIndex extends React.Component {
       teams = Object.values(this.props.teams).map((team,idx) => {
                 return <TeamIndexListItem key={idx+"mat"}
                                           receiveTeam={this.props.receiveTeam}
-                                          team={team}/>
+                                          team={team}/>;
               });
     } else {
-      teams = " "
+      teams = " ";
     }
 
     return (
@@ -29,7 +29,7 @@ class TeamIndex extends React.Component {
           { teams }
         </ul>
       </div>
-    )
+    );
   }
 }
 

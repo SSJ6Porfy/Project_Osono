@@ -1,7 +1,7 @@
 import * as ProjectAPIUtil from "../util/project_api_util";
 
 export const RECEIVE_ALL_PROJECTS = 'RECEIVE_ALL_PROJECTS';
-export const RECEIVE_TEAM_PROJECTS = 'RECEIVE_TEAM_PROJECTS'
+export const RECEIVE_TEAM_PROJECTS = 'RECEIVE_TEAM_PROJECTS';
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 export const REMOVE_PROJECT = 'REMOVE_PROJECT';
 export const RECEIVE_PROJECT_ERRORS = "RECEIVE_PROJECT_ERRORS";
@@ -16,7 +16,7 @@ export const fetchTeamProjects = (team_id) => dispatch => {
   dispatch(startLoadingProjects());
   return ProjectAPIUtil.fetchProjects(team_id)
     .then(res => (dispatch(receiveTeamProjects(res))
-  ), err => (dispatch(receiveProjectErrors(err.responseJSON))))
+  ), err => (dispatch(receiveProjectErrors(err.responseJSON))));
 };
 
 export const fetchProject = (id) => dispatch => (
@@ -43,25 +43,25 @@ export const deleteProject = (id) => dispatch => (
 
 export const startLoadingProjects = () => ({
   type: START_LOADING_PROJECTS
-})
+});
 
 export const receiveAllProjects = (projects) => ({
   type: RECEIVE_ALL_PROJECTS,
   projects
-})
+});
 export const receiveTeamProjects = (teamProjects) => ({
   type: RECEIVE_TEAM_PROJECTS,
   teamProjects
-})
+});
 export const receiveProject = (project) => ({
   type: RECEIVE_PROJECT,
   project
-})
+});
 
 export const removeProject = (project) => ({
   type: REMOVE_PROJECT,
   project
-})
+});
 
 export const receiveProjectErrors = (errors) => ({
   type: RECEIVE_PROJECT_ERRORS,

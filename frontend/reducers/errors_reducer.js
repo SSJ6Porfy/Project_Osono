@@ -5,4 +5,4 @@ import TaskErrorsReducer from "./task_errors_reducer";
 export default combineReducers({
   session: SessionErrorReducer,
   tasks: TaskErrorsReducer
-})
+});

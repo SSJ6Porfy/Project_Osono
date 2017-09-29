@@ -36,16 +36,16 @@ export const deleteTask = (id) => dispatch => (
 export const receiveAllTasks = (tasks) => ({
   type: RECEIVE_ALL_TASKS,
   tasks
-})
+});
 export const receiveTask = (task) => ({
   type: RECEIVE_TASK,
   task
-})
+});
 
 export const removeTask = (task) => ({
   type: REMOVE_TASK,
   task
-})
+});
 
 export const receiveTaskErrors = (errors) => ({
   type: RECEIVE_TASK_ERRORS,

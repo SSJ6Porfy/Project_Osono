@@ -2,8 +2,8 @@ import React from "react";
 
 class UserProfile extends React.Component {
   constructor(props) {
-    super(props)
-    this.state = this.props.currentUser
+    super(props);
+    this.state = this.props.currentUser;
     this.renderErrors = this.renderErrors.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -18,7 +18,7 @@ class UserProfile extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     console.log(this.props);
-    this.props.updateUser(this.state).then(() => this.props.closeModal())
+    this.props.updateUser(this.state).then(() => this.props.closeModal());
   }
 
   renderErrors() {
@@ -72,7 +72,7 @@ class UserProfile extends React.Component {
            </div>
          </form>
        </div>
-    )
+    );
   }
 }
 

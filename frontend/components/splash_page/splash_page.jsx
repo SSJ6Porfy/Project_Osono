@@ -8,11 +8,11 @@ ReactModal.defaultStyles.overlay.backgroundColor = 'rgba(128,128,128,0.75)';
 
 class SplashPage extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       loginModalIsOpen: false,
       signUpModalIsOpen: false
-    }
+    };
     this.openLoginModal = this.openLoginModal.bind(this);
     this.afterOpenLoginModal = this.afterOpenLoginModal.bind(this);
     this.closeLoginModal = this.closeLoginModal.bind(this);
@@ -99,7 +99,7 @@ class SplashPage extends React.Component {
     </ReactModal>
 
       </div>
-    )
+    );
   }
 }
 

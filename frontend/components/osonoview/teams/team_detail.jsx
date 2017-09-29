@@ -22,23 +22,23 @@ class TeamDetail extends React.Component {
 
   update(field) {
     return (e) => {
-      this.setState({[field]: e.target.value})
-    }
+      this.setState({[field]: e.target.value});
+    };
   }
 
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.team_mission === "") {
-      this.state.team_mission = " "
+      this.state.team_mission = " ";
     }
     this.props.updateTeam(this.state)
       .then(() => this.props.history.push(`/osonoview`));
   }
 
   handleClick(e) {
-    e.preventDefault()
+    e.preventDefault();
     this.props.deleteTeam(this.props.team.id)
-      .then(() => this.props.history.push(`/osonoview`))
+      .then(() => this.props.history.push(`/osonoview`));
   }
 
   render() {
@@ -88,7 +88,7 @@ class TeamDetail extends React.Component {
 
         </div>
       </div>
-    )
+    );
   }
 }
 

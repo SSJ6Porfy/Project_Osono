@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 class ProjectIndex extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   componentWillMount() {
@@ -12,7 +12,7 @@ class ProjectIndex extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if ( newProps.currentTeamId && this.props.currentTeamId !== newProps.currentTeamId) {
-      this.props.fetchTeamProjects(newProps.currentTeamId)
+      this.props.fetchTeamProjects(newProps.currentTeamId);
     }
   }
 
@@ -20,7 +20,7 @@ class ProjectIndex extends React.Component {
     let projects;
     if (Object.values(this.props.projects).length > 0) {
        projects = Object.values(this.props.projects).map((project,idx) => {
-                return <li key={idx+"mat"}><Link to={`/osonoview/projects/${project.id}`}>{project.name}</Link></li>
+                return <li key={idx+"mat"}><Link to={`/osonoview/projects/${project.id}`}>{project.name}</Link></li>;
               });
     }
     return ( this.props.loading ? (<div className="loader">Loading...</div>) : (
@@ -30,7 +30,7 @@ class ProjectIndex extends React.Component {
           </ul>
         </div>
       )
-    )
+    );
   }
 }
 

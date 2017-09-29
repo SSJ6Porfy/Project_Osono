@@ -21,7 +21,7 @@ const mapStateToProps = (state) => {
       projects: leadProjects(state.entities.projects, state.session.currentUser),
       currentTeamId: state.ui.currentTeamId,
       loading: state.entities.loading
-    }
+    };
   }
 };
 

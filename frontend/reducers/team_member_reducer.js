@@ -4,13 +4,13 @@ import { RECEIVE_ALL_TEAM_MEMBERS,
          REMOVE_TEAM_MEMBER } from "../actions/team_member_actions";
 import { LOGOUT } from '../actions/session_actions';
 
-const initialState = {}
+const initialState = {};
 
 const TeamMemberReducer = (state = initialState, action) => {
 
   Object.freeze(state);
   const newState = merge({}, state);
-  const blankState = {}
+  const blankState = {};
   switch (action.type) {
     case RECEIVE_ALL_TEAM_MEMBERS:
       return action.teamMembers;

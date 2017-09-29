@@ -2,7 +2,7 @@ import React from "react";
 
 class ProjectDetail extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   render() {
@@ -10,7 +10,7 @@ class ProjectDetail extends React.Component {
       <div>
         <h1>I'm project show</h1>
       </div>
-    )
+    );
   }
 }
 

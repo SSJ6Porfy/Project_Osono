@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import { Link } from "react-router-dom";
 import ReactModal from 'react-modal';
 import UserProfileContainer from './user_profile_container';
@@ -7,15 +7,15 @@ ReactModal.defaultStyles.overlay.backgroundColor = 'rgba(128,128,128,0.75)';
 
 class Navbar extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.handleLogout = this.handleLogout.bind(this);
     this.state = {
       modalIsOpen: false,
       search: ""
-    }
+    };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.handleChange = this.handleChange.bind(this)
+    this.handleChange = this.handleChange.bind(this);
   }
 
   openModal() {
@@ -29,12 +29,12 @@ class Navbar extends React.Component {
 
 
   handleLogout() {
-    this.props.logout().then(() => console.log("successful log out"))
+    this.props.logout().then(() => console.log("successful log out"));
   }
 
   handleChange(e) {
-    e.preventDefault()
-    this.props.fetchSearchedTeams(e.target.value).then(() => {})
+    e.preventDefault();
+    this.props.fetchSearchedTeams(e.target.value).then(() => {});
   }
 
   render() {
@@ -81,7 +81,7 @@ class Navbar extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
