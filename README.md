@@ -37,12 +37,12 @@ the core functionalities of Asana.
 ### Backend
 
 * Database
-  ** PostgreSQL, an object-relational database management system (ORDBMS) was used
+  * PostgreSQL, an object-relational database management system (ORDBMS) was used
 for the database.  
 * Heroku
-  ** The Application is hosted on Heroku
+  * The Application is hosted on Heroku
 * Dependencies
-  ** BCrypt for secure auth
+  * BCrypt for secure auth
 
 ### Frontend
 
