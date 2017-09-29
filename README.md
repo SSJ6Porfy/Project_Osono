@@ -19,7 +19,7 @@ complete or incomplete.
 * Users have a profile to manage their own information.
 
 ![Wireframe Instructions](https://github.com/SSJ6Porfy/Project_Osono/blob/master/docs/Osonoview.png)
-![Wireframe Instructions](https://github.com/SSJ6Porfy/Project_Osono/blob/master/docs/Osonoview Create Team.png)
+![Wireframe Instructions](https://github.com/SSJ6Porfy/Project_Osono/blob/master/docs/Osonoview%20Create%20Team.png)
 
 ## Product Design
 
