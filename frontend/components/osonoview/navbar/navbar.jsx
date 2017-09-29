@@ -10,10 +10,12 @@ class Navbar extends React.Component {
     super(props)
     this.handleLogout = this.handleLogout.bind(this);
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
+      search: ""
     }
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.handleChange = this.handleChange.bind(this)
   }
 
   openModal() {
@@ -28,6 +30,11 @@ class Navbar extends React.Component {
 
   handleLogout() {
     this.props.logout().then(() => console.log("successful log out"))
+  }
+
+  handleChange(e) {
+    e.preventDefault()
+    this.props.fetchSearchedTeams(e.target.value).then(() => {})
   }
 
   render() {
@@ -49,7 +56,9 @@ class Navbar extends React.Component {
                             13c0-4.963,4.037-9,9-9c4.963,0,9,4.037,9,9s-4.037,
                             9-9,9C8.037,22,4,17.963,4,13z"></path>
                  </svg>
-            <input type="text" placeholder="search"></input>
+            <input type="text"
+                   onChange={this.handleChange}
+                   placeholder="search"></input>
           </div>
         </div>
         <div className="mainNavbarRight">

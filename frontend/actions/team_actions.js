@@ -38,7 +38,7 @@ export const deleteTeam = (id) => dispatch => (
 
 export const fetchSearchedTeams = (search) => dispatch => (
   SearchTeamAPIUtil.fetchSearchedTeams(search)
-    .then(res => dispatch(receiveSearchedTeams()))
+    .then(res => dispatch(receiveSearchedTeams(res)))
 )
 
 export const receiveSearchedTeams = (searchedTeams) => ({

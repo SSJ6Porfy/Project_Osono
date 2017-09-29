@@ -4,11 +4,12 @@
 #
 #  id          :integer          not null, primary key
 #  user_id     :integer          not null
-#  project_id  :integer          not null
+#  project_id  :integer
 #  name        :string           not null
 #  description :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  complete?   :boolean          default(FALSE)
 #
 
 class Task < ApplicationRecord

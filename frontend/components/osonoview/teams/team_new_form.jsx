@@ -5,9 +5,9 @@ class TeamNewForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      "user_id": this.props.currentUserId,
-      "name": "",
-      "team_mission": ""
+      user_id: this.props.currentUserId,
+      name: "",
+      team_mission: ""
     }
     this.renderErrors = this.renderErrors.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)

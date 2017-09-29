@@ -18,8 +18,8 @@ User.create!(id: 3, username: "adrianJ", password: "pass1234", email: "adrianJ@a
 User.create!(id: 4, username: "mike", password: "admin123", email: "mike@mike.com")
 User.create!(id: 5, username: "adrianR", password: "acbd1234", email: "adrianR@adrianR.com")
 
-Team.create!(id: 1, user_id: 1, name: "Cohort X Upstairs", department: "App Academy")
-Team.create!(id: 2, user_id: 5, name: "Cohort X Downstairs", department: "AA")
+Team.create!(id: 1, user_id: 1, name: "Cohort X Upstairs", team_mission: "App Academy")
+Team.create!(id: 2, user_id: 5, name: "Cohort X Downstairs", team_mission: "AA")
 
 Project.create!(id: 1, project_leader_id: 2, team_id: 1, name: "Final Project")
 Project.create!(id: 2, project_leader_id: 4, team_id: 2, name: "Javascript Project")
