@@ -13,9 +13,11 @@ class Api::TeamsController < ApplicationController
   end
 
   def search
-    query = params[:search]
+    if params[:search]
+      query = params[:search]
       @teams = Team.where('name LIKE ?', "%#{query}%")
       render "api/teams/search"
+    end
   end
 
   def index

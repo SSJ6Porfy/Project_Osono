@@ -1,4 +1,4 @@
-export const fetchTeams = (name) => {
+export const fetchSearchedTeams = (name) => {
   let team_query = name ? `${name}` : "";
   return $.ajax({
     method: 'GET',

@@ -1,6 +1,8 @@
 import * as TeamAPIUtil from "../util/team_api_util";
+import * as SearchTeamAPIUtil from "../util/search_team_api_util"
 
 export const RECEIVE_ALL_TEAMS = 'RECEIVE_ALL_TEAMS';
+export const SEARCHED_TEAMS = 'SEARCHED_TEAMS';
 export const RECEIVE_TEAM = 'RECEIVE_TEAM';
 export const REMOVE_TEAM = 'REMOVE_TEAM';
 export const RECEIVE_TEAM_ERRORS = "RECEIVE_TEAM_ERRORS";
@@ -34,6 +36,15 @@ export const deleteTeam = (id) => dispatch => (
   ), err => (dispatch(receiveTeamErrors(err.responseJSON))))
 );
 
+export const fetchSearchedTeams = (search) => dispatch => (
+  SearchTeamAPIUtil.fetchSearchedTeams(search)
+    .then(res => dispatch(receiveSearchedTeams()))
+)
+
+export const receiveSearchedTeams = (searchedTeams) => ({
+  type: SEARCHED_TEAMS,
+  searchedTeams
+})
 
 export const receiveAllTeams = (teams) => ({
   type: RECEIVE_ALL_TEAMS,
