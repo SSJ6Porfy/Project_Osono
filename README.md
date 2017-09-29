@@ -7,7 +7,7 @@ management and increased productivity.
 
 Osono is personal project by Porfirio Matias.
 
-![Wireframe Instructions](docs/OsonoSignUp.png)
+![Wireframe Instructions](https://github.com/SSJ6Porfy/Project_Osono/blob/master/docs/OsonoSignup.png)
 
 Things you may want to cover:
 
