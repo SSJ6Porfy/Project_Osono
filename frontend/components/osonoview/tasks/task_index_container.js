@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
     tasks: currentTasks(state.session.currentUser, state.entities.tasks, ownProps.match.params),
     errors: state.errors.tasks,
     currentUser: state.session.currentUser
-  }
+  };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

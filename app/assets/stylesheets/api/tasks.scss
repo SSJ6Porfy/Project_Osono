@@ -127,9 +127,17 @@
 }
 
 .CheckIcon {
-  border: 1px solid #d5dce0;
+  border: 1px solid #ff0000;
   border-radius: 50%;
-  fill: #d5dce0;
+  fill: #ff0000;
+  padding: 3px;
+  transition: bow-shadow 1.0s ease;
+}
+
+.CheckIcon-complete {
+  border: 1px solid #62f6db;
+  fill: #62f6db;
+  border-radius: 50%;
   padding: 3px;
   transition: bow-shadow 1.0s ease;
 }

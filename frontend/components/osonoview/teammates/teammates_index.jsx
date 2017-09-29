@@ -2,7 +2,7 @@ import React from 'react';
 
 class TeammatesIndex extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -11,31 +11,31 @@ class TeammatesIndex extends React.Component {
   }
 
   handleClick(id) {
-    this.props.deleteTeamMember(id).then(() => console.log("it worked"))
+    this.props.deleteTeamMember(id).then(() => {});
   }
 
   render() {
     let teamMembers = this.props.teammates || {};
 
     let memberList = Object.values(teamMembers).map((teammate, idx) => {
-      return (<li>{teammate.username}</li>)
-    })
+      return (<li>{teammate.username}</li>);
+    });
 
     if (this.props.team) {
       memberList = this.props.team.team_members.map(({ id }) => {
         return <li><span>{ teamMembers[id].username }</span>
       <button className="remove-teammate-btn"
               onClick={() => this.handleClick(id)}>Remove from Team</button>
-               </li>
-      })
+          </li>;
+      });
     }
 
     return (
       <ul>
         { memberList }
       </ul>
-    )
+    );
   }
-};
+}
 
 export default TeammatesIndex;

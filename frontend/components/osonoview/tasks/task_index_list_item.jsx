@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 class TaskIndexListItem extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = this.props.task;
     this.removeTask = this.removeTask.bind(this);
     this.toggleStatus = this.toggleStatus.bind(this);
@@ -19,33 +19,48 @@ class TaskIndexListItem extends React.Component {
 
   update(field) {
     return (e) => {
-      this.setState({[field]: e.target.value})
-    }
+      this.setState({[field]: e.target.value});
+    };
   }
 
   removeTask(e) {
     e.preventDefault();
     if (this.props.match.params.projectId) {
-      let projectId = this.props.match.params.projectId
+      let projectId = this.props.match.params.projectId;
       this.props.deleteTask(this.state.id)
         .then(() => this.props.history.push(`/osonoview/projects/${projectId}`));
     } else {
       this.props.deleteTask(this.state.id)
-        .then(() => this.props.history.push("/osonoview"))
+        .then(() => this.props.history.push("/osonoview"));
     }
   }
 
 
   toggleStatus(e) {
     e.preventDefault();
-    this.state["complete?"] = true;
+
+    if (this.state["complete?"] === false) {
+      this.state["complete?"] = true;
+    } else {
+      this.state["complete?"] = false;
+    }
+
+    // if (this.state["complete?"]) {
+    //   e.currentTarget.classList.remove("Icon");
+    //   e.currentTarget.classList.add("CheckIcon-complete");
+    //
+    // } else {
+    //   e.currentTarget.classList.remove("CheckIcon-complete");
+    //   e.currentTarget.classList.add("CheckIcon");
+    // }
+
     if (this.props.match.params.projectId) {
-      let projectId = this.props.match.params.projectId
+      let projectId = this.props.match.params.projectId;
       this.props.updateTask(this.state)
         .then(() => this.props.history.push(`/osonoview/projects/${projectId}`));
     } else {
       this.props.updateTask(this.state)
-        .then(() => this.props.history.push("/osonoview"))
+        .then(() => this.props.history.push("/osonoview"));
     }
   }
 
@@ -53,12 +68,12 @@ class TaskIndexListItem extends React.Component {
     e.preventDefault();
 
     if (this.props.match.params.projectId) {
-      let projectId = this.props.match.params.projectId
+      let projectId = this.props.match.params.projectId;
       this.props.updateTask(this.state)
         .then(() => {});
     } else {
       this.props.updateTask(this.state)
-        .then(() => { })
+        .then(() => { });
     }
   }
 
@@ -74,7 +89,8 @@ class TaskIndexListItem extends React.Component {
             <div className="task-status-checkbox-container" onClick={this.toggleStatus}>
               <svg className="Icon CheckIcon"
                    viewBox="0 0 32 32"
-                   height="12" width="12">
+                   height="12" width="12"
+                   >
                 <polygon
                   points="27.672,4.786 10.901,21.557 4.328,14.984 1.5,17.812 10.901,27.214 30.5,7.615">
                 </polygon>

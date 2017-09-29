@@ -3,7 +3,7 @@ import TaskIndexListItem from "./task_index_list_item";
 
 class TaskIndex extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.newTask = this.newTask.bind(this);
   }
 
@@ -24,7 +24,7 @@ class TaskIndex extends React.Component {
                   "description": " ",
                   "complete?": false
                 };
-    this.props.createTask(task).then(() => console.log("new task!"))
+    this.props.createTask(task).then(() => console.log("new task!"));
   }
 
 
@@ -36,8 +36,8 @@ class TaskIndex extends React.Component {
                                   history={this.props.history}
                                   match={this.props.match}
                                   deleteTask={this.props.deleteTask}
-                                  updateTask={this.props.updateTask}/> )
-    })
+                                  updateTask={this.props.updateTask}/> );
+    });
     return (
       <div className="task-index-container">
         <div className="task-index-header-container">
@@ -47,7 +47,7 @@ class TaskIndex extends React.Component {
           { result }
         </ul>
       </div>
-    )
+    );
   }
 }
 

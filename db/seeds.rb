@@ -20,7 +20,7 @@ user5 = User.create!(username: "AdrianR", password: "acbd1234", email: "adrianR@
 user6 = User.create!(username: "Alice", password: "acbd1234", email: "alice@aliceCo.com")
 user7 = User.create!(username: "Sarah", password: "acbd1234", email: "sarah@sarahCompany.com")
 
-team1 = Team.create!(user_id: user1.id, name: "Advertsing", team_mission: "Increase visibility")
+team1 = Team.create!(user_id: user1.id, name: "Advertising", team_mission: "Increase visibility")
 team2 = Team.create!(user_id: user5.id, name: "Engineering", team_mission: "Launch Products")
 team3 = Team.create!(user_id: user2.id, name: "Accounting", team_mission: "Make the books")
 team4 = Team.create!(user_id: user4.id, name: "Sales", team_mission: "Increase sales")

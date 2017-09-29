@@ -1,6 +1,6 @@
 # Osono
 
-https://osono.herokuapp.com is a web application for project management
+[Osono](https://osono.herokuapp.com) is a web application for project management
 inspired by Asana. Osono allows users to create teams, projects and
 tasks, allowing for users and organizations to have centralized project
 management and increased productivity.
