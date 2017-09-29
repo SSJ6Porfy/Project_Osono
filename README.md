@@ -26,6 +26,10 @@ complete or incomplete.
 Osono was designed and built in 10 days with the goal of replicating
 the core functionalities of Asana.
 
+[Component Hierarchy](https://github.com/SSJ6Porfy/Project_Osono/wiki/Component-Hierarchy)
+
+[Database Schema](https://github.com/SSJ6Porfy/Project_Osono/wiki/Database-Schema)
+
 * Ruby version
 
 * System dependencies
