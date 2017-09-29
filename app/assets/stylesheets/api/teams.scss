@@ -80,8 +80,23 @@
   border-radius: 3px;
   cursor: pointer;
   font-size: 13px;
-  color: white;
   margin-top: 10px;
+  transition: background-color 1s ease-out;
+}
+
+.team-detail-delete-btn {
+  background: white;
+  border: 1px solid red;
+  color: red;
+  height: 30px;
+  width: 120px;
+  line-height: 30px;
+  padding: 0 9px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+  margin-top: 10px;
+  margin-left: 15px;
   transition: background-color 1s ease-out;
 }
 
@@ -164,9 +179,14 @@
   border: 1px solid #7a6ff0
 }
 
-.remove-teammate-btn:hover {
+.remove-teammate-btn:hover, .team-detail-delete-btn:hover {
   background: rgb(255, 206, 206);
   color: red;
   border: 1px solid red;
   font-weight: bold;
+}
+
+.team-detail-btn-container {
+  display: flex;
+  flex-direction: row;
 }

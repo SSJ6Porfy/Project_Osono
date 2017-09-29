@@ -7,6 +7,7 @@ class TeamDetail extends React.Component {
     super(props)
     this.state = this.props.team || { name: "", team_mission: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -31,7 +32,13 @@ class TeamDetail extends React.Component {
       this.state.team_mission = " "
     }
     this.props.updateTeam(this.state)
-      .then(() => this.props.history.push(`/osonoview/teams/${this.props.team.id}`));
+      .then(() => this.props.history.push(`/osonoview`));
+  }
+
+  handleClick(e) {
+    e.preventDefault()
+    this.props.deleteTeam(this.props.team.id)
+      .then(() => this.props.history.push(`/osonoview`))
   }
 
   render() {
@@ -61,8 +68,12 @@ class TeamDetail extends React.Component {
               <div className="team-detail-teammates-index">
                 <TeammatesIndexContainer team={this.props.team}/>
               </div>
+            <div className="team-detail-btn-container">
+              <input type="submit" value="Update Team"/>
+              <button className="team-detail-delete-btn"
+                onClick={this.handleClick}>Delete Team</button>
+            </div>
 
-            <input type="submit" value="Update Team"/>
           </form>
         </div>
 
