@@ -9,6 +9,7 @@ class TaskIndexListItem extends React.Component {
     this.removeTask = this.removeTask.bind(this);
     this.toggleStatus = this.toggleStatus.bind(this);
     this.saveChanges = this.saveChanges.bind(this);
+    this.colorCheckbox = this.colorCheckbox.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
@@ -35,6 +36,16 @@ class TaskIndexListItem extends React.Component {
     }
   }
 
+  colorCheckbox(e) {
+    e.preventDefault();
+    if (this.state["complete?"]) {
+      e.currentTarget.classList.remove("CheckIcon");
+      e.currentTarget.classList.add("CheckIcon-complete");
+    } else {
+      e.currentTarget.classList.remove("CheckIcon-complete");
+      e.currentTarget.classList.add("CheckIcon");
+    }
+  }
 
   toggleStatus(e) {
     e.preventDefault();
@@ -44,15 +55,6 @@ class TaskIndexListItem extends React.Component {
     } else {
       this.state["complete?"] = false;
     }
-
-    // if (this.state["complete?"]) {
-    //   e.currentTarget.classList.remove("Icon");
-    //   e.currentTarget.classList.add("CheckIcon-complete");
-    //
-    // } else {
-    //   e.currentTarget.classList.remove("CheckIcon-complete");
-    //   e.currentTarget.classList.add("CheckIcon");
-    // }
 
     if (this.props.match.params.projectId) {
       let projectId = this.props.match.params.projectId;
@@ -90,6 +92,7 @@ class TaskIndexListItem extends React.Component {
               <svg className="Icon CheckIcon"
                    viewBox="0 0 32 32"
                    height="12" width="12"
+                   onClick={this.colorCheckbox}
                    >
                 <polygon
                   points="27.672,4.786 10.901,21.557 4.328,14.984 1.5,17.812 10.901,27.214 30.5,7.615">
