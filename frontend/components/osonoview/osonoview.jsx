@@ -19,7 +19,6 @@ class Osonoview extends React.Component {
         <div className="osonoview-main-container">
           <NavbarContainer />
         <div className="team-name-container">
-          <h1>All My Tasks</h1>
         </div>
         <div className="main-console-container">
         <Switch>
