@@ -16,7 +16,7 @@ class TeamDetail extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (this.props.match.params.teamId !== newProps.match.params.teamId) {
-      this.props.fetchTeam(newProps.match.params.teamId).then((res) => this.setState(res))
+      this.props.fetchTeam(newProps.match.params.teamId).then((res) => this.setState(res));
     }
   }
 
