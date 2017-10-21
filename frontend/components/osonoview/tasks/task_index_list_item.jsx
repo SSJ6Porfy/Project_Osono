@@ -84,12 +84,13 @@ class TaskIndexListItem extends React.Component {
       `/osonoview/projects/${this.props.match.params.projectId}/tasks/${this.props.task.id}`
     ) : (`/osonoview/tasks/${this.props.task.id}`);
 
+    let iconClass = this.state["complete?"] ? "Icon CheckIcon-complete" : "Icon CheckIcon";
     return (
       <div className="task-row">
         <div className="item-row">
           <li className="item-row-container">
             <div className="task-status-checkbox-container" onClick={this.toggleStatus}>
-              <svg className="Icon CheckIcon"
+              <svg className={iconClass}
                    viewBox="0 0 32 32"
                    height="12" width="12"
                    onClick={this.colorCheckbox}
@@ -109,8 +110,7 @@ class TaskIndexListItem extends React.Component {
           <button className="delete-task-btn" onClick={this.removeTask}>X</button>
         </div>
       </div>
-
-    )
+    );
   }
 }
 

@@ -70,9 +70,11 @@ class TaskDetail extends React.Component {
                         value={this.state.description}/>
             </div>
           </form>
+          <div className="timestamp-container">
+          </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
