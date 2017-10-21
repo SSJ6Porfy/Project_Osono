@@ -42,7 +42,22 @@ class Navbar extends React.Component {
     this.props.fetchProjects().then((res) => this.props.history.push("/osonoview"));
   }
 
+  displaySearch(e) {
+    e.preventDefault();
+    const el = document.getElementById("search-index-container");
+
+    el.style.display = "flex";
+  }
+
+  closeSearch(e) {
+    e.preventDefault();
+    const el = document.getElementById("search-index-container");
+
+    el.style.display = "none";
+  }
+
   render() {
+    let search = (<div id="search-index-container">This is the search div</div>);
     return (
       <div className="mainNavbarContainer">
         <div className="mainNavbarLeft">
@@ -54,18 +69,21 @@ class Navbar extends React.Component {
           <div className="search-container">
             <svg className="Icon MagnifyerIcon TopbarSearch-icon"
                  viewBox="0 0 32 32">
-                   <path d="M29.707,28.293l-8.256-8.256C23.042,
-                            18.13,24,15.677,24,13c0-6.075-4.925-11-11-11S2
-                            ,6.925,2,13s4.925,11,11,11c2.677,0,5.13-0.958
-                            ,7.037-2.549l8.256,8.256L29.707,28.293z M4,
-                            13c0-4.963,4.037-9,9-9c4.963,0,9,4.037,9,9s-4.037,
-                            9-9,9C8.037,22,4,17.963,4,13z"></path>
-                 </svg>
+                  <path d="M29.707,28.293l-8.256-8.256C23.042,
+                          18.13,24,15.677,24,13c0-6.075-4.925-11-11-11S2
+                          ,6.925,2,13s4.925,11,11,11c2.677,0,5.13-0.958
+                          ,7.037-2.549l8.256,8.256L29.707,28.293z M4,
+                          13c0-4.963,4.037-9,9-9c4.963,0,9,4.037,9,9s-4.037,
+                          9-9,9C8.037,22,4,17.963,4,13z"></path>
+            </svg>
             <input type="text"
                    onChange={this.handleChange}
+                   onFocus={this.displaySearch}
+                   onBlur={this.closeSearch}
                    placeholder="search"></input>
           </div>
         </div>
+        {search}
         <div className="mainNavbarRight">
           <div className="logoutBtnContainer">
             <button onClick={this.handleLogout}>Logout</button>
