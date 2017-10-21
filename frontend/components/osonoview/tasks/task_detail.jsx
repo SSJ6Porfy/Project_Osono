@@ -5,6 +5,8 @@ class TaskDetail extends React.Component {
     super(props);
     this.state = this.props.task || { name: " ", description: " " };
     this.closeTaskDetail = this.closeTaskDetail.bind(this);
+    this.toggleStatus = this.toggleStatus.bind(this);
+    this.colorCheckbox = this.colorCheckbox.bind(this);
   }
 
   componentDidMount() {
@@ -43,8 +45,32 @@ class TaskDetail extends React.Component {
     }
   }
 
+  colorCheckbox(e) {
+    e.preventDefault();
+    if (this.state["complete?"]) {
+      e.currentTarget.classList.remove("CheckIcon");
+      e.currentTarget.classList.add("CheckIcon-complete");
+    } else {
+      e.currentTarget.classList.remove("CheckIcon-complete");
+      e.currentTarget.classList.add("CheckIcon");
+    }
+  }
+
+  toggleStatus(e) {
+    e.preventDefault();
+
+    if (this.state["complete?"] === false) {
+      this.state["complete?"] = true;
+    } else {
+      this.state["complete?"] = false;
+    }
+
+    this.props.updateTask(this.state);
+  }
+
 
   render() {
+    let iconClass = this.state["complete?"] ? "Icon CheckIcon-complete" : "Icon CheckIcon";
     return (
       <div className="task-detail-container">
         <div className="task-detail">
@@ -58,13 +84,23 @@ class TaskDetail extends React.Component {
               <label>Task Name
                 <br/>
               </label>
-              <input className="task-detail-input"
-                     onChange={this.update("name")}
-                     type="text"
-                     value={this.state.name}></input>
-                   <label>Task Description
-               <br/>
-             </label>
+              <div className="task-detail-title-container">
+                <svg className={iconClass}
+                  viewBox="0 0 32 32"
+                  height="22" width="22"
+                  onClick={this.toggleStatus}>
+                <polygon
+                  points="27.672,4.786 10.901,21.557 4.328,14.984 1.5,17.812 10.901,27.214 30.5,7.615">
+                </polygon>
+                </svg>
+                <input className="task-detail-input"
+                    onChange={this.update("name")}
+                    type="text"
+                    value={this.state.name}></input>
+              </div>
+              <label>Task Description
+                <br/>
+              </label>
               <textarea className="task-detail-description-text"
                         onChange={this.update("description")}
                         value={this.state.description}/>

@@ -56,14 +56,7 @@ class TaskIndexListItem extends React.Component {
       this.state["complete?"] = false;
     }
 
-    if (this.props.match.params.projectId) {
-      let projectId = this.props.match.params.projectId;
-      this.props.updateTask(this.state)
-        .then(() => this.props.history.push(`/osonoview/projects/${projectId}`));
-    } else {
-      this.props.updateTask(this.state)
-        .then(() => this.props.history.push("/osonoview"));
-    }
+    this.props.updateTask(this.state);
   }
 
   saveChanges(e) {

@@ -23,6 +23,12 @@
   color: rgb(157, 167, 176);
 }
 
+.mainNavbarLeft span {
+  text-decoration: none;
+  color: rgb(157, 167, 176);
+  cursor: pointer;
+}
+
 .mainNavbarLeft button {
   background: linear-gradient(to top right, #ff5263 0%, #ff7381 35%, #fcbd01 100%);
   width: 24px;

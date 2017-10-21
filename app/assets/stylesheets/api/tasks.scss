@@ -277,23 +277,31 @@
 }
 
 .task-detail-input {
-  width: 98%;
+  width: 87%;
   font-size: 20px;
-  margin-bottom: 15px;
   border: none;
   padding-left: 10px;
   line-height: 30px;
+  margin-left: 5px;
 }
 
 .task-detail-description-text {
   border: none;
   line-height: 30px;
   font-size: 20px;
-  height: 200px;
+  height: 150px;
   max-width: 100%;
+  resize: none;
 }
 
 .task-detail-input:hover, .task-detail-description-text:hover {
   border-radius: 3px;
   box-shadow: 0 0 0 1px rgb(230, 231, 232);
+}
+
+.task-detail-title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
 }
