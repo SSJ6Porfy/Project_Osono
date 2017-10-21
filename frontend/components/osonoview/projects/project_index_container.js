@@ -12,7 +12,7 @@ import { leadProjects } from "../../../reducers/selectors";
 const mapStateToProps = (state) => {
     return {
       projects: state.entities.projects,
-      currentTeamId: state.ui.currentTeamId,
+      currentTeam: state.ui.currentTeam,
       loading: state.entities.loading
     };
 };

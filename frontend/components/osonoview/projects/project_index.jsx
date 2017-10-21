@@ -7,16 +7,19 @@ class ProjectIndex extends React.Component {
   }
 
   componentWillMount() {
-    if (this.props.currentTeamId) {
-      this.props.fetchTeamProjects(this.props.currentTeamId);
+    if (this.props.currentTeam) {
+      console.log(this.props);
+      this.props.fetchTeamProjects(this.props.currentTeam.id);
     } else {
       this.props.fetchProjects();
     }
   }
 
   componentWillReceiveProps(newProps) {
-    if (newProps.currentTeamId && this.props.currentTeamId !== newProps.currentTeamId) {
-      this.props.fetchTeamProjects(newProps.currentTeamId);
+    console.log(newProps);
+    if (newProps.currentTeam && this.props.currentTeam &&
+       this.props.currentTeam.id !== newProps.currentTeam.id) {
+      this.props.fetchTeamProjects(newProps.currentTeam.id);
     }
   }
 
