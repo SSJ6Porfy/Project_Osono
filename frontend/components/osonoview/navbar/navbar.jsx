@@ -16,6 +16,7 @@ class Navbar extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.reloadProjects = this.reloadProjects.bind(this);
   }
 
   openModal() {
@@ -37,11 +38,15 @@ class Navbar extends React.Component {
     this.props.fetchSearchedTeams(e.target.value).then(() => {});
   }
 
+  reloadProjects(e) {
+    this.props.fetchProjects().then((res) => this.props.history.push("/osonoview"));
+  }
+
   render() {
     return (
       <div className="mainNavbarContainer">
         <div className="mainNavbarLeft">
-          <Link to="/osonoview">My Tasks</Link>
+          <span onClick={this.reloadProjects}>My Tasks</span>
           <Link to="/osonoview">Dashboard</Link>
           <button>+</button>
         </div>

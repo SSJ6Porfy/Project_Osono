@@ -10,19 +10,11 @@ import { leadProjects } from "../../../reducers/selectors";
 
 
 const mapStateToProps = (state) => {
-  if (state.ui.currentTeamId) {
     return {
       projects: state.entities.projects,
       currentTeamId: state.ui.currentTeamId,
       loading: state.entities.loading
     };
-  } else {
-    return {
-      projects: leadProjects(state.entities.projects, state.session.currentUser),
-      currentTeamId: state.ui.currentTeamId,
-      loading: state.entities.loading
-    };
-  }
 };
 
 const mapDispatchToProps = (dispatch) => ({
