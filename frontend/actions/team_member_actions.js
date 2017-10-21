@@ -5,8 +5,8 @@ export const RECEIVE_TEAM_MEMBER = 'RECEIVE_TEAM_MEMBER';
 export const REMOVE_TEAM_MEMBER = 'REMOVE_TEAM_MEMBER';
 
 
-export const fetchTeamMembers = () => dispatch => (
-  TeamMemberAPIUtil.fetchTeamMembers()
+export const fetchTeamMembers = (teamId) => dispatch => (
+  TeamMemberAPIUtil.fetchTeamMembers(teamId)
     .then(res => dispatch(receiveAllTeamMembers(res)))
 );
 export const fetchTeamMember = (id) => dispatch => (

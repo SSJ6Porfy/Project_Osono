@@ -60,7 +60,7 @@
 // }
 //
 .task-row:hover {
-  box-shadow: 2px 2px 2px 1px #888888;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,0.15);
   z-index: 1000;
   transition: box-shadow 0.2s ease-in;
 }
@@ -105,7 +105,7 @@
 .task-item-name-editable {
   background: transparent;
   border-radius: 0;
-  height: 100%;
+  height: 20px;
   outline: 0;
   overflow: hidden;
   resize: none;
@@ -114,12 +114,16 @@
   border: none;
   font-family: sans-serif;
   font-size: 100%;
+  resize: none;
+  white-space: nowrap;
+  overflow-x: scroll;
 }
 
 .ask-item-name-editable-link {
   display: flex;
   width: 100%;
   text-decoration: none;
+
 }
 
 .task-status-checkbox-container {

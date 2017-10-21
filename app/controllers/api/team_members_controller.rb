@@ -1,7 +1,11 @@
 class Api::TeamMembersController < ApplicationController
 
   def index
-    @team_members = TeamMember.all
+    if params[:team_id]
+      @team_members = TeamMember.where(team_id: params[:team_id])
+    else
+      @team_members = TeamMember.all
+    end
   end
 
   def show

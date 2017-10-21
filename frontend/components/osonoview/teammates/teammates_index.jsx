@@ -10,8 +10,10 @@ class TeammatesIndex extends React.Component {
     this.props.fetchTeammates();
   }
 
-  handleClick(id) {
-    this.props.deleteTeamMember(id).then(() => {});
+  handleClick(e) {
+    e.preventDefault();
+    let id = e.currentTarget.id;
+    this.props.deleteTeamMember(id).then((res) => console.log(res));
   }
 
   render() {
@@ -24,8 +26,8 @@ class TeammatesIndex extends React.Component {
     if (this.props.team) {
       memberList = this.props.team.team_members.map(({ id }, idx) => {
         return <li key={idx+"tm"}><span>{ teamMembers[id].username }</span>
-      <button className="remove-teammate-btn"
-              onClick={() => this.handleClick(id)}>Remove from Team</button>
+      <button id={id} className="remove-teammate-btn"
+              onClick={this.handleClick}>Remove from Team</button>
           </li>;
       });
     }

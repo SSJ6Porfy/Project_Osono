@@ -1,10 +1,11 @@
 
-export const fetchTeamMembers = () => (
-  $.ajax({
+export const fetchTeamMembers = (teamId) => {
+  let teamQuery = teamId ? `?team_id=${teamId}` : "";
+  return $.ajax({
     method: 'GET',
-    url: '/api/team_members'
-  })
-);
+    url: `/api/team_members${teamQuery}`
+  });
+};
 
 export const fetchTeamMember = (id) => (
   $.ajax({

@@ -11,12 +11,19 @@ class TeamDetail extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchTeam(this.props.match.params.teamId).then((res) => this.setState(res));
+    let currentTeam = this.props.match.params.teamId;
+    this.props.fetchTeam(currentTeam)
+      .then((res) => this.setState(res))
+      .then(() => this.props.fetchTeamMembers(currentTeam));
   }
 
   componentWillReceiveProps(newProps) {
-    if (this.props.match.params.teamId !== newProps.match.params.teamId) {
-      this.props.fetchTeam(newProps.match.params.teamId).then((res) => this.setState(res));
+    let currentTeam = this.props.match.params.teamId;
+    let newTeam = newProps.match.params.teamId;
+    if (currentTeam !== newTeam ) {
+      this.props.fetchTeam(newTeam)
+        .then((res) => this.setState(res))
+        .then(() => this.props.fetchTeamMembers(currentTeam));
     }
   }
 
