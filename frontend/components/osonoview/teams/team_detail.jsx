@@ -20,10 +20,10 @@ class TeamDetail extends React.Component {
   componentWillReceiveProps(newProps) {
     let currentTeam = this.props.match.params.teamId;
     let newTeam = newProps.match.params.teamId;
-    if (currentTeam !== newTeam ) {
+    if (currentTeam !== newTeam) {
       this.props.fetchTeam(newTeam)
         .then((res) => this.setState(res))
-        .then(() => this.props.fetchTeamMembers(currentTeam));
+        .then(() => this.props.fetchTeamMembers(newTeam));
     }
   }
 

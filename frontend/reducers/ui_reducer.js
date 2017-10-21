@@ -10,8 +10,7 @@ const UIReducer = (state = initialState, action) => {
   const newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_TEAM:
-       newState.currentTeamId = action.team.id;
-      return newState;
+      return action.team;
     case RECEIVE_ALL_TASKS:
       newState.currentTeamId = null;
       return newState;
