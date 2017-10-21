@@ -13,8 +13,7 @@ class TeamDetail extends React.Component {
   componentDidMount() {
     let currentTeam = this.props.match.params.teamId;
     this.props.fetchTeam(currentTeam)
-      .then((res) => this.setState(res))
-      .then(() => this.props.fetchTeamMembers(currentTeam));
+      .then((res) => this.setState(res));
   }
 
   componentWillReceiveProps(newProps) {

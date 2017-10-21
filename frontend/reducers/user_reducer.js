@@ -5,7 +5,7 @@ import { LOGOUT } from '../actions/session_actions';
 
 const initialState = {
   teammates: {}
-}
+};
 
 const UserReducer = (state = initialState, action) => {
   Object.freeze(state);
@@ -17,6 +17,6 @@ const UserReducer = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
 
 export default UserReducer;

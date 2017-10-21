@@ -13,7 +13,10 @@ const TeamMemberReducer = (state = initialState, action) => {
   const blankState = {};
   switch (action.type) {
     case RECEIVE_ALL_TEAM_MEMBERS:
-      return action.teamMembers;
+      action.teamMembers.forEach((teamMember) => {
+        blankState[teamMember.id] = teamMember;
+      });
+      return blankState;
     case RECEIVE_TEAM_MEMBER:
       newState[action.teamMember.id] = action.teamMember;
       return newState;
