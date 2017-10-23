@@ -195,11 +195,36 @@
   border: 1px solid rgb(230, 231, 232);
   display: none;
   position: absolute;
+  flex-direction: column;
   top: 40px;
   left: 41%;
-  margin: auto;
-  height: 200px;
+  height: 205px;
   width: 500px;
   z-index: 1000;
   background: white;
+}
+
+.search-header-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: rgb(76, 169, 239);
+  height: 40px;
+  align-items: center;
+}
+
+.search-header-text {
+  color: white;
+  font-size: 24px;
+  font-family: "Nexa_Free_Light", sans-serif;
+}
+.searched-team-list-item {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  font-size: 16px;
+  border: 1px solid rgb(230, 231, 232);
+  font-family: "Nexa_Free_Light", sans-serif;
 }

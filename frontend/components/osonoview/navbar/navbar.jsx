@@ -11,7 +11,7 @@ class Navbar extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
     this.state = {
       modalIsOpen: false,
-      search: ""
+      search: []
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -35,11 +35,13 @@ class Navbar extends React.Component {
 
   handleChange(e) {
     e.preventDefault();
-    this.props.fetchSearchedTeams(e.target.value).then(() => {});
+    this.props.fetchSearchedTeams(e.target.value)
+      .then((res) => this.setState({"search": res.searchedTeams}));
   }
 
   reloadProjects(e) {
-    this.props.fetchProjects().then((res) => this.props.history.push("/osonoview"));
+    this.props.fetchProjects()
+      .then((res) => this.props.history.push("/osonoview"));
   }
 
   displaySearch(e) {
@@ -57,7 +59,18 @@ class Navbar extends React.Component {
   }
 
   render() {
-    let search = (<div id="search-index-container">This is the search div</div>);
+    let searchedTeams = this.state.search.map((team, idx) => {
+      return (<li key={team + idx}
+                  className="searched-team-list-item">
+                  <h3 className="searched-team-list-name">{team.name}</h3>
+                  </li>);
+    });
+    let search = (<div id="search-index-container">
+                    <div className="search-header-container">
+                      <h3 className="search-header-text">Search for Teams to Join!</h3>
+                    </div>
+                    {searchedTeams}
+                 </div>);
     return (
       <div className="mainNavbarContainer">
         <div className="mainNavbarLeft">
@@ -69,7 +82,7 @@ class Navbar extends React.Component {
           <div className="search-container">
             <svg className="Icon MagnifyerIcon TopbarSearch-icon"
                  viewBox="0 0 32 32">
-                  <path d="M29.707,28.293l-8.256-8.256C23.042,
+                 <path d="M29.707,28.293l-8.256-8.256C23.042,
                           18.13,24,15.677,24,13c0-6.075-4.925-11-11-11S2
                           ,6.925,2,13s4.925,11,11,11c2.677,0,5.13-0.958
                           ,7.037-2.549l8.256,8.256L29.707,28.293z M4,

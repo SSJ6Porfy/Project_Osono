@@ -19,7 +19,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   fetchProjects: () => dispatch(fetchProjects()),
-  fetchTeamProjects: (team_id) => dispatch(fetchTeamProjects(team_id)),
+  fetchTeamProjects: (teamId) => dispatch(fetchTeamProjects(teamId)),
   fetchProject: (id) => dispatch(fetchProject(id)),
   createProject: (project) => dispatch(createProject(project)),
   updateProject: (project) => dispatch(updateProject(project)),
