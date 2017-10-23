@@ -6,14 +6,15 @@ import { fetchProjects,
          createProject,
          updateProject,
          deleteProject } from "../../../actions/project_actions";
-import { leadProjects } from "../../../reducers/selectors";
+import { userProjects } from "../../../reducers/selectors";
 
 
 const mapStateToProps = (state) => {
     return {
       projects: state.entities.projects,
       currentTeam: state.ui.currentTeam,
-      loading: state.entities.loading
+      loading: state.entities.loading,
+      userProjects: userProjects(state.entities.projects,state.entities.teams)
     };
 };
 

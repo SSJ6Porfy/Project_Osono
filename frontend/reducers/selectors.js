@@ -19,11 +19,19 @@ export const currentTasks = (currentUser, tasks, params) => {
 };
 
 
-export const leadProjects = (allProjects, currentUser) => {
+export const userProjects = (allProjects, myTeams) => {
   let projects = [];
 
+  if (Object.values(myTeams).length === 0) {
+    myTeams = [];
+  }
+
+  let teamIds = Object.values(myTeams).map((team) => {
+    return team.id;
+  });
+
   Object.values(allProjects).forEach((project) => {
-    if (project.project_leader_id === Number(currentUser.id)) {
+    if (teamIds.includes(project.team_id)) {
       projects.push(project);
     }
   });
