@@ -17,17 +17,17 @@ class Navbar extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.reloadProjects = this.reloadProjects.bind(this);
+    this.handleTeam = this.handleTeam.bind(this);
+    this.displaySearch = this.displaySearch.bind(this);
   }
 
   openModal() {
     this.setState({modalIsOpen: true});
   }
 
-
   closeModal() {
     this.setState({modalIsOpen: false});
   }
-
 
   handleLogout() {
     this.props.logout().then(() => console.log("successful log out"));
@@ -48,22 +48,65 @@ class Navbar extends React.Component {
     e.preventDefault();
     const el = document.getElementById("search-index-container");
 
-    el.style.display = "flex";
+    const header = document.getElementById("search-header-container");
+    const search = document.getElementById("search-input");
+    $(document).click(function (e) {
+      if (e.target == search) {
+        el.style.display = "flex";
+      } else {
+        el.style.display = "none";
+      }
+    });
   }
 
-  closeSearch(e) {
-    e.preventDefault();
-    const el = document.getElementById("search-index-container");
-
-    el.style.display = "none";
+  handleTeam(team, e) {
+    if (e.currentTarget.innerText === "Leave Team") {
+      let deletedMembership;
+      team.team_members.forEach((teamMember) => {
+        if (teamMember.user_id === this.props.currentUser.id) {
+          deletedMembership = teamMember.id;
+        }
+      });
+      this.props.deleteTeamMember(deletedMembership)
+        .then(() => this.props.fetchTeams())
+        .then(() => this.props.fetchProjects())
+        .then(() => this.props.fetchTeammates())
+        .then(() => this.closeSearch());
+    } else {
+      let newTeamMember = { user_id: this.props.currentUser.id,
+                            team_id: team.id };
+      this.props.createTeamMember(newTeamMember)
+        .then(() => this.props.fetchTeams())
+        .then(() => this.props.fetchProjects())
+        .then(() => this.props.fetchTeammates())
+        .then(() => this.closeSearch());
+    }
   }
+
 
   render() {
     let searchedTeams = this.state.search.map((team, idx) => {
-      return (<li key={team + idx}
-                  className="searched-team-list-item">
-                  <h3 className="searched-team-list-name">{team.name}</h3>
-                  </li>);
+      let memberIds = Object.values(team.members).map(member =>{
+        return member.member_id;
+      });
+      let btnText = "Join!";
+      if (memberIds.includes(this.props.currentUser.id)) {
+        btnText = "Leave Team";
+      }
+
+      return (<div key={idx+team}
+                   className="searched-team-list-item"
+                   >
+                <div className="searched-team-list-item-inner">
+                  <li key={team + idx}>
+                    <h3 className="searched-team-list-name">{team.name}</h3>
+                  </li>
+                  <button className="join-status-btn"
+                          onClick={(e) => this.handleTeam(team, e)}
+                    >{btnText}</button>
+                </div>
+              </div>
+             );
     });
     let search = (<div id="search-index-container">
                     <div className="search-header-container">
@@ -89,10 +132,10 @@ class Navbar extends React.Component {
                           13c0-4.963,4.037-9,9-9c4.963,0,9,4.037,9,9s-4.037,
                           9-9,9C8.037,22,4,17.963,4,13z"></path>
             </svg>
-            <input type="text"
+            <input id="search-input"
+                   type="text"
                    onChange={this.handleChange}
                    onFocus={this.displaySearch}
-                   onBlur={this.closeSearch}
                    placeholder="search"></input>
           </div>
         </div>

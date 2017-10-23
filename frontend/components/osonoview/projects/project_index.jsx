@@ -15,7 +15,6 @@ class ProjectIndex extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    console.log(newProps);
     if (newProps.currentTeam && this.props.currentTeam &&
        this.props.currentTeam.id !== newProps.currentTeam.id) {
       this.props.fetchTeamProjects(newProps.currentTeam.id);

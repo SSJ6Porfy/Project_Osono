@@ -198,7 +198,7 @@
   flex-direction: column;
   top: 40px;
   left: 41%;
-  height: 205px;
+  height: 185px;
   width: 500px;
   z-index: 1000;
   background: white;
@@ -209,7 +209,7 @@
   justify-content: center;
   width: 100%;
   background: rgb(76, 169, 239);
-  height: 40px;
+  height: 45px;
   align-items: center;
 }
 
@@ -223,8 +223,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
+  height: 45px;
   font-size: 16px;
   border: 1px solid rgb(230, 231, 232);
   font-family: "Nexa_Free_Light", sans-serif;
+}
+
+.searched-team-list-item-inner {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.join-status-btn {
+  border: 2px solid #594fc7;
+  border-radius: 4px;
+  background: none;
+  padding: 5px 14px 5px 14px;
+  font-family: sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.join-status-btn:hover {
+  background: #594fc7;
+  color: white;
 }
