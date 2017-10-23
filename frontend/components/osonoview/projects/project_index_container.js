@@ -11,10 +11,9 @@ import { userProjects } from "../../../reducers/selectors";
 
 const mapStateToProps = (state) => {
     return {
-      projects: state.entities.projects,
+      projects: userProjects(state.entities.projects,state.entities.teams),
       currentTeam: state.ui.currentTeam,
       loading: state.entities.loading,
-      userProjects: userProjects(state.entities.projects,state.entities.teams)
     };
 };
 
