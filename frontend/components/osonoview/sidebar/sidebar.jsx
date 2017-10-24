@@ -8,11 +8,11 @@ import ReactModal from 'react-modal';
 
 class Sidebar extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       newTeamModalIsOpen: false,
       newProjectModalIsOpen: false
-    }
+    };
 
     this.openNewTeamModal = this.openNewTeamModal.bind(this);
     this.closeNewTeamModal = this.closeNewTeamModal.bind(this);

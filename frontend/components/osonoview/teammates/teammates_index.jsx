@@ -1,4 +1,5 @@
 import React from 'react';
+import randomColor from "randomcolor";
 
 class TeammatesIndex extends React.Component {
   constructor(props) {
@@ -50,7 +51,19 @@ class TeammatesIndex extends React.Component {
       });
     } else {
       teammateList = this.props.teammates.map((teammate, idx) => {
-        return ( <li key={idx+"ml"}>{teammate.username}</li>);
+        let avatar;
+
+        if (teammate.username) {
+          avatar = teammate.username.slice(0,2);
+        } else {
+          avatar = "";
+        }
+        let style = {
+          background: randomColor()
+        };
+        return ( <li className="teammate-name-avatar"
+                      style={style}
+                     key={idx+"ml"}>{avatar}</li>);
       });
     }
 
