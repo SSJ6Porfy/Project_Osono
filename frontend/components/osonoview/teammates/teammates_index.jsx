@@ -68,7 +68,7 @@ class TeammatesIndex extends React.Component {
           { background: "#d73388" },
       ];
         return ( <li className="teammate-name-avatar"
-                      style={style[idx]}
+                      style={style[idx % 8]}
                      key={idx+"ml"}>{avatar}</li>);
       });
     }
