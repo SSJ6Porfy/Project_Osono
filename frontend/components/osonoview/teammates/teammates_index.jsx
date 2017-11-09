@@ -58,11 +58,17 @@ class TeammatesIndex extends React.Component {
         } else {
           avatar = "";
         }
-        let style = {
-          background: randomColor()
-        };
+        let style = [
+          { background: "#7a6ff0" },
+          { background: "#1ccca2" },
+          { background: "#ff0000" },
+          { background: "#4ca9ef" },
+          { background: "#f97a02" },
+          { background: "#42a32f" },
+          { background: "#d73388" },
+      ];
         return ( <li className="teammate-name-avatar"
-                      style={style}
+                      style={style[idx]}
                      key={idx+"ml"}>{avatar}</li>);
       });
     }
