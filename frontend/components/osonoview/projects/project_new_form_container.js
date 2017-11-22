@@ -3,7 +3,7 @@ import ProjectNewForm from "./project_new_form";
 import { createProject } from "../../../actions/project_actions";
 
 const mapStateToProps = (state) => ({
-  currentTeamId: state.ui.currentTeamId,
+  currentTeam: state.ui.currentTeam,
   currentUserId: state.session.currentUser.id
 });
 

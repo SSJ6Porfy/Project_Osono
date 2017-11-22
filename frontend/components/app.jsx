@@ -7,7 +7,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-
     <Switch>
       <AuthRoute exact path="/" component={SplashPageContainer} />
       <ProtectedRoute path="/osonoview" component={OsonoviewContainer}/>

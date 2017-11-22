@@ -17,5 +17,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchTeamMembers: (teamId) => dispatch(fetchTeamMembers(teamId))
 });
 
-export default withRouter(connect(mapStateToProps,
-                                  mapDispatchToProps)(TeamDetail));
+export default connect(mapStateToProps, mapDispatchToProps)(TeamDetail);

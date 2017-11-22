@@ -5,10 +5,9 @@ import TeamIndexContainer from "../teams/team_index_container";
 class ProjectNewForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { project_leader_id: this.props.currentUserId,
+    this.state = {
                    name: "",
-                   description: "",
-                   team_id: this.props.currentTeamId
+                   description: ""
                  };
     this.renderErrors = this.renderErrors.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,7 +21,13 @@ class ProjectNewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createProject(this.state).then(() => this.props.closeModal());
+    const newProject = {
+      name: this.state.name,  
+      description: this.state.description,
+      project_leader_id: this.props.currentUserId,
+      team_id: this.props.currentTeam.id
+    };
+    this.props.createProject(newProject).then(() => this.props.closeModal());
   }
 
   renderErrors() {}
