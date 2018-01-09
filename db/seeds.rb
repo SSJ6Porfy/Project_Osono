@@ -49,8 +49,8 @@ task15 = Task.create!(user_id: user2.id, project_id: project4.id, name: "New lea
 task16 = Task.create!(user_id: user2.id, project_id: project4.id, name: "Sales team meeting")
 task17 = Task.create!(user_id: user3.id, project_id: project4.id, name: "Send client thank you cards")
 
-com1 = Comment.create!(user_id: user1.id, comment_type: "task", body: "this is task comment", task_id: task1.id, parent_id: nil)
-com2 = Comment.create!(user_id: user2.id, comment_type: "com", body: "this is com comment", task_id: task1.id, parent_id: com1.id)
+com1 = Comment.create!(user_id: user1.id, body: "this is task comment", commentable_id: task1.id, commentable_type: "Task")
+com2 = Comment.create!(user_id: user2.id, body: "this is com comment", commentable_id: com1.id, commentable_type: "Comment")
 
 
 TeamMember.create!(team_id: team1.id, user_id: user1.id)
