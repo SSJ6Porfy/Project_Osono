@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       resources :projects, only: [:index]
     end
 
-
+    resources :comments, only: [:index, :create, :show, :update, :destory]
 
     resources :projects do
       resources :tasks, only: [:index]
