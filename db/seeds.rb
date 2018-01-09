@@ -11,6 +11,7 @@ Team.destroy_all
 Project.destroy_all
 Task.destroy_all
 TeamMember.destroy_all
+Comment.destroy_all
 
 user1 = User.create!(username: "porfy", password: "password", email: "porfy@porfyCompany.com")
 user2 = User.create!(username: "John", password: "12345678", email: "john@johnCompany.com")
@@ -48,7 +49,9 @@ task15 = Task.create!(user_id: user2.id, project_id: project4.id, name: "New lea
 task16 = Task.create!(user_id: user2.id, project_id: project4.id, name: "Sales team meeting")
 task17 = Task.create!(user_id: user3.id, project_id: project4.id, name: "Send client thank you cards")
 
-Comment.create!()
+com1 = Comment.create!(user_id: user1.id, comment_type: "task", body: "this is task comment", task_id: task1.id, parent_id: nil)
+com2 = Comment.create!(user_id: user2.id, comment_type: "com", body: "this is com comment", task_id: task1.id, parent_id: com1.id)
+
 
 TeamMember.create!(team_id: team1.id, user_id: user1.id)
 TeamMember.create!(team_id: team4.id, user_id: user1.id)
