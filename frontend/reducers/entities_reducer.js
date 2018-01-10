@@ -6,6 +6,7 @@ import loadingReducer from "./loading_reducer";
 import UserReducer from "./user_reducer";
 import TeamMemberReducer from "./team_member_reducer";
 import SearchedTeamReducer from "./searched_team_reducer";
+import CommentReducer from "./comment_reducer";
 
 export default combineReducers({
   tasks: TaskReducer,
@@ -14,5 +15,6 @@ export default combineReducers({
   loading: loadingReducer,
   teammates: UserReducer,
   team_members: TeamMemberReducer,
-  searchedTeams: SearchedTeamReducer
+  searchedTeams: SearchedTeamReducer,
+  comments: CommentReducer
 });

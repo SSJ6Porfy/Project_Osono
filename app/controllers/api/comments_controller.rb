@@ -3,7 +3,7 @@ class Api::CommentsController < ApplicationController
     before_action :require_logged_in?
     
     def index
-        Comment.all
+        @comments = Comment.all
     end
 
     def show

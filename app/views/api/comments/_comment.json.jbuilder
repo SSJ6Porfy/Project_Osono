@@ -1,1 +1,1 @@
-json.extract! comment, :id, :user_id, :task_id, :comment_type, :body
+json.extract! comment, :id, :user_id, :commentable_id, :body

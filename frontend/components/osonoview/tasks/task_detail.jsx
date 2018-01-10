@@ -1,4 +1,5 @@
 import React from "react";
+import CommentsIndexContainer from '../comments/comments_index_container';
 
 class TaskDetail extends React.Component {
   constructor(props) {
@@ -103,10 +104,13 @@ class TaskDetail extends React.Component {
               </label>
               <textarea className="task-detail-description-text"
                         onChange={this.update("description")}
-                        value={this.state.description}/>
+                        value={this.state.description || " "}/>
             </div>
           </form>
           <div className="timestamp-container">
+          </div>
+          <div className="comments-container">
+            <CommentsIndexContainer/>
           </div>
         </div>
       </div>
