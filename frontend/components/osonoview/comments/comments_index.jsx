@@ -11,7 +11,15 @@ class CommentsIndex extends React.Component {
 
     render() {
         return (
-            <p>I'm a Comment, sort'of!</p>
+            <div className="comments-container">
+                <ul>
+                { this.props.comments.map((comment, idx) => {
+                    return (
+                        <li key={idx + comment.body}>{ comment.body }</li>
+                    );
+                })}
+                </ul>
+            </div>
         );
     }
 }
