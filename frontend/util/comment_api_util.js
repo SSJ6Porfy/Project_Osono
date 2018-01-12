@@ -1,10 +1,11 @@
 
-export const fetchComments = () => (
-    $.ajax({
+export const fetchComments = (task_id) => {
+    let task_query = task_id ? `?task_id=${task_id}` : "";
+    return $.ajax({
         method: 'GET',
-        url: `/api/comments`
-    })
-);
+        url: `/api/comments/${task_query}`
+    });
+};
 
 export const fetchComment = (id) => (
     $.ajax({

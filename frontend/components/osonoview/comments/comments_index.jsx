@@ -6,7 +6,7 @@ class CommentsIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchComments();
+        this.props.fetchComments(this.props.match.params.taskId);
     }
 
     render() {
