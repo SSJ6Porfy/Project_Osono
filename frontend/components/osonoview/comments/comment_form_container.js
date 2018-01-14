@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import CommentForm from "./comment_form";
 import { createComment,
          updateComment } from "../../../actions/comment_actions";
@@ -12,4 +13,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   updateComment: (comment) => dispatch(updateComment(comment))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CommentForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CommentForm));

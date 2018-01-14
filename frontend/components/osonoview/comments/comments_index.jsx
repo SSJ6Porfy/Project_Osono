@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentIndexItem from './comment_index_item';
 
 class CommentsIndex extends React.Component {
     constructor(props) {
@@ -10,12 +11,21 @@ class CommentsIndex extends React.Component {
     }
 
     render() {
+        let teammate_hash = {};
+        teammate_hash["1"] = "Porfy";
+        this.props.teammates.forEach((tm) => {
+            teammate_hash[tm.id] = tm.username;
+        });
         return (
             <div className="comments-container">
                 <ul>
                 { this.props.comments.map((comment, idx) => {
+                    let username = teammate_hash[comment.user_id];
+                    if (username === undefined) {
+                        username = 'Porfy';
+                    }
                     return (
-                        <li key={idx + comment.body}>{ comment.body }</li>
+                        <CommentIndexItem body={comment.body} username={username}/>
                     );
                 })}
                 </ul>

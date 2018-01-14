@@ -1,5 +1,6 @@
 import React from "react";
 import CommentsIndexContainer from '../comments/comments_index_container';
+import CommentsFormContainer from '../comments/comment_form_container';
 
 class TaskDetail extends React.Component {
   constructor(props) {
@@ -111,6 +112,7 @@ class TaskDetail extends React.Component {
           </div>
           <div className="comments-container">
             <CommentsIndexContainer/>
+            <CommentsFormContainer/>
           </div>
         </div>
       </div>

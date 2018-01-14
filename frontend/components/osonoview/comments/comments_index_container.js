@@ -7,7 +7,8 @@ import { fetchComments,
          updateComment } from "../../../actions/comment_actions";
 
 const mapStateToProps = (state, ownProps) => ({
-  comments: Object.values(state.entities.comments)
+  comments: Object.values(state.entities.comments),
+  teammates: Object.values(state.entities.teammates)
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
