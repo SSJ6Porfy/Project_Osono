@@ -3,7 +3,12 @@ class Api::CommentsController < ApplicationController
     before_action :require_logged_in?
     
     def index
-        @comments = Comment.all
+        if params[:task_id]
+            @comments = Comment.all.where(commentable_id: params[:task_id])
+        else
+            @comments = Comment.all
+        end
+        
     end
 
     def show

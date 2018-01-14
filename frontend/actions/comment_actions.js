@@ -5,8 +5,8 @@ export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 export const RECEIVE_COMMENT_ERRORS = "RECEIVE_COMMENT_ERRORS";
 
-export const fetchComments = () => dispatch => (
-  CommentAPIUtil.fetchComments()
+export const fetchComments = (taskId) => dispatch => (
+  CommentAPIUtil.fetchComments(taskId)
     .then(res => (dispatch(receiveAllComments(res))
     ), err => (dispatch(receiveCommentErrors(err.responseJSON))))
 );
