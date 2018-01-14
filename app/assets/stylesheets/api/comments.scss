@@ -1,3 +1,50 @@
 // Place all the styles related to the Api::Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.comments-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.comment-index-item-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 10px;
+}
+
+.comment-name {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.comment-body {
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.user-profile2 {
+    font-family: sans-serif;
+    font-weight: 400;
+    margin-bottom: 5px;
+  }
+  
+  .avatarContainer2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #7a6ff0;
+    border-radius: 50%;
+    background-color: #7a6ff0;
+    color: white;
+    font-size: 13px;
+    height: 25px;
+    line-height: 25px;
+    width: 25px;
+    font-weight: bold;
+    margin-right: 10px;
+  }

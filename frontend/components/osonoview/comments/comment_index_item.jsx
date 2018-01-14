@@ -8,15 +8,19 @@ class CommentIndexItem extends React.Component {
     render() {
         return (
             <div className="comment-index-item-container">
-                <div className="avatarContainer">
-                    <span className="user-profile">
+                <div className="avatarContainer2">
+                    <span className="user-profile2">
                         { this.props.username[0] }
                     </span>
                 </div>
-                <div className="comment-name-container">
-                { this.props.name }
+                <div className="comment-content-container">
+                    <div className="comment-name">
+                        { this.props.username }
+                    </div>
+                    <div className="comment-body">
+                        { this.props.body }    
+                    </div>
                 </div>
-                { this.props.body }
             </div>
         );
     }
