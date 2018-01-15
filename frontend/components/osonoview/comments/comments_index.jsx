@@ -17,15 +17,15 @@ class CommentsIndex extends React.Component {
             teammate_hash[tm.id] = tm.username;
         });
         return (
-            <div className="comments-container">
-                <ul>
+            <div className="comments-list-container">
+                <ul className="comment-ul">
                 { this.props.comments.map((comment, idx) => {
                     let username = teammate_hash[comment.user_id];
                     if (username === undefined) {
                         username = 'Porfy';
                     }
                     return (
-                        <CommentIndexItem body={comment.body} username={username}/>
+                        <CommentIndexItem key={idx + username} body={comment.body} username={username}/>
                     );
                 })}
                 </ul>

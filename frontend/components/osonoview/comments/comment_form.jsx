@@ -8,11 +8,18 @@ class CommentForm extends React.Component {
     render() {
         return (
             <div className="new-comment-form-container">
-                <form>
-                    <textarea className="comment-body-input" 
-                              placeholder="Write a comment">
-                    </textarea>
-                </form>
+                <div className="inner-comment-container">
+                    <div className="avatarContainer2">
+                        <span className="user-profile2">
+                            { this.props.username[0].toUpperCase() }
+                        </span>
+                    </div>
+                    <form className="new-comment-form">
+                        <textarea className="comment-body-input" 
+                                  placeholder="Write a comment">
+                        </textarea>
+                    </form>
+                </div>
             </div>
         );
     }

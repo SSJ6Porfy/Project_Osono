@@ -5,7 +5,8 @@ import { createComment,
          updateComment } from "../../../actions/comment_actions";
 
 const mapStateToProps = (state, ownProps) => ({
-  comments: Object.values(state.entities.comments)
+  comments: Object.values(state.entities.comments),
+  username: Object.values(state.session.currentUser.username)
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
