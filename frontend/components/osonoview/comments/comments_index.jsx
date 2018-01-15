@@ -10,6 +10,10 @@ class CommentsIndex extends React.Component {
         this.props.fetchComments(this.props.match.params.taskId);
     }
 
+    componentWillReceiveProps(newProps) {
+        this.props.fetchComments(this.props.match.params.taskId);
+    }
+
     render() {
         let teammate_hash = {};
         teammate_hash["1"] = "Porfy";
