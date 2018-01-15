@@ -11,7 +11,9 @@ class CommentsIndex extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
-        this.props.fetchComments(this.props.match.params.taskId);
+        if (newProps.match.params.taskId != this.props.match.params.taskId) {
+            this.props.fetchComments(newProps.match.params.taskId);
+        }
     }
 
     render() {
