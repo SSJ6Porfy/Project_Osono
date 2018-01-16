@@ -10,7 +10,8 @@ import { fetchComments,
 const mapStateToProps = (state, ownProps) => ({
   comments: Object.values(state.entities.comments),
   teammates: Object.values(state.entities.teammates),
-  loading: state.entities.loading,
+  user: state.session.currentUser,
+  loading: state.entities.loading
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

@@ -43,13 +43,13 @@ class CommentForm extends React.Component {
         if (e.charCode === 13) {
             this.props.createComment(this.state)
                 .then(() => this.setState({ "body": "" }));
-            console.log(this.textInput);
             this.textInput.value = "";
             this.textInput.blur();
         }
     }
 
     render() {
+        console.log(this.props.user);
         return (
             <div className="new-comment-form-container">
                 <div className="inner-comment-container">

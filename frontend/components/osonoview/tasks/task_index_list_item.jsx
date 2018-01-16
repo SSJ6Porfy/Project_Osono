@@ -68,7 +68,7 @@ class TaskIndexListItem extends React.Component {
         .then(() => {});
     } else {
       this.props.updateTask(this.state)
-        .then(() => { });
+        .then(() => {});
     }
   }
 
