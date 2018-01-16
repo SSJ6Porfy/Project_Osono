@@ -43,8 +43,9 @@ class CommentForm extends React.Component {
         if (e.charCode === 13) {
             this.props.createComment(this.state)
                 .then(() => this.setState({ "body": "" }));
-            let input = document.getElementById("comment-body-input");
-            input.value = "";
+            console.log(this.textInput);
+            this.textInput.value = "";
+            this.textInput.blur();
         }
     }
 
@@ -59,12 +60,13 @@ class CommentForm extends React.Component {
                         </span>
                     </div>
                     <form id="new-comment-form">
-                        <textarea className="comment-body-input" 
+                        <textarea id="comment-body-input" 
                                   placeholder="Write a comment"
                                   onChange={this.update("body")}
                                   onKeyPress={this.submitComment}
                                   onFocus={this.focusInput} 
-                                  onBlur={this.shrinkInput} 
+                                  onBlur={this.shrinkInput}
+                                  ref={(input) => { this.textInput = input; }}
                                   >
                         </textarea>
                     </form>
