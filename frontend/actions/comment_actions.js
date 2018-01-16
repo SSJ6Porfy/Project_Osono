@@ -4,6 +4,7 @@ export const RECEIVE_ALL_COMMENTS = 'RECEIVE_ALL_COMMENTS';
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 export const RECEIVE_COMMENT_ERRORS = "RECEIVE_COMMENT_ERRORS";
+export const CLEAR_COMMENTS = "CLEAR_COMMENTS";
 
 export const fetchComments = (taskId) => dispatch => (
   CommentAPIUtil.fetchComments(taskId)
@@ -32,6 +33,10 @@ export const deleteComment = (id) => dispatch => (
     ), err => (dispatch(receiveCommentErrors(err.responseJSON))))
 );
 
+export const clearComments = () => dispatch => (
+  dispatch(receieveClearComments({}))
+);
+
 
 export const receiveAllComments = (comments) => ({
   type: RECEIVE_ALL_COMMENTS,
@@ -50,4 +55,9 @@ export const removeComment = (comment) => ({
 export const receiveCommentErrors = (errors) => ({
   type: RECEIVE_COMMENT_ERRORS,
   errors
+});
+
+export const receieveClearComments = (comments) => ({
+  type: CLEAR_COMMENTS,
+  comments
 });

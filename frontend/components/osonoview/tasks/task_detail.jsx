@@ -12,12 +12,12 @@ class TaskDetail extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.match.params.taskId) {
-      this.props.fetchTask(this.props.match.params.taskId);
-    }
     const el = document.getElementsByClassName("task-index-container");
-    if (el[0].classList) {
-      el[0].classList.add("task-index-container-enabled");
+    if (this.props.match.params.taskId) {
+      this.props.fetchTask(this.props.match.params.taskId)
+        .then(() => {
+          el[0].classList.add("task-index-container-enabled");
+        });
     }
   }
 

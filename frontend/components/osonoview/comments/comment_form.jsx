@@ -50,7 +50,6 @@ class CommentForm extends React.Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <div className="new-comment-form-container">
                 <div className="inner-comment-container">
