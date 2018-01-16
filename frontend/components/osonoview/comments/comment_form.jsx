@@ -5,6 +5,19 @@ class CommentForm extends React.Component {
         super(props);
         this.shrinkInput = this.shrinkInput.bind(this);
         this.focusInput = this.focusInput.bind(this);
+        this.submitComment = this.submitComment.bind(this);
+        this.state = {
+            user_id: this.props.user.id,
+            commentable_id: this.props.match.params.taskId,
+            body: ""
+        };
+        
+    }
+
+    componentWillReceiveProps(newProps) {
+        if (newProps.match.params.taskId != this.state.commentable_id) {
+            this.setState({ "commentable_id": newProps.match.params.taskId });
+        }
     }
 
     shrinkInput(e) {
@@ -16,21 +29,43 @@ class CommentForm extends React.Component {
     focusInput(e) {
         e.preventDefault();
         let input = e.currentTarget;
-        input.style.height = "80px";
+        input.style.transitionDuration = "0.5s";
+        input.style.height = "60px";
+    }
+
+    update(field) {
+        return (e) => {
+            this.setState({[field]: e.target.value});
+        };
+    }
+
+    submitComment(e) {
+        if (e.charCode === 13) {
+            this.props.createComment(this.state)
+                .then(() => this.setState({ "body": "" }));
+            let input = document.getElementById("comment-body-input");
+            input.value = "";
+        }
     }
 
     render() {
+        console.log(this.state);
         return (
             <div className="new-comment-form-container">
                 <div className="inner-comment-container">
                     <div className="avatarContainer2">
                         <span className="user-profile2">
-                            { this.props.username[0].toUpperCase() }
+                            { this.props.user.username[0].toUpperCase() }
                         </span>
                     </div>
-                    <form className="new-comment-form">
-                        <textarea onFocus={this.focusInput} onBlur={this.shrinkInput} className="comment-body-input" 
-                                  placeholder="Write a comment">
+                    <form id="new-comment-form">
+                        <textarea className="comment-body-input" 
+                                  placeholder="Write a comment"
+                                  onChange={this.update("body")}
+                                  onKeyPress={this.submitComment}
+                                  onFocus={this.focusInput} 
+                                  onBlur={this.shrinkInput} 
+                                  >
                         </textarea>
                     </form>
                 </div>
