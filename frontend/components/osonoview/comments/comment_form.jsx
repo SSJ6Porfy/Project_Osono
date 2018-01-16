@@ -61,7 +61,7 @@ class CommentForm extends React.Component {
                     </div>
                     <form id="new-comment-form">
                         <textarea id="comment-body-input" 
-                                  placeholder="Write a comment"
+                                  placeholder="Write a comment... Press Enter to submit"
                                   onChange={this.update("body")}
                                   onKeyPress={this.submitComment}
                                   onFocus={this.focusInput} 
