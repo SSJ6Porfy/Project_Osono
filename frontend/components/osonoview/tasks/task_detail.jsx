@@ -76,12 +76,12 @@ class TaskDetail extends React.Component {
     return (
       <div className="task-detail-container">
         <div className="task-detail">
-          <div className="task-detail-header-container">
+        <div className="task-scrollable">
+        <div className="task-detail-header-container">
             <button className="close-task-btn"
                   onClick={this.closeTaskDetail}>X</button>
           </div>
           <form className="task-detail-form">
-
             <div className="task-detail-field-container">
               <label>Task Name
                 <br/>
@@ -110,8 +110,9 @@ class TaskDetail extends React.Component {
           </form>
           <div className="timestamp-container">
           </div>
+          <CommentsIndexContainer/>
+        </div>
           <div className="comments-container">
-            <CommentsIndexContainer/>
             <CommentsFormContainer/>
           </div>
         </div>

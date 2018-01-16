@@ -25,6 +25,13 @@
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
   flex-direction: column;
 }
+.task-scrollable {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
 
 .task-index-header-container {
     -webkit-box-align: center;
@@ -221,7 +228,7 @@
 
 .task-detail {
   display: flex;
-  width: 90%;
+  width: 100%;
   flex-direction: column;
   background: white;
   align-items: center;
