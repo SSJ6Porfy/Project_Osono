@@ -12,6 +12,7 @@ class SessionSignupForm extends React.Component {
       email: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoUserLogin = this.demoUserLogin.bind(this);
   }
 
 
@@ -30,8 +31,14 @@ class SessionSignupForm extends React.Component {
    handleSubmit(e) {
      e.preventDefault();
      const user = this.state;
-     this.props.signup(user).then(this.props.fetchTeammates());
+     this.props.signup(user).then(() => this.props.fetchTeammates());
    }
+
+   demoUserLogin(e) {
+    e.preventDefault();
+    this.props.login({"username": "John", "password": "12345678"})
+      .then(() => this.props.fetchTeammates());
+  }
 
    renderErrors() {
        return(
@@ -83,7 +90,10 @@ class SessionSignupForm extends React.Component {
              />
            </label>
            <br/>
-         <input type="submit" value="SIGN UP"/>
+         <div className="login-btn-conatainer">
+            <button className="demo-btn2" onClick={this.handleSubmit}>SIGN UP</button>
+            <button className="demo-btn" onClick={this.demoUserLogin}>DEMO USER</button>
+         </div>
          </div>
        </form>
      </div>

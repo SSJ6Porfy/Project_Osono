@@ -29,7 +29,6 @@ class SessionLoginForm extends React.Component {
 
    demoUserLogin(e) {
      e.preventDefault();
-     this.setState({"username": "John", "password": "12345678"});
      this.props.login({"username": "John", "password": "12345678"})
       .then(() => this.props.fetchTeammates());
    }
@@ -87,7 +86,7 @@ class SessionLoginForm extends React.Component {
            </label>
            <br/>
          <div className="login-btn-conatainer">
-           <input type="submit" value="LOG IN" />
+           <input type="submit" value="LOG IN" /> 
            <button className="demo-btn" onClick={this.demoUserLogin}>DEMO USER</button>
 
          </div>
