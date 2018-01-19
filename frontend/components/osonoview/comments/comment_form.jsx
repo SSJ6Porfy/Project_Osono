@@ -49,7 +49,6 @@ class CommentForm extends React.Component {
     }
 
     render() {
-        console.log(this.props.user);
         return (
             <div className="new-comment-form-container">
                 <div className="inner-comment-container">
