@@ -24,7 +24,7 @@ class TaskIndex extends React.Component {
                   "description": " ",
                   "complete?": false
                 };
-    this.props.createTask(task).then(() => console.log("new task!"));
+    this.props.createTask(task).then(() => {});
   }
 
 
