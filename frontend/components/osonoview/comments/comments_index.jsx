@@ -34,7 +34,6 @@ class CommentsIndex extends React.Component {
                     <ul className="comment-ul">
                     { this.props.comments.map((comment, idx) => {
                         let username = teammate_hash[comment.user_id];
-                        console.log(username);
                         if (username === undefined) {
                             username = this.props.user.username;
                         }
@@ -50,3 +49,4 @@ class CommentsIndex extends React.Component {
 }
 
 export default CommentsIndex;
+
