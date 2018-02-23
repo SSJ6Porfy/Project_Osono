@@ -38,13 +38,25 @@ class TeamDetail extends React.Component {
       this.state.team_mission = " ";
     }
     this.props.updateTeam(this.state)
-      .then(() => this.props.history.push(`/osonoview`));
+      .then(() => this.props.history.push(`/osonoview`))
+      .fail(() => this.setState({name: this.props.team.name, team_mission: this.props.team.team_mission }));
   }
 
   handleClick(e) {
     e.preventDefault();
     this.props.deleteTeam(this.props.team.id)
       .then(() => this.props.history.push(`/osonoview`));
+  }
+
+  renderErrors() {
+    
+    return(
+        this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))
+    );
   }
 
   render() {
@@ -74,6 +86,7 @@ class TeamDetail extends React.Component {
               <div className="team-detail-teammates-index">
                 <TeammatesIndexContainer team={this.props.team}/>
               </div>
+              <h3 className="errors-text">{this.renderErrors()}</h3>
             <div className="team-detail-btn-container">
               <input type="submit" value="Update Team"/>
               <button className="team-detail-delete-btn"

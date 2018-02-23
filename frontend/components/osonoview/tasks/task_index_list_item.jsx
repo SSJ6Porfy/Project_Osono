@@ -98,6 +98,7 @@ class TaskIndexListItem extends React.Component {
                         onBlur={this.saveChanges}
                         onChange={this.update("name")}
                         value={this.state.name}
+                        placeholder={"Write a Task"}
                         rows="1"/></Link>
           </li>
           <button className="delete-task-btn" onClick={this.removeTask}>X</button>

@@ -5,7 +5,7 @@ class Api::TeamsController < ApplicationController
   #Method checks the current_user is the Team Lead.
   #Only Team Leads are allow to modify teams
   def check_if_user_is_team_leader?
-    render json: ["Only the Team Lead can edit this team"] unless current_user.id == this_team.user_id;
+    render json: ["Only the Team Lead can edit this team"], status: 422 unless current_user.id == this_team.user_id;
   end
 
   def this_team

@@ -7,7 +7,8 @@ import { fetchTeam,
          deleteTeam } from "../../../actions/team_actions";
 
 const mapStateToProps = (state, ownProps) => ({
-  team: state.entities.teams[ownProps.match.params.teamId]
+  team: state.entities.teams[ownProps.match.params.teamId],
+  errors: state.errors.teams
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

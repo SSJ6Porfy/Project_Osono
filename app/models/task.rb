@@ -13,7 +13,7 @@
 #
 
 class Task < ApplicationRecord
-  validates :user_id, :name, presence: true
+  validates :user_id, presence: true
 
   belongs_to :user
 
