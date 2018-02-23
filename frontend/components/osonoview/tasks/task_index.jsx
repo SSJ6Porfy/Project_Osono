@@ -20,8 +20,8 @@ class TaskIndex extends React.Component {
     e.preventDefault();
     let task = { "user_id": this.props.currentUser.id,
                   "project_id": this.props.match.params.projectId,
-                  "name": "new task",
-                  "description": " ",
+                  "name": "",
+                  "description": "",
                   "complete?": false
                 };
     this.props.createTask(task).then(() => {});
@@ -31,7 +31,7 @@ class TaskIndex extends React.Component {
   render() {
     let result = this.props.tasks.map((task, idx) => {
       return ( <TaskIndexListItem className="task-index-item"
-                                  key={idx+"porf"}
+                                  key={idx+ task.id + 1000}
                                   task={task}
                                   history={this.props.history}
                                   match={this.props.match}
