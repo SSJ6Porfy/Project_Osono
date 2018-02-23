@@ -1,6 +1,6 @@
 class Api::TeamsController < ApplicationController
 
-  before_action :check_if_user_is_team_leader?, only: [:update]
+  before_action :check_if_user_is_team_leader?, only: [:update, :destroy]
 
   #Method checks the current_user is the Team Lead.
   #Only Team Leads are allow to modify teams
