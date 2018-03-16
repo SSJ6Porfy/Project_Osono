@@ -5,18 +5,18 @@ import CommentsFormContainer from '../comments/comment_form_container';
 class TaskDetail extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.task || { name: " ", description: " " };
+    this.state = this.props.task || { name: "", description: "" };
     this.closeTaskDetail = this.closeTaskDetail.bind(this);
     this.toggleStatus = this.toggleStatus.bind(this);
     this.colorCheckbox = this.colorCheckbox.bind(this);
   }
 
   componentDidMount() {
-    const el = document.getElementsByClassName("task-index-container");
+    const el = document.getElementById("task-index-container");
     if (this.props.match.params.taskId) {
       this.props.fetchTask(this.props.match.params.taskId)
         .then(() => {
-          el[0].classList.add("task-index-container-enabled");
+          el.classList.add("task-index-container-enabled");
         });
     }
   }
@@ -27,7 +27,9 @@ class TaskDetail extends React.Component {
 
   update(field) {
     return (e) => {
-      this.setState({[field]: e.target.value});
+      this.setState({ [field]: e.target.value }, () => {
+        this.props.updateTaskInStore(this.state);
+      });
     };
   }
 

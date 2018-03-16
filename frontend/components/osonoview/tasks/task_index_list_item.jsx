@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 class TaskIndexListItem extends React.Component {
   constructor(props) {
     super(props);
@@ -20,7 +19,9 @@ class TaskIndexListItem extends React.Component {
 
   update(field) {
     return (e) => {
-      this.setState({[field]: e.target.value});
+      this.setState({ [field]: e.target.value }, () => {
+        this.props.updateTaskInStore(this.state);
+      });
     };
   }
 
@@ -94,12 +95,12 @@ class TaskIndexListItem extends React.Component {
               </svg>
             </div>
             <Link className="ask-item-name-editable-link" to={linkAddress}>
-              <textarea className="task-item-name-editable"
+              <input className="task-item-name-editable"
                         onBlur={this.saveChanges}
                         onChange={this.update("name")}
                         value={this.state.name}
                         placeholder={"Write a Task"}
-                        rows="1"/></Link>
+                        rows={"1"}/></Link>
           </li>
           <button className="delete-task-btn" onClick={this.removeTask}>X</button>
         </div>

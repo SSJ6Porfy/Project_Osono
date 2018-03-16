@@ -6,13 +6,15 @@ import { fetchTasks,
          fetchTask,
          createTask,
          updateTask,
-         deleteTask } from "../../../actions/task_actions";
+         deleteTask,
+         updateTaskInStore } from "../../../actions/task_actions";
 
 import { currentTasks } from "../../../reducers/selectors";
 
 const mapStateToProps = (state, ownProps) => {
+  let tasks = currentTasks(state.session.currentUser, state.entities.tasks, ownProps.match.params);
   return {
-    tasks: currentTasks(state.session.currentUser, state.entities.tasks, ownProps.match.params),
+    tasks: tasks,
     errors: state.errors.tasks,
     currentUser: state.session.currentUser
   };
@@ -23,7 +25,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchTask: (id) => dispatch(fetchTask()),
   createTask: (task) => dispatch(createTask(task)),
   updateTask: (task) => dispatch(updateTask(task)),
-  deleteTask: (id) => dispatch(deleteTask(id))
+  deleteTask: (id) => dispatch(deleteTask(id)),
+  updateTaskInStore: (task) => dispatch(updateTaskInStore(task))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(TaskIndex));

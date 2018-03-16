@@ -32,6 +32,9 @@ export const deleteTask = (id) => dispatch => (
     ), err => (dispatch(receiveTaskErrors(err.responseJSON))))
 );
 
+export const updateTaskInStore = task => dispatch => {
+  return dispatch(receiveTask(task));
+};
 
 export const receiveAllTasks = (tasks) => ({
   type: RECEIVE_ALL_TASKS,

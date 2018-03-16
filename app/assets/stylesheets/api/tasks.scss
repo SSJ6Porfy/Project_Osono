@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.task-index-container {
+#task-index-container {
   margin-top: 15px;
   display: flex;
   justify-content: flex-start;
@@ -115,8 +115,6 @@
   border-radius: 0;
   height: 20px;
   outline: 0;
-  overflow: hidden;
-  resize: none;
   top: 0;
   width: 100%;
   border: none;
@@ -124,6 +122,7 @@
   font-size: 100%;
   resize: none;
   white-space: nowrap;
+  overflow-x: scroll;
 }
 
 .ask-item-name-editable-link {
