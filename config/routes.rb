@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     resources :tasks
     resources :team_members, only: [:show, :index, :create, :destroy]
 
-    get 'teams/search', to: 'teams#search'
+    get 'search', to: 'search#search'
+    
     resources :teams do
       resources :projects, only: [:index]
     end
