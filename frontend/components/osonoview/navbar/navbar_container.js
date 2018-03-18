@@ -11,7 +11,8 @@ import Navbar from "./navbar";
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
-  searchedTeams: state.entities.searchedTeams
+  searchedTeams: state.entities.searchedTeams,
+  teams: state.entities.teams
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

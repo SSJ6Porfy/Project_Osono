@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ReactModal from 'react-modal';
 import UserProfileContainer from './user_profile_container';
+import { fetchSearchedTeams } from '../../../util/search_team_api_util';
 
 ReactModal.defaultStyles.overlay.backgroundColor = 'rgba(128,128,128,0.75)';
 
@@ -19,6 +20,7 @@ class Navbar extends React.Component {
     this.reloadProjects = this.reloadProjects.bind(this);
     this.handleTeam = this.handleTeam.bind(this);
     this.displaySearch = this.displaySearch.bind(this);
+    this.fetchSearchedTeams = fetchSearchedTeams.bind(this);
   }
 
   openModal() {
@@ -35,8 +37,9 @@ class Navbar extends React.Component {
 
   handleChange(e) {
     e.preventDefault();
-    this.props.fetchSearchedTeams(e.target.value)
-      .then((res) => this.setState({"search": res.searchedTeams}));
+    console.log(e.target.value);
+    this.fetchSearchedTeams(e.target.value)
+      .then((res) => this.setState({ search: res.hits.hits }));
   }
 
   reloadProjects(e) {
@@ -86,27 +89,35 @@ class Navbar extends React.Component {
 
   render() {
     let searchedTeams = this.state.search.map((team, idx) => {
-      let memberIds = Object.values(team.members).map(member =>{
-        return member.member_id;
-      });
-      let btnText = "Join!";
-      if (memberIds.includes(this.props.currentUser.id)) {
-        btnText = "Leave Team";
-      }
-
-      return (<div key={idx+team}
-                   className="searched-team-list-item"
-                   >
-                <div className="searched-team-list-item-inner">
-                  <li key={team + idx}>
-                    <h3 className="searched-team-list-name">{team.name}</h3>
-                  </li>
-                  <button className="join-status-btn"
-                          onClick={(e) => this.handleTeam(team, e)}
-                    >{btnText}</button>
-                </div>
-              </div>
-             );
+        let searchedTeamId = team._source.id;
+        let currentUserId = this.props.currentUser.id;
+        console.log(team._source);
+        let teamFromStore = this.props.teams[searchedTeamId];
+        let membership = false;
+        if (teamFromStore) {
+          if (teamFromStore.team_members.includes(currentUserId) || 
+              teamFromStore.user_id === currentUserId) {
+              membership = true;
+          }
+        }
+        let btnText = "Join!";
+        if (membership) {
+          btnText = "Leave Team";
+        }
+        console.log(teamFromStore, membership, currentUserId);
+      // return (<div key={idx+team}
+      //              className="searched-team-list-item"
+      //              >
+      //           <div className="searched-team-list-item-inner">
+      //             <li key={team + idx}>
+      //               <h3 className="searched-team-list-name">{team.name}</h3>
+      //             </li>
+      //             <button className="join-status-btn"
+      //                     onClick={(e) => this.handleTeam(team, e)}
+      //               >{btnText}</button>
+      //           </div>
+      //         </div>
+      //        );
     });
     let search = (<div id="search-index-container">
                     <div className="search-header-container">
