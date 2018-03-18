@@ -53,7 +53,7 @@ class TaskIndex extends React.Component {
                                   updateTask={this.props.updateTask}/> );
     });
     return (
-      <div id="task-index-container" onKeyDown={this.keyMoves}>
+      <div className="task-index-container" onKeyDown={this.keyMoves}>
         <div className="task-index-header-container">
           <a className="header-add-task-btn" onClick={this.newTask}>Add Task</a>
         </div>
