@@ -1,10 +1,10 @@
 class Api::SearchController < ApplicationController
     def search
-        if params[:search].nil?
+        if params[:q].nil?
           @teams = []
         else
-          @teams = Team.search params[:search]
-          render "api/search/search"
+          @teams = Team.search(params[:q])
+          render :search
         end
       end
 end

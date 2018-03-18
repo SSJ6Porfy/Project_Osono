@@ -26,14 +26,12 @@ class Team < ApplicationRecord
     through: :team_members, source: :user
 
   def self.search(query)
+    puts query
     __elasticsearch__.search(
       {
         query: {
-          multi_match: {
-            query: query,
-            fields: ['name', 'string']
+          match_phrase_prefix: { name: query }
           }
-        }
       }
     )
   end
