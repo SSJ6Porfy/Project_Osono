@@ -14,8 +14,9 @@ Osono is personal project by Porfirio Matias.
 * Users can create accounts with secure authentication
 * Users can create tasks with titles and descriptions and label them
 complete or incomplete.
-* Create Teams that other users and join.  
+* Create Teams.  
 * Create Projects and add project specifc tasks.
+* Search for Teams to join
 * Users have a profile to manage their own information.
 
 ![Wireframe Instructions](https://github.com/SSJ6Porfy/Project_Osono/blob/master/docs/Osonoview.png)
@@ -38,7 +39,8 @@ the core functionalities of Asana.
 
 * Database
   * PostgreSQL, an object-relational database management system (ORDBMS) was used
-for the database.  
+for the database.
+  * Elasticsearch, a document data store for fast full text search
 * Heroku
   * The Application is hosted on Heroku
 * Dependencies
@@ -67,7 +69,5 @@ for the database.
 
 ## ToDos
 
-* Implement restrictions where only project and team leads can edit
-the respective team or project.
-
-* Implement team search for users to search teams to join
+* Implement Elasticsearch for completed tasks
+* Filter completed tasks from task index
